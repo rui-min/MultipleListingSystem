@@ -1,6 +1,9 @@
 import java.util.UUID;
+
 /**
- * Abstract class representing Condominium Type (level 3)
+ * Abstract class is a class that cannot be made instances of in Java and it helps
+ * achieve Abstraction.
+ * This abstract class represents the idea: Condominium type (level 3)
  */
 public abstract class Condominium extends Residential implements LockerStorage {
     private final String TITLE = "Condominium";
@@ -24,4 +27,6 @@ public abstract class Condominium extends Residential implements LockerStorage {
 
     public abstract int howManyLockerStorage();
     public abstract void setHowManyLockerStorage(int howManyLockerStorage);
+
+
 }
