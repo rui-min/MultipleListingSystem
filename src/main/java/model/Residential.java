@@ -1,3 +1,5 @@
+package model;
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.UUID;
@@ -5,14 +7,14 @@ import java.util.UUID;
 /**
  * Abstract class is a class that cannot be made instances of in Java and it helps
  * achieve Abstraction.
- * This abstract class represents the idea: Residential type (level 2)
+ * This abstract class represents the idea: model.Residential type (level 2)
  */
 //import java.time.Period;
 public abstract class Residential extends Property implements ParkingSpaces {
     /**
      * There is only one copy of the static attribute shared among the declaring class
      * and all subclasses. REFER_PRICE is a package-wide indicator, and residential properties
-     * with prices higher than or equal to it are called "High Value Residential Property"
+     * with prices higher than or equal to it are called "High Value model.Residential model.Property"
      */
     public static final int REFER_PRICE = 10000000;
 
@@ -30,7 +32,7 @@ public abstract class Residential extends Property implements ParkingSpaces {
     }
 
     /**
-     * Check whether this Residential property is a High Value Property
+     * Check whether this model.Residential property is a High Value model.Property
      * @return true if it is larger than or equal to the indicator, otherwise false
      */
     public boolean isHighValue() {
@@ -57,7 +59,7 @@ public abstract class Residential extends Property implements ParkingSpaces {
      */
     @Override
     public String toString() {
-        return "Residential{" +
+        return "model.Residential{" +
                 "uuid=" + super.getUuid() +
                 ", address='" + super.getAddress() + '\'' +
                 ", price=" + super.getPrice() +

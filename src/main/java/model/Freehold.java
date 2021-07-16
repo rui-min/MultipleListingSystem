@@ -1,9 +1,11 @@
+package model;
+
 import java.util.UUID;
 
 /**
  * Abstract class is a class that cannot be made instances of in Java and it helps
  * achieve Abstraction.
- * This abstract class represents the idea: Freehold type (level 3)
+ * This abstract class represents the idea: model.Freehold type (level 3)
  */
 public abstract class Freehold extends Residential implements Generations {
 
@@ -14,7 +16,7 @@ public abstract class Freehold extends Residential implements Generations {
      */
     private String type = "single family";
     private int numberOfFloors = 0;
-    private final String TITLE = "Freehold";
+    private final String TITLE = "model.Freehold";
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
@@ -27,16 +29,16 @@ public abstract class Freehold extends Residential implements Generations {
     }
 
     /**
-     * Get the type of the Freehold
-     * @return type of the Freehold
+     * Get the type of the model.Freehold
+     * @return type of the model.Freehold
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Set the type of the Freehold
-     * @param type of the Freehold
+     * Set the type of the model.Freehold
+     * @param type of the model.Freehold
      */
     public void setType(String type) {
         this.type = type;
@@ -44,7 +46,7 @@ public abstract class Freehold extends Residential implements Generations {
 
     /**
      * Get the final attribute TITLE
-     * @return TITLE of the Freehold
+     * @return TITLE of the model.Freehold
      */
     public String getTITLE() {
         return TITLE;
@@ -86,7 +88,7 @@ public abstract class Freehold extends Residential implements Generations {
      */
     @Override
     public String toString() {
-        return "Freehold{" +
+        return "model.Freehold{" +
                 "type='" + type + '\'' +
                 ", numberOfFloors=" + numberOfFloors +
                 ", TITLE='" + TITLE + '\'' +

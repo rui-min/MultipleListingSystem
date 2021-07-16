@@ -1,9 +1,11 @@
+package model;
+
 import java.util.UUID;
 
 /**
  * Abstract class is a class that cannot be made instances of in Java and it helps
  * achieve Abstraction.
- * This abstract class represents the idea: Property (level 1)
+ * This abstract class represents the idea: model.Property (level 1)
  */
 public abstract class Property {
     /**
@@ -21,7 +23,7 @@ public abstract class Property {
     private Property() {}
 
     /**
-     * The public constructor is prepared for subclasses to create a new Property with
+     * The public constructor is prepared for subclasses to create a new model.Property with
      * given uuid, address and price.
      * @param uuid the unique uuid of the property
      * @param address the unique address of the property, with unit No. if applicable
@@ -87,12 +89,12 @@ public abstract class Property {
     }
 
     /**
-     * Override Object class's toString() method. Create a string representation of this Property
-     * @return the string representation of this Property
+     * Override Object class's toString() method. Create a string representation of this model.Property
+     * @return the string representation of this model.Property
      */
     @Override
     public String toString() {
-        return "Property{" +
+        return "model.Property{" +
                 "uuid=" + this.uuid +
                 ", address='" + this.address + '\'' +
                 ", price=" + this.price +

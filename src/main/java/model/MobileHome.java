@@ -1,22 +1,23 @@
-/**
- * Concrete class representing Cooperative home (level 3)
+package model; /**
+ * Concrete class representing Mobile home (level 3)
  */
 import java.util.UUID;
 
-public class CooperativeHome extends Residential {
-    public CooperativeHome(UUID uuid, String address, int price) {
+public class MobileHome extends Residential {
+
+    public MobileHome(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
     @Override
     public int getHowManyParks() {
-        //TODO
+        // TODO
         return 0;
     }
 
     @Override
     public void setHowManyParks(int howManyParks) {
-        //TODO
+        // TODO
     }
 
     //.toString() TODO

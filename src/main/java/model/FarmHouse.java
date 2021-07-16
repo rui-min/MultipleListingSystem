@@ -1,10 +1,10 @@
-/**
- * Concrete class representing Town house (level 4)
+package model; /**
+ * Concrete class representing Farm House (level 4)
  */
 import java.util.UUID;
 
-public class TownHouse extends Freehold {
-    public TownHouse(UUID uuid, String address, int price) {
+public class FarmHouse extends Freehold {
+    public FarmHouse(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
@@ -28,5 +28,5 @@ public class TownHouse extends Freehold {
 
     }
 
-    //.toString() TODO
+    //toString() TODO
 }

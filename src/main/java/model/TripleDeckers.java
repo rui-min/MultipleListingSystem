@@ -1,10 +1,10 @@
-/**
- * Concrete class representing Condo (level 4)
+package model; /**
+ * Concrete class representing Mobile home (level 4)
  */
 import java.util.UUID;
 
-public class Condo extends Condominium {
-    public Condo(UUID uuid, String address, int price) {
+public class TripleDeckers extends Condominium{
+    public TripleDeckers(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
@@ -27,6 +27,4 @@ public class Condo extends Condominium {
     public void setHowManyParks(int howManyParks) {
 
     }
-
-    //toString() TODO
 }

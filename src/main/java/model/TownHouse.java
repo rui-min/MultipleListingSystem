@@ -1,11 +1,10 @@
-/**
- * Concrete class representing MultiLex (level 4)
+package model; /**
+ * Concrete class representing Town house (level 4)
  */
 import java.util.UUID;
 
-public class MultiLex extends Freehold {
-
-    public MultiLex(UUID uuid, String address, int price) {
+public class TownHouse extends Freehold {
+    public TownHouse(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
@@ -29,5 +28,5 @@ public class MultiLex extends Freehold {
 
     }
 
-    //toString() TODO
+    //.toString() TODO
 }

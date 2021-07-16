@@ -1,12 +1,14 @@
+package model;
+
 import java.util.UUID;
 
 /**
  * Abstract class is a class that cannot be made instances of in Java and it helps
  * achieve Abstraction.
- * This abstract class represents the idea: Condominium type (level 3)
+ * This abstract class represents the idea: model.Condominium type (level 3)
  */
 public abstract class Condominium extends Residential implements LockerStorage {
-    private final String TITLE = "Condominium";
+    private final String TITLE = "model.Condominium";
     private int unitNumber = -1;
 
     public Condominium(UUID uuid, String address, int price) {

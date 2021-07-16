@@ -1,3 +1,5 @@
+package model;
+
 import java.util.UUID;
 
 /**
@@ -21,7 +23,7 @@ public class Land extends Property {
      */
     @Override
     public String toString() {
-        return "Land{" +
+        return "model.Land{" +
                 "uuid=" + super.getUuid() +
                 ", address='" + super.getAddress() + '\'' +
                 ", price=" + super.getPrice() +

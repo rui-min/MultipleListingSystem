@@ -1,11 +1,10 @@
-/**
- * Concrete class representing Recreational and vacation home (level 3)
+package model; /**
+ * Concrete class representing Detached Home (level 4)
  */
 import java.util.UUID;
 
-public class VacationHome extends Freehold {
-
-    public VacationHome(UUID uuid, String address, int price) {
+public class DetachedHome extends Freehold {
+    public DetachedHome(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
