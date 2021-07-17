@@ -6,6 +6,8 @@ package model;
  * method and one setter method related to generations living in the property.
  */
 public interface Generations {
-    public int getHowManyGenerations();
-    public void setHowManyGenerations(int howManyGenerations);
+    default int getHowManyGenerations(){
+        return 1;
+    };
+    void setHowManyGenerations(int howManyGenerations);
 }

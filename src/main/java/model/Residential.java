@@ -20,7 +20,7 @@ public abstract class Residential extends Property implements ParkingSpaces {
 
     private Period availability;    // TODO!
     private LocalDate buildDate;    // TODO!
-
+    private int howManyParks;
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
      * @param uuid the unique uuid of the property
@@ -40,30 +40,35 @@ public abstract class Residential extends Property implements ParkingSpaces {
     }
 
     /**
-     * An abstract method, which cannot be finished here and must be implemented
-     * by non-abstract subclass.
-     * @return the number of parking spaces.
+     * override the abstract method in Generation interface
+     * get howManyGenerations in this house
+     * @return the number of Parking Space.
      */
-    public abstract int getHowManyParks();
+    @Override
+    public int getHowManyParks() {
+        return this.howManyParks;
+    }
 
     /**
-     * An abstract method, which cannot be finished here and must be implemented
-     * by non-abstract subclass.
-     * @param howManyParks the number of parking spaces.
+     * override the abstract method in Generation interface.
+     * Set howManyGenerations in this house
+     * @param howManyParks the number of generations living here.
      */
-    public abstract void setHowManyParks(int howManyParks);
-
+    @Override
+    public void setHowManyParks(int howManyParks){
+        this.howManyParks = howManyParks;
+    };
     /**
      * Override superclass's toString() method. Create a string representation of this class.
      * @return the string representation of this class
      */
     @Override
     public String toString() {
-        return "model.Residential{" +
-                "uuid=" + super.getUuid() +
-                ", address='" + super.getAddress() + '\'' +
-                ", price=" + super.getPrice() +
+        return
+                super.toString() + " ,"  +
                 ", highValue=" + this.isHighValue() +
-                '}';
+                ", REFER_PRICE=" + Residential.REFER_PRICE +
+                ", howManyParks=" + howManyParks
+                ;
     }
 }
