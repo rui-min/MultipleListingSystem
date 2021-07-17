@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -18,8 +19,8 @@ public abstract class Residential extends Property implements ParkingSpaces {
      */
     public static final int REFER_PRICE = 10000000;
 
-    private Period availability;    // TODO!
-    private LocalDate buildDate;    // TODO!
+    private ArrayList<Date> availability = new ArrayList<>(2);    // TODO!
+    private Date buildDate;    // TODO!
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
