@@ -17,16 +17,15 @@ public class Land extends Property {
         super(uuid, address, price);
     }
 
+
+
     /**
-     * Override Object class's toString() method. Create a string representation of this class
-     * @return the string representation of this class
+     * Override Object class's toString() method. Create a string representation of this class.
+     * @return the string representation of Land as Land{uuid, address, price}.
      */
     @Override
     public String toString() {
-        return "model.Land{" +
-                "uuid=" + super.getUuid() +
-                ", address='" + super.getAddress() + '\'' +
-                ", price=" + super.getPrice() +
-                '}';
+        return String.format("%s{uuid=%s, address=%s, price=%d}",
+                this.getClass().getSimpleName(), this.getUuid(), this.getAddress(), this.getPrice());
     }
 }
