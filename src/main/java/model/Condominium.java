@@ -27,7 +27,7 @@ public abstract class Condominium extends Residential implements LockerStorage {
         this.unitNumber = unitNumber;
     }
 
-    public abstract int howManyLockerStorage();
+    public abstract int getHowManyLockerStorage();
     public abstract void setHowManyLockerStorage(int howManyLockerStorage);
 
 

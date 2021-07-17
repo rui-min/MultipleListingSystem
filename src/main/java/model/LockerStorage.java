@@ -6,6 +6,6 @@ package model;
  * method and one setter method related to number of locker storages in the property.
  */
 public interface LockerStorage {
-    public int howManyLockerStorage();
+    public int getHowManyLockerStorage();
     public void setHowManyLockerStorage(int howManyLockerStorage);
 }

@@ -9,7 +9,7 @@ public class Condo extends Condominium {
     }
 
     @Override
-    public int howManyLockerStorage() {
+    public int getHowManyLockerStorage() {
         return 0;
     }
 

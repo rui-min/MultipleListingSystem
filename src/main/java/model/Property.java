@@ -77,11 +77,13 @@ public abstract class Property {
 
     /**
      * Override Object class's equals() method. Evaluate objects' equality using attribute values
+     * For simplification, it is assumed that same address represents same property regardless
+     * of other attributes. Write "final" to force no subclasses' overridden.
      * @param o other Object for comparison
      * @return a boolean value "true" if specified attribute values are same, otherwise "false"
      */
     @Override
-    public boolean equals(Object o) {
+    public final boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Property other = (Property) o;
