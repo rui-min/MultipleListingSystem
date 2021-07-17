@@ -4,7 +4,7 @@ import java.util.UUID;
  * Abstract class representing Residential Type (level 2)
  */
 public abstract class Residential extends Property implements ParkingSpaces {
-    public static final int REFER_PRICE = 10000000;
+    public static final int REFER_PRICE = 750000;
 //    private Period availability;
 
     public Residential(UUID uuid, String address, int price) {
@@ -18,6 +18,8 @@ public abstract class Residential extends Property implements ParkingSpaces {
     public abstract int getHowManyParks();
 
     public abstract void setHowManyParks(int howManyParks);
+
+    public abstract String getTitle();
 
     @Override
     public String toString() {
