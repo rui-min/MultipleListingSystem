@@ -4,6 +4,6 @@
  * method and one setter method related to generations living in the property.
  */
 public interface Generations {
-    public int getHowManyGenerations();
-    public void setHowManyGenerations(int howManyGenerations);
+    public boolean isMultigeneration();
+    public void setMultigeneration();
 }

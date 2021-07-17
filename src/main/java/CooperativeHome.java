@@ -4,20 +4,25 @@
 import java.util.UUID;
 
 public class CooperativeHome extends Residential {
+    private String buildingType;
+
     public CooperativeHome(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
-    @Override
-    public int getHowManyParks() {
-        //TODO
-        return 0;
-    }
 
     @Override
-    public void setHowManyParks(int howManyParks) {
-        //TODO
+    public String getOwnership() {
+        return "Cooperative Home";
     }
 
-    //.toString() TODO
+    public void setBuildingType(String type){
+        this.buildingType = type;
+    }
+
+    public String getBuildingType() {
+        return this.buildingType;
+    }
+
+
 }

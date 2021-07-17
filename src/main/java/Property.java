@@ -51,17 +51,9 @@ public abstract class Property {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || this.getClass() != o.getClass()) return false;
         Property other = (Property) o;
         return this.address.equals(other.address);
     }
 
-    @Override
-    public String toString() {
-        return "Property{" +
-                "uuid=" + this.uuid +
-                ", address='" + this.address + '\'' +
-                ", price=" + this.price +
-                '}';
-    }
 }

@@ -4,6 +4,7 @@
  * method and one setter method related to number of parking spaces in the property.
  */
 public interface ParkingSpaces {
-    public int getHowManyParks();
-    public void setHowManyParks(int howManyParks);
+    public int howManyParkingSpace();
+
+    public void setParkingSpace( int howMany);
 }
