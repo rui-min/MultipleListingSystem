@@ -1,4 +1,4 @@
-package java.model;
+package model;
 
 import org.junit.Test;
 
