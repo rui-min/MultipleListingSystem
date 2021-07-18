@@ -13,10 +13,10 @@ public class FreeholdTest {
         Freehold f2 = new VacationHome(UUID.randomUUID(),"Finch", 400000);
         Freehold f3 = new FarmHouse(UUID.randomUUID(), "North York", 300000) {
         };
-        f1.setHowManyGenerations(3);
-        f2.setHowManyParks(2);
-        assertEquals(3,f1.getHowManyGenerations());
-        assertEquals(2,f2.getHowManyParks());
+        f1.setMultigeneration();
+        f2.setParkingSpace(2);
+        assertEquals(3,f1.isMultigeneration());
+        assertEquals(2,f2.howManyParkingSpace());
         System.out.println(f1.toString());
         System.out.println(f2.toString());
         System.out.println(f3.toString());
