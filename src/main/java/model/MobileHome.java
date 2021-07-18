@@ -4,16 +4,20 @@ package model; /**
 import java.util.UUID;
 
 public class MobileHome extends Residential {
-    private String ownership;
 
     public MobileHome(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
+    @Override
+    public int getHowManyParks() {
+        // TODO
+        return 0;
+    }
 
     @Override
-    public String getOwnership() {
-        return null;
+    public void setHowManyParks(int howManyParks) {
+        // TODO
     }
 
     //.toString() TODO

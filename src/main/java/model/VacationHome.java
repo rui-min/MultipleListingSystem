@@ -9,4 +9,15 @@ public class VacationHome extends Freehold {
         super(uuid, address, price);
     }
 
+
+    /**
+     * return a String using the superClass's toString()
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "VacationHome{" + "\n" +
+                super.toString() +
+                "}";
+    }
 }

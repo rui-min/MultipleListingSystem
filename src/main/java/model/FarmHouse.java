@@ -8,5 +8,14 @@ public class FarmHouse extends Freehold {
         super(uuid, address, price);
     }
 
-    //toString() TODO
+    /**
+     * return a String using the superClass's toString()
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return "FarmHouse{" + "\n" +
+                super.toString() +
+                "}";
+    }
 }
