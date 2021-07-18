@@ -1,7 +1,8 @@
-/**
+package model; /**
  * Concrete class representing Detached Home (level 4)
  */
 import java.util.UUID;
+
 
 public class DetachedHome extends Freehold {
 

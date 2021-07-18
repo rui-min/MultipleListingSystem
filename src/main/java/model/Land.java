@@ -1,3 +1,5 @@
+package model;
+
 import java.util.UUID;
 /**
  * Concrete class representing listed vacant land (level 2)

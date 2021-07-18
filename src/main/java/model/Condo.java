@@ -1,3 +1,4 @@
+package model;
 /**
  * Concrete class representing Condo (level 4)
  */

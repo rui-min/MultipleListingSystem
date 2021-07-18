@@ -1,3 +1,5 @@
+package model;
+
 /**
  * Concrete class representing Cooperative home (level 3)
  */

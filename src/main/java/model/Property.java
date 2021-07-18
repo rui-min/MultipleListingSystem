@@ -1,3 +1,5 @@
+package model;
+
 import java.util.UUID;
 /**
  * Abstract class representing the idea: Property (level 1)

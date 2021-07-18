@@ -1,4 +1,4 @@
-/**
+package model; /**
  * Concrete class representing Recreational and vacation home (level 3)
  */
 import java.util.UUID;
