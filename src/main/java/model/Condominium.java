@@ -5,7 +5,6 @@ import java.util.UUID;
  * Abstract class representing Condominium Type (level 3)
  */
 public abstract class Condominium extends Residential {
-//    private final String TITLE = "Condominium";
     private String unitNumber;
 
     public Condominium(UUID uuid, String address, int price) {
