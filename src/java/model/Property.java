@@ -25,14 +25,15 @@ public abstract class Property {
     /**
      * The public constructor is prepared for subclasses to create a new java.model.Property with
      * given uuid, address and price.
-     * @param uuid the unique uuid of the property
-     * @param address the unique address of the property, with unit No. if applicable
-     * @param price selling price of the listed property
+     * builder.uuid is the unique uuid of the property
+     * builder.address is the unique address of the property, with unit No. if applicable
+     * builder.price is selling price of the listed property
+     * @param builder
      */
-    public Property(UUID uuid, String address, int price) {
-        this.uuid = uuid;
-        this.address = address;
-        this.price = price;
+    public <T extends Builder<T>> Property(Builder<?> builder) {
+        this.uuid = builder.uuid;
+        this.address = builder.address;
+        this.price = builder.price;
     }
 
     /**
@@ -101,22 +102,18 @@ public abstract class Property {
     }
 
 
-
     /**
-     * Builder design pattern to facilitate construction of an
-     * MLS record.
-     *
-     * @see <a href="https://en.wikipedia.org/wiki/Design_Patterns">About Design Patterns</a>
-     * @see <a href="https://en.wikipedia.org/wiki/Builder_pattern">About Builder Pattern</a>
+     * Builder design pattern to facilitate construction of the class
+     * "abstract" for abstract class.
      */
-    public static class Builder {
+    public static abstract class Builder<T extends Builder <T>> {
 
-        private UUID id;
+        private UUID uuid;
         private String address;
         private int price;
 
-        public Builder(UUID id) {
-            this.id = id;
+        public Builder(UUID uuid) {
+            this.uuid = uuid;
         }
 
         /**
@@ -124,9 +121,9 @@ public abstract class Property {
          * @param address of the property
          * @return the Builder object
          */
-        public Builder locatedAt(String address){
+        public T locatedAt(String address){
             this.address = address;
-            return this;
+            return (T) this;
         }
 
         /**
@@ -134,9 +131,9 @@ public abstract class Property {
          * @param price of the property
          * @return the Builder object
          */
-        public Builder pricedAt(int price){
+        public T pricedAt(int price){
             this.price = price;
-            return this;
+            return (T) this;
         }
 
         /**
@@ -144,13 +141,8 @@ public abstract class Property {
          * @return the MLS record using the previously collected information
          * provided to the Builder object.
          */
-        public MultipleListingService build(){
-            MultipleListingService mls = new MultipleListingService();
-            mls.id = this.id;
-            mls.address = this.address;
-            mls.price = this.price;
-            return mls;
-        }
+        public abstract T build(); // TODO by concrete subclasses
+
     }
 
     // quick test

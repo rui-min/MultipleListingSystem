@@ -17,18 +17,23 @@ public abstract class Residential extends Property implements ParkingSpaces {
      */
     public static final int REFER_PRICE = 750000;
 
+    private int howManyParks = 0;
+
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
-     * @param uuid the unique uuid of the property
+     *
+     * @param uuid    the unique uuid of the property
      * @param address the unique address of the property, with unit No. if applicable
-     * @param price selling price of the listed property
+     * @param price   selling price of the listed property
      */
-    public Residential(UUID uuid, String address, int price) {
-        super(uuid, address, price);
+    public <T extends Builder<T>> Residential(Builder<?> builder) {
+        super(builder);
+        this.howManyParks = builder.howManyParks;
     }
 
     /**
      * Check whether this java.model.Residential property is a High Value java.model.Property
+     *
      * @return true if it is larger than or equal to the indicator, otherwise false
      */
     public boolean isHighValue() {
@@ -38,24 +43,31 @@ public abstract class Residential extends Property implements ParkingSpaces {
     /**
      * An abstract method, which cannot be finished here and must be implemented
      * by non-abstract subclass.
+     *
      * @return the number of parking spaces.
      */
-    public abstract int getHowManyParks();
+    public int getHowManyParks() {
+        return this.howManyParks;
+    };
 
     /**
      * An abstract method, which cannot be finished here and must be implemented
      * by non-abstract subclass.
+     *
      * @param howManyParks the number of parking spaces.
      */
-    public abstract void setHowManyParks(int howManyParks);
+    public void setHowManyParks(int howManyParks) {
+        this.howManyParks = howManyParks;
+    }
 
     /**
      * Override superclass's toString() method. Create a string representation of this class.
+     *
      * @return the string representation of this class
      */
     @Override
     public String toString() {
-        return  this.getClass().getSimpleName() + "{" +
+        return this.getClass().getSimpleName() + "{" +
                 "uuid=" + getUuid() +
                 ", address='" + getAddress() + '\'' +
                 ", price=" + getPrice() +
@@ -63,4 +75,27 @@ public abstract class Residential extends Property implements ParkingSpaces {
                 ", highValue=" + isHighValue() +
                 '}';
     }
+
+    /**
+     * Builder design pattern to facilitate construction of the class
+     * "abstract" for abstract class.
+     */
+    public static abstract class Builder<T extends Builder<T>>
+            extends Property.Builder<Builder<T>> {
+
+        private int howManyParks;
+
+        public Builder(UUID uuid) {
+            super(uuid);
+        }
+
+        public T howManyParks(int howManyParks) {
+            this.howManyParks = howManyParks;
+            return (T) this;
+        }
+
+        public abstract T build(); // TODO by concrete subclasses
+
+    }
+
 }

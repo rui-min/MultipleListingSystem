@@ -8,15 +8,13 @@ import java.util.UUID;
  * This abstract class represents the idea: java.model.Condominium type (level 3)
  */
 public abstract class Condominium extends Residential implements LockerStorage {
-    private final String TITLE = "java.model.Condominium";
     private int unitNumber = 0;
+    private int howManyLockerStorage = 0;
 
-    public Condominium(UUID uuid, String address, int price) {
-        super(uuid, address, price);
-    }
-
-    public String getTITLE() {
-        return TITLE;
+    public <T extends Builder<T>> Condominium(Builder<?> builder) {
+        super(builder);
+        this.unitNumber = builder.unitNumber;
+        this.howManyLockerStorage = builder.howManyLockerStorage;
     }
 
     public int getUnitNumber() {
@@ -27,8 +25,49 @@ public abstract class Condominium extends Residential implements LockerStorage {
         this.unitNumber = unitNumber;
     }
 
-    public abstract int getHowManyLockerStorage();
-    public abstract void setHowManyLockerStorage(int howManyLockerStorage);
+    public int getHowManyLockerStorage() {
+        return this.howManyLockerStorage;
+    };
+    public void setHowManyLockerStorage(int howManyLockerStorage) {
+        this.howManyLockerStorage = howManyLockerStorage;
+    };
 
+    @Override
+    public String toString() {
+        return "Condominium{" +
+                "uuid=" + getUuid() +
+                ", address='" + getAddress() + '\'' +
+                ", price=" + getPrice() +
+                ", REFER_PRICE=" + REFER_PRICE +
+                ", highValue=" + isHighValue() +
+                ", unitNumber=" + unitNumber +
+                ", howManyLockerStorage=" + howManyLockerStorage +
+                '}';
+    }
+
+
+    public static abstract class Builder<T extends Builder<T>>
+            extends Residential.Builder<Builder<T>> {
+
+        private int unitNumber;
+        private int howManyLockerStorage;
+
+        public Builder(UUID uuid) {
+            super(uuid);
+        }
+
+        public T unitNumber(int unitNumber){
+            this.unitNumber = unitNumber;
+            return (T) this;
+        }
+
+        public T howManyLockerStorage(int howManyLockerStorage){
+            this.howManyLockerStorage = howManyLockerStorage;
+            return (T) this;
+        }
+
+        public abstract T build(); // TODO by concrete subclasses
+
+    }
 
 }

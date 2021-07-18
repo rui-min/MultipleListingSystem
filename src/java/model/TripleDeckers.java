@@ -4,40 +4,37 @@ import java.util.UUID;
 /**
  * Concrete class representing Triple Deckers (level 4)
  */
-public class TripleDeckers extends Condominium{
-    private String title = this.getClass().getSimpleName();
-    private int howManyLockerStorageInBuilding = 0;
-    private int howManyParks = 0;
+public class TripleDeckers extends Condominium {
+    private final String TITLE = this.getClass().getSimpleName();
 
-    public TripleDeckers(UUID uuid, String address, int price) {
-        super(uuid, address, price);
+    public TripleDeckers(Builder builder) {
+        super(builder);
     }
 
     public String getTitle() {
-        return title;
+        return this.TITLE;
     }
 
-    @Override
-    public int getHowManyLockerStorage() {
-        return howManyLockerStorageInBuilding;
+    public static class Builder<Builder>
+            extends Condominium.Builder {
+
+        private int unitNumber;
+        private int howManyLockerStorage;
+
+        public Builder(UUID uuid) {
+            super(uuid);
+        }
+
+        @Override
+        public Builder getThis(){
+            return this;
+        }
+
+        public TripleDeckers build() {
+            return new TripleDeckers(this);
+        }
+
     }
-
-    @Override
-    public void setHowManyLockerStorage(int howManyLockerStorage) {
-        this.howManyLockerStorageInBuilding = howManyLockerStorage;
-    }
-
-    @Override
-    public int getHowManyParks() {
-        return howManyParks;
-    }
-
-    @Override
-    public void setHowManyParks(int howManyParks) {
-        this.howManyParks = howManyParks;
-    }
-
-
 
     public static void main(String[] args) {
         TripleDeckers tri = new TripleDeckers(UUID.randomUUID(),"Yonge",90000);
