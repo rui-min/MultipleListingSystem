@@ -96,10 +96,10 @@ public abstract class Property {
      */
     @Override
     public String toString() {
-        return "model.Property{" +
+        return
                 "uuid=" + this.uuid +
                 ", address='" + this.address + '\'' +
-                ", price=" + this.price +
-                '}';
+                ", price=" + this.price
+                ;
     }
 }

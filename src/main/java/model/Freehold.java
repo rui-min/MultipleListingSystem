@@ -17,6 +17,8 @@ public abstract class Freehold extends Residential implements Generations {
     private String type = "single family";
     private int numberOfFloors = 0;
     private final String TITLE = "model.Freehold";
+    private int howManyGenerations = 1;
+
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
@@ -69,18 +71,25 @@ public abstract class Freehold extends Residential implements Generations {
     }
 
     /**
-     * An abstract method, which cannot be finished here and must be implemented
-     * by non-abstract subclass.
-     * @return the number of parking spaces.
+     * override the abstract method in Generation interface
+     * get howManyGenerations in this house
+     * @return the number of generations living here.
      */
-    public abstract int getHowManyGenerations();
+    @Override
+    public int getHowManyGenerations() {
+        return this.howManyGenerations;
+    }
 
     /**
-     * An abstract method, which cannot be finished here and must be implemented
-     * by non-abstract subclass.
-     * @param howManyGenerations the number of parking spaces.
+     * override the abstract method in Generation interface.
+     * Set howManyGenerations in this house
+     * @param howManyGenerations the number of generations living here.
      */
-    public abstract void setHowManyGenerations(int howManyGenerations);
+    @Override
+    public void setHowManyGenerations(int howManyGenerations){
+        this.howManyGenerations = howManyGenerations;
+    };
+
 
     /**
      * Override superclass's toString() method. Create a string representation of this class.
@@ -88,15 +97,12 @@ public abstract class Freehold extends Residential implements Generations {
      */
     @Override
     public String toString() {
-        return "model.Freehold{" +
+        return
                 "type='" + type + '\'' +
                 ", numberOfFloors=" + numberOfFloors +
                 ", TITLE='" + TITLE + '\'' +
-                ", uuid=" + super.getUuid() +
-                ", address='" + super.getAddress() + '\'' +
-                ", price=" + super.getPrice() +
-                ", REFER_PRICE=" + Residential.REFER_PRICE +
-                ", highValue=" + super.isHighValue() +
-                '}';
+                ", howManyGeneration=" + howManyGenerations +
+                ", " + super.toString()
+                ;
     }
 }
