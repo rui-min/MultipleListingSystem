@@ -9,7 +9,7 @@ import java.util.UUID;
  */
 public abstract class Condominium extends Residential implements LockerStorage {
     private final String TITLE = "java.model.Condominium";
-    private int unitNumber = -1;
+    private int unitNumber = 0;
 
     public Condominium(UUID uuid, String address, int price) {
         super(uuid, address, price);

@@ -55,7 +55,7 @@ public abstract class Residential extends Property implements ParkingSpaces {
      */
     @Override
     public String toString() {
-        return "Residential{" +
+        return  this.getClass().getSimpleName() + "{" +
                 "uuid=" + getUuid() +
                 ", address='" + getAddress() + '\'' +
                 ", price=" + getPrice() +
