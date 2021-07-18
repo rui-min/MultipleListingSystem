@@ -100,6 +100,59 @@ public abstract class Property {
                 this.getClass().getSimpleName(), this.getUuid(), this.getAddress(), this.getPrice());
     }
 
+
+
+    /**
+     * Builder design pattern to facilitate construction of an
+     * MLS record.
+     *
+     * @see <a href="https://en.wikipedia.org/wiki/Design_Patterns">About Design Patterns</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Builder_pattern">About Builder Pattern</a>
+     */
+    public static class Builder {
+
+        private UUID id;
+        private String address;
+        private int price;
+
+        public Builder(UUID id) {
+            this.id = id;
+        }
+
+        /**
+         * Set the address of the property
+         * @param address of the property
+         * @return the Builder object
+         */
+        public Builder locatedAt(String address){
+            this.address = address;
+            return this;
+        }
+
+        /**
+         * Set the price of the property
+         * @param price of the property
+         * @return the Builder object
+         */
+        public Builder pricedAt(int price){
+            this.price = price;
+            return this;
+        }
+
+        /**
+         * Finalize the construction of an MLS record using Builder design pattern.
+         * @return the MLS record using the previously collected information
+         * provided to the Builder object.
+         */
+        public MultipleListingService build(){
+            MultipleListingService mls = new MultipleListingService();
+            mls.id = this.id;
+            mls.address = this.address;
+            mls.price = this.price;
+            return mls;
+        }
+    }
+
     // quick test
     public static void main(String[] args) {
         Property tri = new TripleDeckers(UUID.randomUUID(),"Yonge",90000);
