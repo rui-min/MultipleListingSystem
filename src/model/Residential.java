@@ -17,7 +17,7 @@ public abstract class Residential extends Property implements ParkingSpaces {
      * and all subclasses. REFER_PRICE is a package-wide indicator, and residential properties
      * with prices higher than or equal to it are called "High Value model.Residential model.Property"
      */
-    public static final int REFER_PRICE = 10000000;
+    public static final int REFER_PRICE = 750000;
 
     private ArrayList<Date> availability = new ArrayList<>(2);    // TODO!
     private Date buildDate;    // TODO!

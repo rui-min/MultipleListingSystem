@@ -96,10 +96,12 @@ public abstract class Property {
      */
     @Override
     public String toString() {
-        return
-                "uuid=" + this.uuid +
-                ", address='" + this.address + '\'' +
-                ", price=" + this.price
-                ;
+        return String.format("%s{uuid=%s, address=%s, price=%d}",
+                this.getClass().getSimpleName(), this.getUuid(), this.getAddress(), this.getPrice());
+    }
+
+    public static void main(String[] args) {
+        Property tri = new TripleDeckers(UUID.randomUUID(),"Yonge",90000);
+        System.out.println(tri);
     }
 }
