@@ -10,11 +10,6 @@ public abstract class Property {
     private int price;
 
     /**
-     * below constructor is written to prevent users from creating by default constructor
-     */
-    private Property() {}
-
-    /**
      *
      * @param uuid the unique uuid of the property
      * @param address the unique address of the property, with unit No. if applicable
