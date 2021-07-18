@@ -18,7 +18,6 @@ public class Land extends Property {
     }
 
 
-
     /**
      * Override Object class's toString() method. Create a string representation of this class.
      * @return the string representation of Land as Land{uuid, address, price}.
