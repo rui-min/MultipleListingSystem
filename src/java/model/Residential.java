@@ -17,6 +17,8 @@ public abstract class Residential extends Property implements ParkingSpaces {
      */
     public static final int REFER_PRICE = 750000;
 
+    private int howManyParks = 0;
+
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
      * @param uuid the unique uuid of the property
@@ -40,14 +42,18 @@ public abstract class Residential extends Property implements ParkingSpaces {
      * by non-abstract subclass.
      * @return the number of parking spaces.
      */
-    public abstract int getHowManyParks();
+    public int getHowManyParks() {
+        return this.howManyParks;
+    }
 
     /**
      * An abstract method, which cannot be finished here and must be implemented
      * by non-abstract subclass.
      * @param howManyParks the number of parking spaces.
      */
-    public abstract void setHowManyParks(int howManyParks);
+    public void setHowManyParks(int howManyParks) {
+        this.howManyParks = howManyParks;
+    }
 
     /**
      * Override superclass's toString() method. Create a string representation of this class.
