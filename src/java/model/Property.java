@@ -18,12 +18,12 @@ public abstract class Property {
     private int price;
 
     /**
-     * below constructor is written to prevent users from creating by default constructor
+     * default constructor is private and never called
      */
     private Property() {}
 
     /**
-     * The public constructor is prepared for subclasses to create a new java.model.Property with
+     * The public constructor is prepared for subclasses to create a new Property with
      * given uuid, address and price.
      * @param uuid the unique uuid of the property
      * @param address the unique address of the property, with unit No. if applicable
@@ -91,8 +91,8 @@ public abstract class Property {
     }
 
     /**
-     * Override Object class's toString() method. Create a string representation of this java.model.Property
-     * @return the string representation of this java.model.Property
+     * Override Object class's toString() method. Create a string representation of this Property
+     * @return the string representation of this Property
      */
     @Override
     public String toString() {

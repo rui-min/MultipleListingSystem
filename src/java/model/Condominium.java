@@ -5,9 +5,12 @@ import java.util.UUID;
 /**
  * Abstract class is a class that cannot be made instances of in Java and it helps
  * achieve Abstraction.
- * This abstract class represents the idea: java.model.Condominium type (level 3)
+ * This abstract class represents the idea: Condominium type (level 3)
  */
 public abstract class Condominium extends Residential implements LockerStorage {
+    /**
+     *
+     */
     private final String TITLE = "Condominium";
     private int unitNumber = 0;
     private int howManyLockerStorage = 0;
@@ -36,6 +39,10 @@ public abstract class Condominium extends Residential implements LockerStorage {
         this.howManyLockerStorage = howManyLockerStorage;
     }
 
+    /**
+     * Override superclass's toString() method. Create a string representation of current class
+     * @return the string representation of current class
+     */
     @Override
     public String toString() {
         return "Condominium{" +
