@@ -27,4 +27,10 @@ public class MultiLex extends Freehold {
        }
     }
 
+    @Override
+    public String toString() {
+        return  super.toString()+
+                ", numberOfUnits=" + nOfUnits +
+                '}';
+    }
 }

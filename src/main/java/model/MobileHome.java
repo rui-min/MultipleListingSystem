@@ -16,5 +16,4 @@ public class MobileHome extends Residential {
         return null;
     }
 
-    //.toString() TODO
 }
