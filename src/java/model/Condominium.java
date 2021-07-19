@@ -1,34 +1,40 @@
 package model;
 
 import java.util.UUID;
-
 /**
- * Abstract class is a class that cannot be made instances of in Java and it helps
- * achieve Abstraction.
- * This abstract class represents the idea: java.model.Condominium type (level 3)
+ * Abstract class representing Condominium Type (level 3)
  */
-public abstract class Condominium extends Residential implements LockerStorage {
-    private final String TITLE = "java.model.Condominium";
-    private int unitNumber = 0;
+public abstract class Condominium extends Residential {
+//    private final String TITLE = "Condominium";
+    private String unitNumber;
 
     public Condominium(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
-    public String getTITLE() {
-        return TITLE;
+    @Override
+    public String getOwnership() {
+        return "Condominium";
     }
 
-    public int getUnitNumber() {
-        return unitNumber;
+    public String getUnitNumber() {
+        return this.unitNumber;
     }
 
-    public void setUnitNumber(int unitNumber) {
+    public void setUnitNumber(String unitNumber) {
         this.unitNumber = unitNumber;
     }
 
-    public abstract int getHowManyLockerStorage();
-    public abstract void setHowManyLockerStorage(int howManyLockerStorage);
-
+    @Override
+    public String toString() {
+        return  this.getBuildingType() +" " + this.getOwnership()+ "{" +
+                "uuid=" + this.getUuid() +
+                ", address='" + this.getAddress() + '\'' +
+                ", price=" + this.getPrice() +
+                ", numberOfParkingSpace=" + this.howManyParkingSpace() +
+                ", storage=" + this.getStorageType() + " " + this.howManyStorage() +
+                ", highValue=" + this.isHighValue() +
+                '}';
+    }
 
 }
