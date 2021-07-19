@@ -1,39 +1,59 @@
 package model;
 
 import java.util.UUID;
+
 /**
- * Abstract class representing Condominium Type (level 3)
+ * Abstract class is a class that cannot be made instances of in Java and it helps
+ * achieve Abstraction.
+ * This abstract class represents the idea: Condominium type (level 3)
  */
-public abstract class Condominium extends Residential {
-//    private final String TITLE = "Condominium";
-    private String unitNumber;
+public abstract class Condominium extends Residential implements LockerStorage {
+    /**
+     *
+     */
+    private final String TITLE = "Condominium";
+    private int unitNumber = 0;
+    private int howManyLockerStorage = 0;
 
     public Condominium(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
-    @Override
-    public String getOwnership() {
-        return "Condominium";
+    public String getTITLE() {
+        return TITLE;
     }
 
-    public String getUnitNumber() {
-        return this.unitNumber;
+    public int getUnitNumber() {
+        return unitNumber;
     }
 
-    public void setUnitNumber(String unitNumber) {
+    public void setUnitNumber(int unitNumber) {
         this.unitNumber = unitNumber;
     }
 
+    public int getHowManyLockerStorage() {
+        return this.howManyLockerStorage;
+    }
+
+    public void setHowManyLockerStorage(int howManyLockerStorage) {
+        this.howManyLockerStorage = howManyLockerStorage;
+    }
+
+    /**
+     * Override superclass's toString() method. Create a string representation of current class
+     * @return the string representation of current class
+     */
     @Override
     public String toString() {
-        return  this.getBuildingType() +" " + this.getOwnership()+ "{" +
-                "uuid=" + this.getUuid() +
-                ", address='" + this.getAddress() + '\'' +
-                ", price=" + this.getPrice() +
-                ", numberOfParkingSpace=" + this.howManyParkingSpace() +
-                ", storage=" + this.getStorageType() + " " + this.howManyStorage() +
-                ", highValue=" + this.isHighValue() +
+        return "Condominium{" +
+                "uuid=" + getUuid() +
+                ", address='" + getAddress() + '\'' +
+                ", price=" + getPrice() +
+                ", REFER_PRICE=" + REFER_PRICE +
+                ", highValue=" + isHighValue() +
+                ", howManyParks=" + getHowManyParks() +
+                ", unitNumber=" + unitNumber +
+                ", howManyLockerStorage=" + howManyLockerStorage +
                 '}';
     }
 
