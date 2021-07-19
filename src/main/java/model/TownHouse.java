@@ -1,5 +1,4 @@
-package model;
-/**
+package model; /**
  * Concrete class representing Town house (level 4)
  */
 import java.util.UUID;

@@ -8,4 +8,5 @@ public class FarmHouse extends Freehold {
         super(uuid, address, price);
     }
 
+    //toString() TODO
 }
