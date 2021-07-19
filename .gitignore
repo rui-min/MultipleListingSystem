@@ -1,5 +1,6 @@
 !.idea
 !docs
 !out
-!README.md
 !.DS_Store
+!README.md
+*.xml

@@ -1,5 +1,4 @@
-package model;
-/**
+package model; /**
  * Concrete class representing Mobile home (level 4)
  */
 import java.util.UUID;
