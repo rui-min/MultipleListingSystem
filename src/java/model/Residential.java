@@ -17,7 +17,7 @@ public abstract class Residential extends Property implements ParkingSpaces {
      */
     public static final int REFER_PRICE = 750000;
 
-    private int howManyParks = 0;
+    private int howManyParks;
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.

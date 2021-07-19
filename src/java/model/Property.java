@@ -26,7 +26,7 @@ public abstract class Property {
      * The public constructor is prepared for subclasses to create a new Property with
      * given uuid, address and price.
      * @param uuid the unique uuid of the property
-     * @param address the unique address of the property, with unit No. if applicable
+     * @param address the unique address of the property
      * @param price selling price of the listed property
      */
     public Property(UUID uuid, String address, int price) {
@@ -77,13 +77,12 @@ public abstract class Property {
 
     /**
      * Override Object class's equals() method. Evaluate objects' equality using attribute values
-     * For simplification, it is assumed that same address represents same property regardless
-     * of other attributes. Write "final" to force no subclasses' overridden.
+     * For simplification, it is assumed that same address represents same property.
      * @param o other Object for comparison
      * @return a boolean value "true" if specified attribute values are same, otherwise "false"
      */
     @Override
-    public final boolean equals(Object o) {
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Property other = (Property) o;
