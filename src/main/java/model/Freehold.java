@@ -48,10 +48,17 @@ public abstract class Freehold extends Residential implements Generations {
 
     @Override
     public String toString() {
-        return  super.toString() +
-                "type=" + this.type +
+        return  this.getBuildingType() +" " + this.getOwnership()+ "{" +
+                "uuid=" + this.getUuid() +
+                ", address='" + this.getAddress() + '\'' +
+                ", price=" + this.getPrice() +
+                ", type=" + this.getType() +
+                ", storeys=" + this.getNumberOfStoreys() +
+                ", numberOfParkingSpace=" + this.howManyParkingSpace() +
+                ", storage=" + this.getStorageType() + " " + this.howManyStorage() +
                 ", highValue=" + this.isHighValue() +
-                ", isMultiGeneration=" + this.isMultigeneration();
+                ", multiGeneration=" + this.isMultigeneration() +
+                '}';
     }
 
 }

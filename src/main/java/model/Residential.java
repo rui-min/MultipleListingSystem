@@ -5,7 +5,7 @@ import java.util.UUID;
 import static java.time.temporal.ChronoUnit.YEARS;
 
 /**
- * Abstract class representing Residential Property (level 2)
+ * Abstract class representing Residential Type (level 2)
  */
 public abstract class Residential extends Property implements ParkingSpaces, Storage {
     public static final int REFER_PRICE = 750000;
@@ -17,19 +17,15 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
 
     /**
      * Constructor to be called in the subclass constructor.
-     * @param uuid UUID for the new object
-     * @param address address of the new residential property
-     * @param price price of the new residential property
+     * @param uuid
+     * @param address
+     * @param price
      */
     public Residential(UUID uuid, String address, int price) {
         super(uuid, address, price);
         this.entryDate = LocalDate.now();
     }
 
-    /**
-     * Check if the home is a high valued home.
-     * @return ture, if the calling object is a high value home;
-     */
     public boolean isHighValue() {
         return this.getPrice() >= REFER_PRICE;
     }
@@ -60,28 +56,17 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
     }
 
 
-    /**
-     * Methods from the ParkingSpace interface. Get number of parking spaces.
-     * @return number of parking spaces
-     */
+
     @Override
     public int howManyParkingSpace(){
         return this.nOfParkingSpace;
     }
 
-    /**
-     * Set number of parking spaces.
-     * @param howMany number of parking spaces
-     */
     @Override
     public void setParkingSpace(int howMany) {
         this.nOfParkingSpace = howMany;
     }
 
-    /**
-     * 
-     * @return
-     */
 
     @Override
     public int howManyStorage(){
@@ -99,10 +84,6 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
         return this.storageType;
     }
 
-    /**
-     * Abstract method to be completed in subclass to return the type of ownership of a calling object.
-     * @return the type of ownership of a the calling object
-     */
     public abstract String getOwnership();
 
     /**
@@ -124,12 +105,12 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
                         "address=%s, " +
                         "price=%d, " +
                         "ownership=%s, " +
-                        "builtDate=%s, " +
-                        "storageType=%s, " +
-                        "numberOfStorage=%d, " +
-                        "numberOfParkingSpace=%d, " +
-                        "isNewConstruction=%s, ",
-                this.getBuildingType(),
+                        "builtDate=%s" +
+                        "storageType=%s" +
+                        "numberOfStorage=%d" +
+                        "numberOfParkingSpace=%d" +
+                        "isNewConstruction=%s",
+                this.getClass().getSimpleName(),
                 this.getUuid(),
                 this.getAddress(),
                 this.getPrice(),
