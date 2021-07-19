@@ -21,7 +21,6 @@ public class TownHouse extends Freehold {
      *
      * @return the number of parking spaces.
      */
-    @Override
     public int getHowManyParks() {
         return 0;
     }
@@ -32,19 +31,8 @@ public class TownHouse extends Freehold {
      *
      * @param howManyParks the number of parking spaces.
      */
-    @Override
     public void setHowManyParks(int howManyParks) {
 
     }
 
-    /**
-     * return a String using the superClass's toString()
-     * @return String
-     */
-    @Override
-    public String toString() {
-        return "TownHouse{" + "\n" +
-                super.toString() +
-                "}";
-    }
 }

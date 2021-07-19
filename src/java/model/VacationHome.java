@@ -31,15 +31,4 @@ public class VacationHome extends Freehold {
 
     }
 
-
-    /**
-     * return a String using the superClass's toString()
-     * @return String
-     */
-    @Override
-    public String toString() {
-        return "VacationHome{" + "\n" +
-                super.toString() +
-                "}";
-    }
 }

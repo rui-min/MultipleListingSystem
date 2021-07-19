@@ -30,14 +30,4 @@ public class FarmHouse extends Freehold {
 
     }
 
-    /**
-     * return a String using the superClass's toString()
-     * @return String
-     */
-    @Override
-    public String toString() {
-        return "FarmHouse{" + "\n" +
-                super.toString() +
-                "}";
-    }
 }
