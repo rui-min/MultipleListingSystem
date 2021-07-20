@@ -1,8 +1,5 @@
-!.idea/
-!docs/
-!out/
-!README.md
-!*/.DS_Store
+*
+!/src/*
 
 # github java
 # Compiled class file
