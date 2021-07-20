@@ -5,11 +5,6 @@ import java.util.UUID;
  * Concrete class representing Building: Stacked Townhouse (level 4)
  */
 public class StackedTownHouse extends Condominium {
-    /**
-     * final constant attribute representing current class's unique title in the format
-     * "superclass's TITLE - current class's TITLE"
-     */
-    private final String TITLE = super.getTITLE() + " - " + this.getClass().getSimpleName();
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
@@ -21,14 +16,7 @@ public class StackedTownHouse extends Condominium {
         super(uuid, address, price);
     }
 
-    /**
-     * Get TITLE of current class. Override superclass's same method.
-     * @return TITLE of current class
-     */
-    @Override
-    public String getTITLE() {
-        return TITLE;
-    }
+
 
     /**
      * Override equals() method. Evaluate objects' equality using attribute values.
@@ -44,25 +32,6 @@ public class StackedTownHouse extends Condominium {
         StackedTownHouse other = (StackedTownHouse) o;
         return this.getAddress().equals(other.getAddress())
                 && this.getUnitNumber() == other.getUnitNumber();
-    }
-
-    /**
-     * Override superclass's toString() method. Create a string representation of current class
-     * @return the string representation of current class
-     */
-    @Override
-    public String toString() {
-        return "StackedTownHouse{" +
-                "uuid=" + getUuid() +
-                ", address='" + getAddress() + '\'' +
-                ", price=" + getPrice() +
-                ", REFER_PRICE=" + REFER_PRICE +
-                ", highValue=" + isHighValue() +
-                ", howManyParks=" + getHowManyParks() +
-                ", unitNumber=" + getUnitNumber() +
-                ", howManyLockerStorage=" + getHowManyLockerStorage() +
-                ", TITLE='" + TITLE + '\'' +
-                '}';
     }
 
     /**
@@ -133,7 +102,7 @@ public class StackedTownHouse extends Condominium {
         public StackedTownHouse build(){
             StackedTownHouse sta = new StackedTownHouse(this.uuid,this.address,this.price);
             sta.setUnitNumber(this.unitNumber);
-            sta.setHowManyParks(this.howManyParks);
+            sta.setParkingSpace(this.howManyParks);
             sta.setHowManyLockerStorage(this.howManyLockerStorage);
             return sta;
         }
@@ -143,7 +112,7 @@ public class StackedTownHouse extends Condominium {
     // quick test
     public static void main(String[] args) {
         StackedTownHouse sta = new StackedTownHouse(UUID.randomUUID(),"Yonge",90000);
-        System.out.println(sta.getTITLE());
+//        System.out.println(sta.getTITLE());
         System.out.println(sta);
 
         StackedTownHouse sta1 = new StackedTownHouse.Builder(UUID.randomUUID(),"Yonge",90000)

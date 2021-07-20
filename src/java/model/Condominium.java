@@ -11,7 +11,6 @@ public abstract class Condominium extends Residential implements LockerStorage {
     /**
      *
      */
-    private final String TITLE = "Condominium";
     private int unitNumber;
     private int howManyLockerStorage;
 
@@ -19,9 +18,11 @@ public abstract class Condominium extends Residential implements LockerStorage {
         super(uuid, address, price);
     }
 
-    public String getTITLE() {
-        return TITLE;
+    @Override
+    public String getOwnership() {
+        return "Condominium";
     }
+
 
     public int getUnitNumber() {
         return unitNumber;
@@ -51,7 +52,7 @@ public abstract class Condominium extends Residential implements LockerStorage {
                 ", price=" + getPrice() +
                 ", REFER_PRICE=" + REFER_PRICE +
                 ", highValue=" + isHighValue() +
-                ", howManyParks=" + getHowManyParks() +
+                ", howManyParks=" + howManyParkingSpace() +
                 ", unitNumber=" + unitNumber +
                 ", howManyLockerStorage=" + howManyLockerStorage +
                 '}';

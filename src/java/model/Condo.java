@@ -6,12 +6,6 @@ import java.util.UUID;
  */
 public class Condo extends Condominium {
     /**
-     * final constant attribute representing current class's unique title in the format
-     * "superclass's TITLE - current class's TITLE"
-     */
-    private final String TITLE = super.getTITLE() + " - " + this.getClass().getSimpleName();
-
-    /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
      * @param uuid the unique uuid of the property
      * @param address the unique address of the property, with unit No. if applicable
@@ -21,14 +15,6 @@ public class Condo extends Condominium {
         super(uuid, address, price);
     }
 
-    /**
-     * Get TITLE of current class. Override superclass's same method.
-     * @return TITLE of current class
-     */
-    @Override
-    public String getTITLE() {
-        return TITLE;
-    }
 
     /**
      * Override equals() method. Evaluate objects' equality using attribute values.
@@ -46,24 +32,6 @@ public class Condo extends Condominium {
                 && this.getUnitNumber() == other.getUnitNumber();
     }
 
-    /**
-     * Override superclass's toString() method. Create a string representation of current class
-     * @return the string representation of current class
-     */
-    @Override
-    public String toString() {
-        return "Condo{" +
-                "uuid=" + getUuid() +
-                ", address='" + getAddress() + '\'' +
-                ", price=" + getPrice() +
-                ", REFER_PRICE=" + REFER_PRICE +
-                ", highValue=" + isHighValue() +
-                ", howManyParks=" + getHowManyParks() +
-                ", unitNumber=" + getUnitNumber() +
-                ", howManyLockerStorage=" + getHowManyLockerStorage() +
-                ", TITLE='" + TITLE + '\'' +
-                '}';
-    }
 
     /**
      * Builder design pattern to facilitate construction of current class object
@@ -133,7 +101,7 @@ public class Condo extends Condominium {
         public Condo build(){
             Condo condo = new Condo(this.uuid,this.address,this.price);
             condo.setUnitNumber(this.unitNumber);
-            condo.setHowManyParks(this.howManyParks);
+            condo.setParkingSpace(this.howManyParks);
             condo.setHowManyLockerStorage(this.howManyLockerStorage);
             return condo;
         }
@@ -143,7 +111,7 @@ public class Condo extends Condominium {
     // quick test
     public static void main(String[] args) {
         Condo condo = new Condo(UUID.randomUUID(),"Yonge",90000);
-        System.out.println(condo.getTITLE());
+//        System.out.println(condo.getTITLE());
         System.out.println(condo); System.out.println("===============================");
 
         Condo condo1 = new Condo.Builder(UUID.randomUUID(),"Yonge",90000)
