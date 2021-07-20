@@ -1,5 +1,6 @@
 package model;
 
+
 import java.time.LocalDate;
 import java.util.UUID;
 import static java.time.temporal.ChronoUnit.YEARS;
@@ -139,6 +140,5 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
                 this.nOfStorages,
                 this.nOfParkingSpace,
                 this.isNew());
-
     }
 }

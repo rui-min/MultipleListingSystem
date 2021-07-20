@@ -1,3 +1,4 @@
+
 package model; /**
  * Concrete class representing MultiLex (level 4)
  */
@@ -32,4 +33,5 @@ public class MultiLex extends Freehold {
         return  super.toString()+
                 ", numberOfUnits=" + nOfUnits;
     }
+
 }

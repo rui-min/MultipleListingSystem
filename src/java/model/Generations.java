@@ -1,5 +1,5 @@
-package model;
 
+package model;
 /**
  * Interface helps achieve Abstraction.
  * The interface "Generations" forces implemented class(es) to include one getter
@@ -7,5 +7,5 @@ package model;
  */
 public interface Generations {
     public boolean isMultigeneration();
-    public void setMultigeneration();
+    public void setMultigeneration(boolean isMultigeneration);
 }
