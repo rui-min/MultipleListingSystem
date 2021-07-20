@@ -9,9 +9,4 @@ public class SemiDetached extends Freehold {
     public SemiDetached(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
-
-    @Override
-    public String toString() {
-        return super.toString()  + '}';
-    }
 }
