@@ -88,7 +88,7 @@ public abstract class Freehold extends Residential implements Generations {
     @Override
     public void setHowManyGenerations(int howManyGenerations){
         this.howManyGenerations = howManyGenerations;
-    };
+    }
 
 
     /**

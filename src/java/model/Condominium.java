@@ -12,8 +12,8 @@ public abstract class Condominium extends Residential implements LockerStorage {
      *
      */
     private final String TITLE = "Condominium";
-    private int unitNumber = 0;
-    private int howManyLockerStorage = 0;
+    private int unitNumber;
+    private int howManyLockerStorage;
 
     public Condominium(UUID uuid, String address, int price) {
         super(uuid, address, price);
