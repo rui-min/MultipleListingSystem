@@ -98,11 +98,11 @@ public abstract class Freehold extends Residential implements Generations {
     @Override
     public String toString() {
         return
-                "type='" + type + '\'' +
+                super.toString() +
+                ", type=" + type +
                 ", numberOfFloors=" + numberOfFloors +
-                ", TITLE='" + TITLE + '\'' +
-                ", howManyGeneration=" + howManyGenerations +
-                ", " + super.toString()
+                ", TITLE=" + TITLE +
+                ", howManyGeneration=" + howManyGenerations
                 ;
     }
 }

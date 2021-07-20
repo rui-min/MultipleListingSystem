@@ -35,13 +35,4 @@ public class CooperativeHome extends Residential {
         this.parkingSlot = howManyParks;
     }
 
-    /**
-     *
-     * @return
-     */
-    @Override
-    public String toString(){
-        return String.format("%s{uuid=%s, address=%s, price=%d}",
-                this.getClass().getSimpleName(), this.getUuid(), this.getAddress(), this.getPrice());
-    }
 }
