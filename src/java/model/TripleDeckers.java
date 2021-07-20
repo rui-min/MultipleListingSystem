@@ -53,6 +53,7 @@ public class TripleDeckers extends Condominium{
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
+        private String storageType; //TODO
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -96,6 +97,17 @@ public class TripleDeckers extends Condominium{
             return this;
         }
 
+//TODO
+        /**
+         * Set the storageType of the property
+         * @param storageType of the property
+         * @return the Builder object
+         */
+        public Builder storageTypeIs(String storageType){
+            this.storageType = storageType;
+            return this;
+        }
+
         /**
          * Finalize the construction of TripleDeckers using Builder design pattern.
          * @return TripleDeckers using the previously collected information
@@ -105,7 +117,7 @@ public class TripleDeckers extends Condominium{
             TripleDeckers tri = new TripleDeckers(this.uuid,this.address,this.price);
             tri.setUnitNumber(this.unitNumber);
             tri.setParkingSpace(this.howManyParks);
-            tri.setHowManyLockerStorage(this.howManyLockerStorage);
+            tri.setStorage(this.storageType, this.howManyLockerStorage);
             return tri;
         }
     }

@@ -106,13 +106,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      */
     public abstract String getOwnership();
 
-    /**
-     * Called by subclass instance.
-     * @return return the concrete class name of a subclass instance.
-     */
-    public String getBuildingType() {
-        return this.getClass().getSimpleName();
-    }
+
 
     /**
      *
@@ -120,25 +114,22 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      */
     @Override
     public String toString(){
-        return String.format("%s{" +
-                        "uuid=%s, " +
-                        "address=%s, " +
-                        "price=%d} " +
+        return String.format("%s " +
                         "ownership=%s, " +
                         "builtDate=%s, " +
                         "storageType=%s, " +
                         "numberOfStorage=%d, " +
                         "numberOfParkingSpace=%d, " +
-                        "isNewConstruction=%s, ",
-                this.getBuildingType(),
-                this.getUuid(),
-                this.getAddress(),
-                this.getPrice(),
+                        "isNewConstruction=%s, " +
+                        "isHighValue=%s",
+                super.toString(),
                 this.getOwnership(),
                 this.builtDate,
                 this.storageType,
                 this.nOfStorages,
                 this.nOfParkingSpace,
-                this.isNew());
+                this.isNew(),
+                this.isHighValue()
+            );
     }
 }

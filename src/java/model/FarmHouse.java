@@ -1,3 +1,4 @@
+package model;
 /**
  * Concrete class representing Farm House (level 4)
  */
@@ -113,7 +114,7 @@ public class FarmHouse extends Freehold {
         public FarmHouse build(){
             FarmHouse fh = new FarmHouse(this.uuid,this.address,this.price);
             fh.setType(this.type);
-            fh.setNumberOfStoreys(this.numberOfStoreys);
+            fh.setNumberOfFloors(this.numberOfStoreys);
             fh.setStorage(this.storageType,nOfStorages);
             fh.setBuiltDate(this.builtDate);
             fh.setMultigeneration(this.isMultigeneration);

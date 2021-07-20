@@ -1,4 +1,4 @@
-
+package model;
 /**
  * Concrete class representing Town house (level 4)
  */
@@ -55,7 +55,7 @@ public class TownHouse extends Freehold {
         }
 
         /**
-         * Set the number of parks of the property
+         * Set the storageType of the property
          * @param storageType of the property
          * @return the Builder object
          */
@@ -64,7 +64,7 @@ public class TownHouse extends Freehold {
             return this;
         }
         /**
-         * Set the number of parks of the property
+//         * Set the number of parks of the property // Todo
          * @param type of the property
          * @return the Builder object
          */
@@ -73,7 +73,7 @@ public class TownHouse extends Freehold {
             return this;
         }
         /**
-         * Set the number of parks of the property
+//         * Set the number of parks of the property // Todo
          * @param builtDate of the property
          * @return the Builder object
          */
@@ -82,7 +82,7 @@ public class TownHouse extends Freehold {
             return this;
         }
         /**
-         * Set the number of parks of the property
+//         * Set the number of parks of the property // Todo
          * @param numberOfStoreys of the property
          * @return the Builder object
          */
@@ -91,7 +91,7 @@ public class TownHouse extends Freehold {
             return this;
         }
         /**
-         * Set the number of parks of the property
+         * Set the number of Storages of the property
          * @param nOfStorages of the property
          * @return the Builder object
          */
@@ -100,7 +100,7 @@ public class TownHouse extends Freehold {
             return this;
         }
         /**
-         * Set the number of parks of the property
+//         * Set the number of parks of the property
          * @param isMultigeneration of the property
          * @return the Builder object
          */
@@ -117,7 +117,7 @@ public class TownHouse extends Freehold {
         public TownHouse build(){
             TownHouse th = new TownHouse(this.uuid,this.address,this.price);
             th.setType(this.type);
-            th.setNumberOfStoreys(this.numberOfStoreys);
+            th.setNumberOfFloors(this.numberOfStoreys);
             th.setStorage(this.storageType,nOfStorages);
             th.setBuiltDate(this.builtDate);
             th.setMultigeneration(this.isMultigeneration);
