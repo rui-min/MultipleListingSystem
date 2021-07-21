@@ -71,7 +71,8 @@ public abstract class Condominium extends Residential implements Storage {
     @Override
     public String toString() {
         return  super.toString() +
-                ", unitNumber=" + unitNumber;
+                ", unitNumber=" + unitNumber +
+                '}';
     }
 
 }

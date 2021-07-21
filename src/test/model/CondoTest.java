@@ -8,7 +8,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test strategy: test 2 kinds of constructions, and override equals() method.
+ * Test strategy: test 2 kinds of constructions, and equals() method.
  */
 class CondoTest {
     /**
@@ -20,7 +20,6 @@ class CondoTest {
         Condo condo = new Condo(UUID.randomUUID(),"Yonge",90000);
         assertEquals("Yonge",condo.getAddress());
         assertEquals(90000,condo.getPrice(), 0.01);
-
     }
 
     /**

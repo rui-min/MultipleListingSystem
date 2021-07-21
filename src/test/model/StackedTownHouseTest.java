@@ -8,7 +8,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test strategy: test 2 kinds of constructions, and override equals() method.
+ * Test strategy: test 2 kinds of constructions, and equals() method.
  */
 class StackedTownHouseTest {
     /**
