@@ -95,12 +95,12 @@ public class TripleDeckers extends Condominium{
         }
 
         /**
-         * Set the number of locker storage of the property
-         * @param howManyLockerStorage number of locker storage of the property
+         * Set the storageType of the property
+         * @param storageType of the property
          * @return the Builder object
          */
-        public Builder withHowManyLokerStorage(int howManyLockerStorage){
-            this.howManyLockerStorage = howManyLockerStorage;
+        public Builder storageTypeIs(String storageType){
+            this.storageType = storageType;
             return this;
         }
 
@@ -122,7 +122,7 @@ public class TripleDeckers extends Condominium{
     // quick test
     public static void main(String[] args) {
         TripleDeckers tri = new TripleDeckers(UUID.randomUUID(),"Yonge",90000);
-        System.out.println(tri.getBuildingType());
+//        System.out.println(tri.getTITLE());
         System.out.println(tri);
 
         TripleDeckers tri1 = new TripleDeckers.Builder(UUID.randomUUID(),"Yonge",90000)
