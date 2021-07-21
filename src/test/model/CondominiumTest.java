@@ -54,7 +54,7 @@ class CondominiumTest {
     /**
      * Test new overridden method toString() with concrete subclass TripleDeckers
      * Corresponding string should begin with below format for package "MLS" manipulation
-     * String.format("%s{uuid=%s, address=%s, price=%d}",
+     * String.format("%s{uuid=%s, address=%s, price=%d ...",
      *         this.getBuildingType(), this.getUuid(), this.getAddress(), this.getPrice());
      */
     @Test
