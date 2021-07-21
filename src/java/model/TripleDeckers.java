@@ -1,12 +1,11 @@
 package model;
-import java.util.Objects;
+
 import java.util.UUID;
 
 /**
  * Concrete class representing Building: Triple Deckers (level 4)
  */
 public class TripleDeckers extends Condominium{
-
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
      * @param uuid the unique uuid of the property
@@ -16,8 +15,6 @@ public class TripleDeckers extends Condominium{
     public TripleDeckers(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
-
-
 
     /**
      * Override equals() method. Evaluate objects' equality using attribute values.
@@ -53,7 +50,7 @@ public class TripleDeckers extends Condominium{
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
-        private String storageType; //TODO
+        private String storageType;
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -97,7 +94,6 @@ public class TripleDeckers extends Condominium{
             return this;
         }
 
-//TODO
         /**
          * Set the storageType of the property
          * @param storageType of the property

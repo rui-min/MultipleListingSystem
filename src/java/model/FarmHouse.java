@@ -1,10 +1,11 @@
 package model;
-/**
- * Concrete class representing Farm House (level 4)
- */
+
 import java.time.LocalDate;
 import java.util.UUID;
 
+/**
+ * Concrete class representing Farm House (level 4)
+ */
 public class FarmHouse extends Freehold {
     public FarmHouse(UUID uuid, String address, int price) {
         super(uuid, address, price);
@@ -93,7 +94,7 @@ public class FarmHouse extends Freehold {
          * @return the Builder object
          */
         public Builder withHowManStorages(int nOfStorages){
-            this.nOfStorages = this.nOfStorages;
+            this.nOfStorages = nOfStorages;
             return this;
         }
         /**
