@@ -11,10 +11,10 @@ import static java.time.temporal.ChronoUnit.YEARS;
 public abstract class Residential extends Property implements ParkingSpaces, Storage {
     public static final int REFER_PRICE = 750000;
     private int nOfParkingSpace;
-    private String storageType;
+    private String storageType ="No storage";
     private int nOfStorages;
     private LocalDate builtDate = LocalDate.MIN;
-    private LocalDate entryDate; // the day the object is entered in the system
+    private LocalDate entryDate; // the day on which the object is entered in the system
 
     /**
      * Constructor to be called in the subclass constructor.
@@ -61,6 +61,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      * @return built date of the residential property
      */
     public LocalDate getBuiltDate() {
+
         return builtDate;
     }
 
@@ -68,7 +69,6 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      * Methods from the ParkingSpace interface. Get number of parking spaces.
      * @return number of parking spaces
      */
-    @Override
     public int howManyParkingSpace(){
         return this.nOfParkingSpace;
     }
@@ -77,24 +77,19 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      * Set number of parking spaces.
      * @param howMany number of parking spaces
      */
-    @Override
     public void setParkingSpace(int howMany) {
         this.nOfParkingSpace = howMany;
     }
 
-
-    @Override
     public int howManyStorage(){
         return this.nOfStorages;
     }
 
-    @Override
     public void setStorage(String type, int howMany){
         this.nOfStorages = howMany;
         this.storageType = type;
     }
 
-    @Override
     public String getStorageType(){
         return this.storageType;
     }
@@ -108,12 +103,12 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
 
 
     /**
-     *
+     * Return the string representation of the calling object.
      * @return a String representation
      */
     @Override
     public String toString(){
-        return String.format("%s " +
+        return String.format("%s, " +
                         "ownership=%s, " +
                         "builtDate=%s, " +
                         "storageType=%s, " +
@@ -123,7 +118,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
                         "isHighValue=%s",
                 super.toString(),
                 this.getOwnership(),
-                this.builtDate,
+                this.builtDate != LocalDate.MIN? this.builtDate : "Unknown",
                 this.storageType,
                 this.nOfStorages,
                 this.nOfParkingSpace,
