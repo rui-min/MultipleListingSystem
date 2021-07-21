@@ -9,63 +9,58 @@ import java.util.UUID;
  */
 public abstract class Condominium extends Residential implements Storage {
     /**
-     * unit number of the building
+     *
      */
     private int unitNumber;
+//    private int howManyLockerStorage;
 
-    /**
-     * Subclass constructor must call superclass's non-private constructor for inheritance.
-     * @param uuid the unique uuid of the property
-     * @param address the unique address of the property, with unit No. if applicable
-     * @param price selling price of the listed property
-     */
     public Condominium(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
-    /**
-     * Abstract method to be completed in subclass to return ownership type as a string
-     * @return the type of ownership as a string
-     */
     @Override
     public String getOwnership() {
         return "Condominium";
     }
 
-    /**
-     * Get unit number of the condominium type property
-     * @return unit number of condominium type property
-     */
+
     public int getUnitNumber() {
         return unitNumber;
     }
 
-    /**
-     * Set unit number of the condominium type property
-     * @param unitNumber unit number of condominium type property
-     */
     public void setUnitNumber(int unitNumber) {
         this.unitNumber = unitNumber;
     }
 
-    /**
-     * Override superclass's toString() method. Create a string representation of current class
-     * @return the string representation of current class
-     */
-    @Override
-    public String toString() {
-        return  getBuildingType() + "{" +
-                "uuid=" + getUuid() +
-                ", address='" + getAddress() + '\'' +
-                ", price=" + getPrice() +
-                ", unitNumber=" + unitNumber +
-                ", REFER_PRICE=" + REFER_PRICE +
-                ", highValue=" + isHighValue() +
-                ", new=" + isNew() +
-                ", howManyParkingSpace=" + howManyParkingSpace() +
-                ", howManyStorage=" + howManyStorage() +
-                ", storageType='" + getStorageType() + '\'' +
-                '}';
-    }
+    //TODO delete, inherited form Residential
+//    public int getHowManyLockerStorage() {
+//        return this.howManyLockerStorage;
+//    }
+//
+//    public void setHowManyLockerStorage(int howManyLockerStorage) {
+//        this.howManyLockerStorage = howManyLockerStorage;
+//    }
+//
+//
+
+    //TODO use super.toString[see details in Residential ] to reduce duplication
+
+//    /**
+//     * Override superclass's toString() method. Create a string representation of current class
+//     * @return the string representation of current class
+//     */
+//    @Override
+//    public String toString() {
+//        return "Condominium{" +
+//                "uuid=" + getUuid() +
+//                ", address='" + getAddress() + '\'' +
+//                ", price=" + getPrice() +
+//                ", REFER_PRICE=" + REFER_PRICE +
+//                ", highValue=" + isHighValue() +
+//                ", howManyParks=" + howManyParkingSpace() +
+//                ", unitNumber=" + unitNumber +
+//                ", howManyLockerStorage=" + howManyLockerStorage +
+//                '}';
+//    }
 
 }

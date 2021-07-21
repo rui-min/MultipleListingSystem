@@ -40,7 +40,11 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      * @return true, if the building is constructed with in 5 years; false, if it is built more than 5 years.
      */
     public boolean isNew(){
-        return YEARS.between(this.builtDate, LocalDate.now()) < 5;
+        if (YEARS.between(this.builtDate, LocalDate.now()) >= 5)
+            return false;
+        else
+            return true;
+
     }
 
     /**
@@ -75,6 +79,10 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
         this.nOfParkingSpace = howMany;
     }
 
+    /**
+     * 
+     * @return
+     */
 
     @Override
     public int howManyStorage(){
@@ -93,8 +101,8 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
     }
 
     /**
-     * Abstract method to be completed in subclass to return ownership type as a string
-     * @return the type of ownership as a string
+     * Abstract method to be completed in subclass to return the type of ownership of a calling object.
+     * @return the type of ownership of a the calling object
      */
     public abstract String getOwnership();
 
@@ -102,7 +110,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
 
     /**
      *
-     * @return a String representation
+     * @return a String representation of an subclass object.
      */
     @Override
     public String toString(){

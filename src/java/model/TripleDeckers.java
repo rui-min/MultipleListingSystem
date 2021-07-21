@@ -17,6 +17,8 @@ public class TripleDeckers extends Condominium{
         super(uuid, address, price);
     }
 
+
+
     /**
      * Override equals() method. Evaluate objects' equality using attribute values.
      * For simplification, it is assumed that same address and unit number represents same property.
