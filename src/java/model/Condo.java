@@ -50,6 +50,7 @@ public class Condo extends Condominium {
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
+        private String storageType;
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -102,7 +103,7 @@ public class Condo extends Condominium {
             Condo condo = new Condo(this.uuid,this.address,this.price);
             condo.setUnitNumber(this.unitNumber);
             condo.setParkingSpace(this.howManyParks);
-            condo.setHowManyLockerStorage(this.howManyLockerStorage);
+            condo.setStorage(this.storageType,this.howManyLockerStorage);
             return condo;
         }
     }

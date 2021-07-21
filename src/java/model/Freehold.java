@@ -14,10 +14,11 @@ public abstract class Freehold extends Residential implements Generations {
      * and public setters and getters (defined further below) allow
      * clients to access and update private attributes.
      */
-    private String type = "single family";
-    private int numberOfFloors = 0;
-    private final String TITLE = "java.model.Freehold";
-    private int howManyGenerations = 1;
+    private String type;
+    private int numberOfFloors;
+//    private final String TITLE = "java.model.Freehold";
+//    private int howManyGenerations = 1;
+    private boolean isMultigeneration;
 
 
     /**
@@ -28,7 +29,11 @@ public abstract class Freehold extends Residential implements Generations {
      */
     public Freehold(UUID uuid, String address, int price) {
         super(uuid, address, price);
+        this.type = null;
+        this.numberOfFloors = 0;
+        this.isMultigeneration = false;
     }
+
 
     /**
      * Get the type of the java.model.Freehold
@@ -38,6 +43,7 @@ public abstract class Freehold extends Residential implements Generations {
         return type;
     }
 
+
     /**
      * Set the type of the java.model.Freehold
      * @param type of the java.model.Freehold
@@ -46,13 +52,13 @@ public abstract class Freehold extends Residential implements Generations {
         this.type = type;
     }
 
-    /**
-     * Get the final attribute TITLE
-     * @return TITLE of the java.model.Freehold
-     */
-    public String getTITLE() {
-        return TITLE;
-    }
+//    /**
+//     * Get the final attribute TITLE
+//     * @return TITLE of the java.model.Freehold
+//     */
+//    public String getTITLE() {
+//        return TITLE;
+//    }
 
     /**
      * Get the number of floors
@@ -60,6 +66,12 @@ public abstract class Freehold extends Residential implements Generations {
      */
     public int getNumberOfFloors() {
         return numberOfFloors;
+    }
+
+
+    @Override
+    public String getOwnership() {
+        return "Freehold";
     }
 
     /**
@@ -70,24 +82,25 @@ public abstract class Freehold extends Residential implements Generations {
         this.numberOfFloors = numberOfFloors;
     }
 
-    /**
-     * override the abstract method in Generation interface
-     * get howManyGenerations in this house
-     * @return the number of generations living here.
-     */
+//    /**
+//     * override the abstract method in Generation interface
+//     * get howManyGenerations in this house
+//     * @return the number of generations living here.
+//     */
     @Override
-    public int getHowManyGenerations() {
-        return this.howManyGenerations;
+    public boolean isMultigeneration() {
+        return this.isMultigeneration;
     }
 
-    /**
-     * override the abstract method in Generation interface.
-     * Set howManyGenerations in this house
-     * @param howManyGenerations the number of generations living here.
-     */
+
+//    /**
+//     * override the abstract method in Generation interface.
+//     * Set isManyGenerations in this house
+//     * @param isMultigeneration ture, if you want to set the property could be multi-generatioal.
+//     */
     @Override
-    public void setHowManyGenerations(int howManyGenerations){
-        this.howManyGenerations = howManyGenerations;
+    public void setMultigeneration(boolean isMultigeneration){
+        this.isMultigeneration = isMultigeneration;
     }
 
 
@@ -100,9 +113,9 @@ public abstract class Freehold extends Residential implements Generations {
         return
                 super.toString() +
                 ", type=" + type +
-                ", numberOfFloors=" + numberOfFloors +
-                ", TITLE=" + TITLE +
-                ", howManyGeneration=" + howManyGenerations
+                ", numberOfFloors=" + this.numberOfFloors +
+//                ", TITLE=" + TITLE +
+                ", isMultigeneration=" + this.isMultigeneration
                 ;
     }
 }

@@ -17,8 +17,6 @@ public class TripleDeckers extends Condominium{
         super(uuid, address, price);
     }
 
-
-
     /**
      * Override equals() method. Evaluate objects' equality using attribute values.
      * For simplification, it is assumed that same address and unit number represents same property.
@@ -52,6 +50,7 @@ public class TripleDeckers extends Condominium{
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
+        private String storageType = "Normal";  // by default "Normal"
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -96,6 +95,16 @@ public class TripleDeckers extends Condominium{
         }
 
         /**
+         * Set the storageType of the property
+         * @param storageType of the property
+         * @return the Builder object
+         */
+        public Builder withStorageType(String storageType){
+            this.storageType = storageType;
+            return this;
+        }
+
+        /**
          * Finalize the construction of TripleDeckers using Builder design pattern.
          * @return TripleDeckers using the previously collected information
          * provided to the Builder object.
@@ -104,7 +113,7 @@ public class TripleDeckers extends Condominium{
             TripleDeckers tri = new TripleDeckers(this.uuid,this.address,this.price);
             tri.setUnitNumber(this.unitNumber);
             tri.setParkingSpace(this.howManyParks);
-            tri.setHowManyLockerStorage(this.howManyLockerStorage);
+            tri.setStorage(this.storageType, this.howManyLockerStorage);
             return tri;
         }
     }

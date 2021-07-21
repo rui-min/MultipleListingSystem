@@ -19,11 +19,17 @@ public class CooperativeHome extends Residential {
         super(uuid, address, price);
     }
 
+    @Override
+    public String getOwnership() {
+        return "Cooperative Home";
+    }
+
     /**
      * Getter for parking slot #.
      * @return int value of parking slots.
      */
-    public int getHowManyParks() {
+    @Override
+    public int howManyParkingSpace() {
         return parkingSlot;
     }
 
@@ -31,7 +37,8 @@ public class CooperativeHome extends Residential {
      * Setter for parking slot #.
      * @param howManyParks the number of parking spaces.
      */
-    public void setHowManyParks(int howManyParks) {
+    @Override
+    public void setParkingSpace(int howManyParks) {
         this.parkingSlot = howManyParks;
     }
 

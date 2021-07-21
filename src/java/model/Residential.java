@@ -13,7 +13,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
     private int nOfParkingSpace;
     private String storageType;
     private int nOfStorages;
-    private LocalDate builtDate;
+    private LocalDate builtDate = LocalDate.MIN;
     private LocalDate entryDate; // the day the object is entered in the system
 
     /**
@@ -40,11 +40,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      * @return true, if the building is constructed with in 5 years; false, if it is built more than 5 years.
      */
     public boolean isNew(){
-        if (YEARS.between(this.builtDate, LocalDate.now()) >= 5)
-            return false;
-        else
-            return true;
-
+        return YEARS.between(this.builtDate, LocalDate.now()) < 5;
     }
 
     /**
@@ -79,10 +75,6 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
         this.nOfParkingSpace = howMany;
     }
 
-    /**
-     * 
-     * @return
-     */
 
     @Override
     public int howManyStorage(){
@@ -101,44 +93,35 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
     }
 
     /**
-     * Abstract method to be completed in subclass to return the type of ownership of a calling object.
-     * @return the type of ownership of a the calling object
+     * Abstract method to be completed in subclass to return ownership type as a string
+     * @return the type of ownership as a string
      */
     public abstract String getOwnership();
 
-    /**
-     * Called by subclass instance.
-     * @return return the concrete class name of a subclass instance.
-     */
-    public String getBuildingType() {
-        return this.getClass().getSimpleName();
-    }
+
 
     /**
      *
-     * @return a String representation of an subclass object.
+     * @return a String representation
      */
     @Override
     public String toString(){
-        return String.format("%s{" +
-                        "uuid=%s, " +
-                        "address=%s, " +
-                        "price=%d} " +
+        return String.format("%s " +
                         "ownership=%s, " +
                         "builtDate=%s, " +
                         "storageType=%s, " +
                         "numberOfStorage=%d, " +
                         "numberOfParkingSpace=%d, " +
-                        "isNewConstruction=%s, ",
-                this.getBuildingType(),
-                this.getUuid(),
-                this.getAddress(),
-                this.getPrice(),
+                        "isNewConstruction=%s, " +
+                        "isHighValue=%s",
+                super.toString(),
                 this.getOwnership(),
                 this.builtDate,
                 this.storageType,
                 this.nOfStorages,
                 this.nOfParkingSpace,
-                this.isNew());
+                this.isNew(),
+                this.isHighValue()
+            );
     }
 }
