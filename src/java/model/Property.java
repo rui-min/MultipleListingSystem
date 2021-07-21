@@ -76,14 +76,6 @@ public abstract class Property {
     }
 
     /**
-     * Called by subclass instance.
-     * @return return the concrete class name of a subclass instance.
-     */
-    public String getBuildingType() {
-        return this.getClass().getSimpleName();
-    }
-
-    /**
      * Override Object class's equals() method. Evaluate objects' equality using attribute values
      * For simplification, it is assumed that same address represents same property.
      * @param o other Object for comparison
@@ -95,6 +87,14 @@ public abstract class Property {
         if (o == null || getClass() != o.getClass()) return false;
         Property other = (Property) o;
         return this.address.equals(other.address);
+    }
+
+    /**
+     * Called by subclass instance.
+     * @return return the concrete class name of a subclass instance.
+     */
+    public String getBuildingType() {
+        return this.getClass().getSimpleName();
     }
 
     /**

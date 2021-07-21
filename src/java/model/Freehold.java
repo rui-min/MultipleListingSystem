@@ -114,7 +114,6 @@ public abstract class Freehold extends Residential implements Generations {
                 super.toString() +
                 ", type=" + type +
                 ", numberOfFloors=" + this.numberOfFloors +
-//                ", TITLE=" + TITLE +
                 ", isMultigeneration=" + this.isMultigeneration
                 ;
     }
