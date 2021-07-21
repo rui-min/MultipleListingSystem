@@ -8,7 +8,7 @@ import static java.time.temporal.ChronoUnit.YEARS;
 /**
  * Abstract class representing Residential Property (level 2)
  */
-public abstract class Residential extends Property implements ParkingSpaces, Storage {
+public abstract class Residential extends Property implements ParkingSpaces {
     public static final int REFER_PRICE = 750000;
     private int nOfParkingSpace;
     private String storageType;
@@ -77,18 +77,15 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
     }
 
 
-    @Override
     public int howManyStorage(){
         return this.nOfStorages;
     }
 
-    @Override
     public void setStorage(String type, int howMany){
         this.nOfStorages = howMany;
         this.storageType = type;
     }
 
-    @Override
     public String getStorageType(){
         return this.storageType;
     }

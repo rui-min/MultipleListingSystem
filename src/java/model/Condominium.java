@@ -7,11 +7,15 @@ import java.util.UUID;
  * achieve Abstraction.
  * This abstract class represents the idea: Condominium type (level 3)
  */
-public abstract class Condominium extends Residential implements Storage {
+public abstract class Condominium extends Residential implements LockerStorage {
     /**
      * Unit number of the condominium type property.
      */
     private int unitNumber;
+    /**
+     * Number of locker storages, 0 by default
+     */
+    private int howManyLockerStorage = 0;
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
@@ -48,13 +52,21 @@ public abstract class Condominium extends Residential implements Storage {
         this.unitNumber = unitNumber;
     }
 
+    public int getHowManyLockerStorage() {
+        return this.howManyLockerStorage;
+    }
+
+
+    public void setHowManyLockerStorage(int howManyLockerStorage) {
+        this.howManyLockerStorage = howManyLockerStorage;
+    }
     /**
      * Override superclass's toString() method. Create a string representation of current class
      * @return the string representation of current class
      */
     @Override
     public String toString() {
-        return "Condominium{" +
+        return  getBuildingType() + "{" +
                 "uuid=" + getUuid() +
                 ", address='" + getAddress() + '\'' +
                 ", price=" + getPrice() +
