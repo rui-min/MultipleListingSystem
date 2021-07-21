@@ -7,12 +7,12 @@ import java.util.UUID;
  * achieve Abstraction.
  * This abstract class represents the idea: Condominium type (level 3)
  */
-public abstract class Condominium extends Residential implements Storage {
+public abstract class Condominium extends Residential implements LockerStorage {
     /**
      *
      */
     private int unitNumber;
-//    private int howManyLockerStorage;
+    private int howManyLockerStorage;
 
     public Condominium(UUID uuid, String address, int price) {
         super(uuid, address, price);
@@ -32,35 +32,30 @@ public abstract class Condominium extends Residential implements Storage {
         this.unitNumber = unitNumber;
     }
 
-    //TODO delete, inherited form Residential
-//    public int getHowManyLockerStorage() {
-//        return this.howManyLockerStorage;
-//    }
-//
-//    public void setHowManyLockerStorage(int howManyLockerStorage) {
-//        this.howManyLockerStorage = howManyLockerStorage;
-//    }
-//
-//
+    public int getHowManyLockerStorage() {
+        return this.howManyLockerStorage;
+    }
 
-    //TODO use super.toString[see details in Residential ] to reduce duplication
+    public void setHowManyLockerStorage(int howManyLockerStorage) {
+        this.howManyLockerStorage = howManyLockerStorage;
+    }
 
-//    /**
-//     * Override superclass's toString() method. Create a string representation of current class
-//     * @return the string representation of current class
-//     */
-//    @Override
-//    public String toString() {
-//        return "Condominium{" +
-//                "uuid=" + getUuid() +
-//                ", address='" + getAddress() + '\'' +
-//                ", price=" + getPrice() +
-//                ", REFER_PRICE=" + REFER_PRICE +
-//                ", highValue=" + isHighValue() +
-//                ", howManyParks=" + howManyParkingSpace() +
-//                ", unitNumber=" + unitNumber +
-//                ", howManyLockerStorage=" + howManyLockerStorage +
-//                '}';
-//    }
+    /**
+     * Override superclass's toString() method. Create a string representation of current class
+     * @return the string representation of current class
+     */
+    @Override
+    public String toString() {
+        return "Condominium{" +
+                "uuid=" + getUuid() +
+                ", address='" + getAddress() + '\'' +
+                ", price=" + getPrice() +
+                ", REFER_PRICE=" + REFER_PRICE +
+                ", highValue=" + isHighValue() +
+                ", howManyParks=" + howManyParkingSpace() +
+                ", unitNumber=" + unitNumber +
+                ", howManyLockerStorage=" + howManyLockerStorage +
+                '}';
+    }
 
 }

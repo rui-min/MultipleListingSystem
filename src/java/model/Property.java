@@ -17,10 +17,10 @@ public abstract class Property {
     private String address;
     private int price;
 
-//    /**
-//     * default constructor is private and never called
-//     */
-//    private Property() {}
+    /**
+     * default constructor is private and never called
+     */
+    private Property() {}
 
     /**
      * The public constructor is prepared for subclasses to create a new Property with
@@ -89,15 +89,6 @@ public abstract class Property {
         return this.address.equals(other.address);
     }
 
-    //song: moved from Residential//Todo
-    /**
-     * Called by subclass instance.
-     * @return return the concrete class name of a subclass instance.
-     */
-    public String getBuildingType() {
-        return this.getClass().getSimpleName();
-    }
-
     /**
      * Override Object class's toString() method. Create a string representation of this Property
      * @return the string representation of this Property
@@ -105,7 +96,7 @@ public abstract class Property {
     @Override
     public String toString() {
         return String.format("%s{uuid=%s, address=%s, price=%d}",
-                this.getBuildingType(), this.getUuid(), this.getAddress(), this.getPrice());
+                this.getClass().getSimpleName(), this.getUuid(), this.getAddress(), this.getPrice());
     }
 
     // quick test

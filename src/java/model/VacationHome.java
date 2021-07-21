@@ -1,4 +1,3 @@
-package model;
  /**
  * Concrete class representing Recreational and vacation home (level 3)
  */
@@ -122,7 +121,7 @@ public class VacationHome extends Freehold {
         public VacationHome build(){
             VacationHome vh = new VacationHome(this.uuid,this.address,this.price);
             vh.setType(this.type);
-            vh.setNumberOfFloors(this.numberOfStoreys);
+            vh.setNumberOfStoreys(this.numberOfStoreys);
             vh.setStorage(this.storageType,nOfStorages);
             vh.setBuiltDate(this.builtDate);
             vh.setMultigeneration(this.isMultigeneration);

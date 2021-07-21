@@ -52,18 +52,6 @@ public class StackedTownHouse extends Condominium {
         private int howManyParks;
         private int howManyLockerStorage;
 
-        //TODO please check this
-        private String storageType;
-        /**
-         * Set the storageType of the property
-         * @param storageType of the property
-         * @return the Builder object
-         */
-        public Builder storageTypeIs(String storageType){
-            this.storageType = storageType;
-            return this;
-        }
-
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
          * @param uuid the unique uuid of the property
@@ -115,7 +103,7 @@ public class StackedTownHouse extends Condominium {
             StackedTownHouse sta = new StackedTownHouse(this.uuid,this.address,this.price);
             sta.setUnitNumber(this.unitNumber);
             sta.setParkingSpace(this.howManyParks);
-            sta.setStorage(this.storageType, this.howManyLockerStorage);
+            sta.setHowManyLockerStorage(this.howManyLockerStorage);
             return sta;
         }
     }
