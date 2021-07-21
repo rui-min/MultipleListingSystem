@@ -17,22 +17,6 @@ public class StackedTownHouse extends Condominium {
         super(uuid, address, price);
     }
 
-    /**
-     * Override equals() method. Evaluate objects' equality using attribute values.
-     * For simplification, it is assumed that same address and unit number represents same property.
-     * @param o other Object for comparison
-     * @return a boolean value "true" if specified attribute values are same, otherwise "false"
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        StackedTownHouse other = (StackedTownHouse) o;
-        return this.getAddress().equals(other.getAddress())
-                && this.getUnitNumber() == other.getUnitNumber();
-    }
-
 
     /**
      * Builder design pattern to facilitate construction of current class object

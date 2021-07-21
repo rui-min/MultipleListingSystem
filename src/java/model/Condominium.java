@@ -49,6 +49,22 @@ public abstract class Condominium extends Residential implements Storage {
     }
 
     /**
+     * Override equals() method. Evaluate objects' equality using attribute values.
+     * For simplification, it is assumed that same address and unit number represents same property.
+     * @param o other Object for comparison
+     * @return a boolean value "true" if specified attribute values are same, otherwise "false"
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Condominium other = (Condominium) o;
+        return this.getAddress().equals(other.getAddress())
+                && this.getUnitNumber() == other.getUnitNumber();
+    }
+
+    /**
      * Override superclass's toString() method. Create a string representation of current class
      * @return the string representation of current class
      */
