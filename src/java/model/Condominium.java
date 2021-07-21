@@ -7,15 +7,11 @@ import java.util.UUID;
  * achieve Abstraction.
  * This abstract class represents the idea: Condominium type (level 3)
  */
-public abstract class Condominium extends Residential implements LockerStorage {
+public abstract class Condominium extends Residential implements Storage {
     /**
-     * Unit number of the condominium type property.
+     * unit number of the building
      */
     private int unitNumber;
-    /**
-     * Number of locker storages, 0 by default
-     */
-    private int howManyLockerStorage = 0;
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
@@ -28,38 +24,30 @@ public abstract class Condominium extends Residential implements LockerStorage {
     }
 
     /**
-     * Ownership Type of the property, disallow subclasses' overridden
-     * @return Ownership type of the property
+     * Abstract method to be completed in subclass to return ownership type as a string
+     * @return the type of ownership as a string
      */
     @Override
-    public final String getOwnership() {
+    public String getOwnership() {
         return "Condominium";
     }
 
     /**
-     * Get unit number of the condominium type property.
-     * @return unit number condominium type property
+     * Get unit number of the condominium type property
+     * @return unit number of condominium type property
      */
     public int getUnitNumber() {
         return unitNumber;
     }
 
     /**
-     * Set unit number of the condominium type property.
-     * @param unitNumber unit number condominium type property
+     * Set unit number of the condominium type property
+     * @param unitNumber unit number of condominium type property
      */
     public void setUnitNumber(int unitNumber) {
         this.unitNumber = unitNumber;
     }
 
-    public int getHowManyLockerStorage() {
-        return this.howManyLockerStorage;
-    }
-
-
-    public void setHowManyLockerStorage(int howManyLockerStorage) {
-        this.howManyLockerStorage = howManyLockerStorage;
-    }
     /**
      * Override superclass's toString() method. Create a string representation of current class
      * @return the string representation of current class
@@ -71,11 +59,12 @@ public abstract class Condominium extends Residential implements LockerStorage {
                 ", address='" + getAddress() + '\'' +
                 ", price=" + getPrice() +
                 ", unitNumber=" + unitNumber +
-                ", buildingType='" + getBuildingType() + '\'' +
                 ", REFER_PRICE=" + REFER_PRICE +
                 ", highValue=" + isHighValue() +
+                ", new=" + isNew() +
                 ", howManyParkingSpace=" + howManyParkingSpace() +
                 ", howManyStorage=" + howManyStorage() +
+                ", storageType='" + getStorageType() + '\'' +
                 '}';
     }
 

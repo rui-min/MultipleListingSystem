@@ -8,7 +8,7 @@ import static java.time.temporal.ChronoUnit.YEARS;
 /**
  * Abstract class representing Residential Property (level 2)
  */
-public abstract class Residential extends Property implements ParkingSpaces {
+public abstract class Residential extends Property implements ParkingSpaces, Storage {
     public static final int REFER_PRICE = 750000;
     private int nOfParkingSpace;
     private String storageType;
@@ -41,7 +41,6 @@ public abstract class Residential extends Property implements ParkingSpaces {
      */
     public boolean isNew(){
         return YEARS.between(this.builtDate, LocalDate.now()) < 5;
-
     }
 
     /**
@@ -77,22 +76,25 @@ public abstract class Residential extends Property implements ParkingSpaces {
     }
 
 
+    @Override
     public int howManyStorage(){
         return this.nOfStorages;
     }
 
+    @Override
     public void setStorage(String type, int howMany){
         this.nOfStorages = howMany;
         this.storageType = type;
     }
 
+    @Override
     public String getStorageType(){
         return this.storageType;
     }
 
     /**
-     * Abstract method to be completed in subclass to return a String
-     * @return the type of ownership in String
+     * Abstract method to be completed in subclass to return ownership type as a string
+     * @return the type of ownership as a string
      */
     public abstract String getOwnership();
 
@@ -100,7 +102,7 @@ public abstract class Residential extends Property implements ParkingSpaces {
 
     /**
      *
-     * @return a String representation of an subclass object.
+     * @return a String representation
      */
     @Override
     public String toString(){

@@ -17,10 +17,10 @@ public abstract class Property {
     private String address;
     private int price;
 
-    /**
-     * default constructor is private and never called, please use public one below.
-     */
-    private Property() {}
+//    /**
+//     * default constructor is private and never called
+//     */
+//    private Property() {}
 
     /**
      * The public constructor is prepared for subclasses to create a new Property with
@@ -89,9 +89,10 @@ public abstract class Property {
         return this.address.equals(other.address);
     }
 
+    //song: moved from Residential//Todo
     /**
-     * Get title of the class
-     * @return return the class name
+     * Called by subclass instance.
+     * @return return the concrete class name of a subclass instance.
      */
     public String getBuildingType() {
         return this.getClass().getSimpleName();

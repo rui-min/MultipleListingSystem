@@ -1,11 +1,12 @@
 package model;
-
+import java.util.Objects;
 import java.util.UUID;
 
 /**
  * Concrete class representing Building: Triple Deckers (level 4)
  */
 public class TripleDeckers extends Condominium{
+
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
      * @param uuid the unique uuid of the property
@@ -32,7 +33,6 @@ public class TripleDeckers extends Condominium{
                 && this.getUnitNumber() == other.getUnitNumber();
     }
 
-
     /**
      * Builder design pattern to facilitate construction of current class object
      */
@@ -50,7 +50,7 @@ public class TripleDeckers extends Condominium{
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
-        private String storageType;
+        private String storageType; //TODO
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -94,6 +94,7 @@ public class TripleDeckers extends Condominium{
             return this;
         }
 
+//TODO
         /**
          * Set the storageType of the property
          * @param storageType of the property
@@ -122,7 +123,7 @@ public class TripleDeckers extends Condominium{
     // quick test
     public static void main(String[] args) {
         TripleDeckers tri = new TripleDeckers(UUID.randomUUID(),"Yonge",90000);
-//        System.out.println(tri.getTITLE());
+        System.out.println(tri.getBuildingType());
         System.out.println(tri);
 
         TripleDeckers tri1 = new TripleDeckers.Builder(UUID.randomUUID(),"Yonge",90000)
