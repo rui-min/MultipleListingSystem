@@ -56,6 +56,13 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
             this.builtDate = d;
     }
 
+    /**
+     * Get the built date of a Residential Property
+     * @return built date of the residential property
+     */
+    public LocalDate getBuiltDate() {
+        return builtDate;
+    }
 
     /**
      * Methods from the ParkingSpace interface. Get number of parking spaces.

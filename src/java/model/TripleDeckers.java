@@ -1,4 +1,5 @@
 package model;
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -33,6 +34,7 @@ public class TripleDeckers extends Condominium{
                 && this.getUnitNumber() == other.getUnitNumber();
     }
 
+
     /**
      * Builder design pattern to facilitate construction of current class object
      */
@@ -51,6 +53,7 @@ public class TripleDeckers extends Condominium{
         private int howManyParks;
         private int howManyLockerStorage;
         private String storageType = "Normal";  // by default "Normal"
+        private LocalDate builtDate = LocalDate.MIN;
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -105,6 +108,16 @@ public class TripleDeckers extends Condominium{
         }
 
         /**
+         * Set the build date of the property
+         * @param builtDate of the property
+         * @return the Builder object
+         */
+        public Builder withBuiltDate(LocalDate builtDate){
+            this.builtDate = builtDate;
+            return this;
+        }
+
+        /**
          * Finalize the construction of TripleDeckers using Builder design pattern.
          * @return TripleDeckers using the previously collected information
          * provided to the Builder object.
@@ -114,6 +127,7 @@ public class TripleDeckers extends Condominium{
             tri.setUnitNumber(this.unitNumber);
             tri.setParkingSpace(this.howManyParks);
             tri.setStorage(this.storageType, this.howManyLockerStorage);
+            tri.setBuiltDate(this.builtDate);
             return tri;
         }
     }
