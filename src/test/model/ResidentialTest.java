@@ -173,5 +173,4 @@ public class ResidentialTest {
         assertEquals(condoString,condoString0);
         assertEquals(coopString,coopString0);
         assertEquals(fhString,fhString0);
-    }
 }
