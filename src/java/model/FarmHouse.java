@@ -24,7 +24,7 @@ public class FarmHouse extends Freehold {
         private int nOfParkingSpace;
         private String storageType;
         private int nOfStorages;
-        private LocalDate builtDate;
+        private LocalDate builtDate = LocalDate.MIN;
         private String type; // multi family or single family
         private int numberOfStoreys;
         private boolean isMultigeneration;
