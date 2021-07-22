@@ -9,58 +9,70 @@ import java.util.UUID;
  */
 public abstract class Condominium extends Residential implements Storage {
     /**
-     *
+     * unit number of the building
      */
     private int unitNumber;
-//    private int howManyLockerStorage;
 
+    /**
+     * Subclass constructor must call superclass's non-private constructor for inheritance.
+     * @param uuid the unique uuid of the property
+     * @param address the unique address of the property, with unit No. if applicable
+     * @param price selling price of the listed property
+     */
     public Condominium(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
 
+    /**
+     * Abstract method to be completed in subclass to return ownership type as a string
+     * @return the type of ownership as a string
+     */
     @Override
     public String getOwnership() {
         return "Condominium";
     }
 
-
+    /**
+     * Get unit number of the condominium type property
+     * @return unit number of condominium type property
+     */
     public int getUnitNumber() {
         return unitNumber;
     }
 
+    /**
+     * Set unit number of the condominium type property
+     * @param unitNumber unit number of condominium type property
+     */
     public void setUnitNumber(int unitNumber) {
         this.unitNumber = unitNumber;
     }
 
-    //TODO delete, inherited form Residential
-//    public int getHowManyLockerStorage() {
-//        return this.howManyLockerStorage;
-//    }
-//
-//    public void setHowManyLockerStorage(int howManyLockerStorage) {
-//        this.howManyLockerStorage = howManyLockerStorage;
-//    }
-//
-//
+    /**
+     * Override equals() method. Evaluate objects' equality using attribute values.
+     * For simplification, it is assumed that same address and unit number represents same property.
+     * @param o other Object for comparison
+     * @return a boolean value "true" if specified attribute values are same, otherwise "false"
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Condominium other = (Condominium) o;
+        return this.getAddress().equals(other.getAddress())
+                && this.getUnitNumber() == other.getUnitNumber();
+    }
 
-    //TODO use super.toString[see details in Residential ] to reduce duplication
-
-//    /**
-//     * Override superclass's toString() method. Create a string representation of current class
-//     * @return the string representation of current class
-//     */
-//    @Override
-//    public String toString() {
-//        return "Condominium{" +
-//                "uuid=" + getUuid() +
-//                ", address='" + getAddress() + '\'' +
-//                ", price=" + getPrice() +
-//                ", REFER_PRICE=" + REFER_PRICE +
-//                ", highValue=" + isHighValue() +
-//                ", howManyParks=" + howManyParkingSpace() +
-//                ", unitNumber=" + unitNumber +
-//                ", howManyLockerStorage=" + howManyLockerStorage +
-//                '}';
-//    }
+    /**
+     * Override superclass's toString() method. Create a string representation of current class
+     * @return the string representation of current class
+     */
+    @Override
+    public String toString() {
+        return  super.toString() +
+                ", unitNumber=" + unitNumber +
+                '}';
+    }
 
 }

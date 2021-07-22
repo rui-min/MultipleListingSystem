@@ -1,4 +1,5 @@
 package model;
+import java.time.LocalDate;
 import java.util.UUID;
 
 /**
@@ -13,23 +14,6 @@ public class Condo extends Condominium {
      */
     public Condo(UUID uuid, String address, int price) {
         super(uuid, address, price);
-    }
-
-
-    /**
-     * Override equals() method. Evaluate objects' equality using attribute values.
-     * For simplification, it is assumed that same address and unit number represents same property.
-     * @param o other Object for comparison
-     * @return a boolean value "true" if specified attribute values are same, otherwise "false"
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Condo other = (Condo) o;
-        return this.getAddress().equals(other.getAddress())
-                && this.getUnitNumber() == other.getUnitNumber();
     }
 
 
@@ -50,7 +34,8 @@ public class Condo extends Condominium {
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
-        private String storageType;
+        private String storageType = "Normal";
+        private LocalDate builtDate = LocalDate.MIN;
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -95,15 +80,36 @@ public class Condo extends Condominium {
         }
 
         /**
+         * Set the storageType of the property
+         * @param storageType of the property
+         * @return the Builder object
+         */
+        public Builder withStorageType(String storageType){
+            this.storageType = storageType;
+            return this;
+        }
+
+        /**
+         * Set the build date of the property
+         * @param builtDate of the property
+         * @return the Builder object
+         */
+        public Builder withBuiltDate(LocalDate builtDate) {
+            this.builtDate = builtDate;
+            return this;
+        }
+
+        /**
          * Finalize the construction of Condo using Builder design pattern.
          * @return Condo using the previously collected information
          * provided to the Builder object.
          */
-        public Condo build(){
+        public Condo build() {
             Condo condo = new Condo(this.uuid,this.address,this.price);
             condo.setUnitNumber(this.unitNumber);
             condo.setParkingSpace(this.howManyParks);
             condo.setStorage(this.storageType,this.howManyLockerStorage);
+            condo.setBuiltDate(this.builtDate);
             return condo;
         }
     }
@@ -112,7 +118,7 @@ public class Condo extends Condominium {
     // quick test
     public static void main(String[] args) {
         Condo condo = new Condo(UUID.randomUUID(),"Yonge",90000);
-//        System.out.println(condo.getTITLE());
+        System.out.println(condo.getBuildingType());
         System.out.println(condo); System.out.println("===============================");
 
         Condo condo1 = new Condo.Builder(UUID.randomUUID(),"Yonge",90000)

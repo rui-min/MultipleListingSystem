@@ -1,4 +1,5 @@
 package model;
+import java.time.LocalDate;
 import java.util.UUID;
 
 /**
@@ -17,23 +18,6 @@ public class StackedTownHouse extends Condominium {
     }
 
 
-
-    /**
-     * Override equals() method. Evaluate objects' equality using attribute values.
-     * For simplification, it is assumed that same address and unit number represents same property.
-     * @param o other Object for comparison
-     * @return a boolean value "true" if specified attribute values are same, otherwise "false"
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        StackedTownHouse other = (StackedTownHouse) o;
-        return this.getAddress().equals(other.getAddress())
-                && this.getUnitNumber() == other.getUnitNumber();
-    }
-
     /**
      * Builder design pattern to facilitate construction of current class object
      */
@@ -51,9 +35,9 @@ public class StackedTownHouse extends Condominium {
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
+        private String storageType = "Normal";
+        private LocalDate builtDate = LocalDate.MIN;
 
-        //TODO please check this
-        private String storageType;
         /**
          * Set the storageType of the property
          * @param storageType of the property
@@ -107,6 +91,16 @@ public class StackedTownHouse extends Condominium {
         }
 
         /**
+         * Set the build date of the property
+         * @param builtDate of the property
+         * @return the Builder object
+         */
+        public Builder withBuiltDate(LocalDate builtDate) {
+            this.builtDate = builtDate;
+            return this;
+        }
+
+        /**
          * Finalize the construction of StackedTownHouse using Builder design pattern.
          * @return StackedTownHouse using the previously collected information
          * provided to the Builder object.
@@ -116,6 +110,7 @@ public class StackedTownHouse extends Condominium {
             sta.setUnitNumber(this.unitNumber);
             sta.setParkingSpace(this.howManyParks);
             sta.setStorage(this.storageType, this.howManyLockerStorage);
+            sta.setBuiltDate(this.builtDate);
             return sta;
         }
     }
@@ -124,7 +119,7 @@ public class StackedTownHouse extends Condominium {
     // quick test
     public static void main(String[] args) {
         StackedTownHouse sta = new StackedTownHouse(UUID.randomUUID(),"Yonge",90000);
-//        System.out.println(sta.getTITLE());
+        System.out.println(sta.getBuildingType());
         System.out.println(sta);
 
         StackedTownHouse sta1 = new StackedTownHouse.Builder(UUID.randomUUID(),"Yonge",90000)

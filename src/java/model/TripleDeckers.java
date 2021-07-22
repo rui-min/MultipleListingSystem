@@ -1,4 +1,5 @@
 package model;
+import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -15,24 +16,6 @@ public class TripleDeckers extends Condominium{
      */
     public TripleDeckers(UUID uuid, String address, int price) {
         super(uuid, address, price);
-    }
-
-
-
-    /**
-     * Override equals() method. Evaluate objects' equality using attribute values.
-     * For simplification, it is assumed that same address and unit number represents same property.
-     * @param o other Object for comparison
-     * @return a boolean value "true" if specified attribute values are same, otherwise "false"
-     */
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        TripleDeckers other = (TripleDeckers) o;
-        return this.getAddress().equals(other.getAddress())
-                && this.getUnitNumber() == other.getUnitNumber();
     }
 
 
@@ -53,7 +36,8 @@ public class TripleDeckers extends Condominium{
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
-        private String storageType; //TODO
+        private String storageType = "Normal";  // by default "Normal"
+        private LocalDate builtDate = LocalDate.MIN;
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -97,14 +81,23 @@ public class TripleDeckers extends Condominium{
             return this;
         }
 
-//TODO
         /**
          * Set the storageType of the property
          * @param storageType of the property
          * @return the Builder object
          */
-        public Builder storageTypeIs(String storageType){
+        public Builder withStorageType(String storageType){
             this.storageType = storageType;
+            return this;
+        }
+
+        /**
+         * Set the build date of the property
+         * @param builtDate of the property
+         * @return the Builder object
+         */
+        public Builder withBuiltDate(LocalDate builtDate){
+            this.builtDate = builtDate;
             return this;
         }
 
@@ -118,6 +111,7 @@ public class TripleDeckers extends Condominium{
             tri.setUnitNumber(this.unitNumber);
             tri.setParkingSpace(this.howManyParks);
             tri.setStorage(this.storageType, this.howManyLockerStorage);
+            tri.setBuiltDate(this.builtDate);
             return tri;
         }
     }
@@ -126,7 +120,7 @@ public class TripleDeckers extends Condominium{
     // quick test
     public static void main(String[] args) {
         TripleDeckers tri = new TripleDeckers(UUID.randomUUID(),"Yonge",90000);
-//        System.out.println(tri.getTITLE());
+        System.out.println(tri.getBuildingType());
         System.out.println(tri);
 
         TripleDeckers tri1 = new TripleDeckers.Builder(UUID.randomUUID(),"Yonge",90000)

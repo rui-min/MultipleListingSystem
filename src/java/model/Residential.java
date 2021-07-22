@@ -11,10 +11,10 @@ import static java.time.temporal.ChronoUnit.YEARS;
 public abstract class Residential extends Property implements ParkingSpaces, Storage {
     public static final int REFER_PRICE = 750000;
     private int nOfParkingSpace;
-    private String storageType;
+    private String storageType ="No storage";
     private int nOfStorages;
-    private LocalDate builtDate;
-    private LocalDate entryDate; // the day the object is entered in the system
+    private LocalDate builtDate = LocalDate.MIN;
+    private LocalDate entryDate; // the day on which the object is entered in the system
 
     /**
      * Constructor to be called in the subclass constructor.
@@ -40,11 +40,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      * @return true, if the building is constructed with in 5 years; false, if it is built more than 5 years.
      */
     public boolean isNew(){
-        if (YEARS.between(this.builtDate, LocalDate.now()) >= 5)
-            return false;
-        else
-            return true;
-
+        return YEARS.between(this.builtDate, LocalDate.now()) < 5;
     }
 
     /**
@@ -60,12 +56,19 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
             this.builtDate = d;
     }
 
+    /**
+     * Get the built date of a Residential Property
+     * @return built date of the residential property
+     */
+    public LocalDate getBuiltDate() {
+
+        return builtDate;
+    }
 
     /**
      * Methods from the ParkingSpace interface. Get number of parking spaces.
      * @return number of parking spaces
      */
-    @Override
     public int howManyParkingSpace(){
         return this.nOfParkingSpace;
     }
@@ -74,47 +77,38 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      * Set number of parking spaces.
      * @param howMany number of parking spaces
      */
-    @Override
     public void setParkingSpace(int howMany) {
         this.nOfParkingSpace = howMany;
     }
 
-    /**
-     * 
-     * @return
-     */
-
-    @Override
     public int howManyStorage(){
         return this.nOfStorages;
     }
 
-    @Override
     public void setStorage(String type, int howMany){
         this.nOfStorages = howMany;
         this.storageType = type;
     }
 
-    @Override
     public String getStorageType(){
         return this.storageType;
     }
 
     /**
-     * Abstract method to be completed in subclass to return the type of ownership of a calling object.
-     * @return the type of ownership of a the calling object
+     * Abstract method to be completed in subclass to return ownership type as a string
+     * @return the type of ownership as a string
      */
     public abstract String getOwnership();
 
 
 
     /**
-     *
-     * @return a String representation of an subclass object.
+     * Return the string representation of the calling object.
+     * @return a String representation
      */
     @Override
     public String toString(){
-        return String.format("%s " +
+        return String.format("%s, " +
                         "ownership=%s, " +
                         "builtDate=%s, " +
                         "storageType=%s, " +
@@ -124,7 +118,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
                         "isHighValue=%s",
                 super.toString(),
                 this.getOwnership(),
-                this.builtDate,
+                this.builtDate != LocalDate.MIN? this.builtDate : "Unknown",
                 this.storageType,
                 this.nOfStorages,
                 this.nOfParkingSpace,
