@@ -36,7 +36,7 @@ public class TripleDeckers extends Condominium{
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
-        private String storageType = "Normal";  // by default "Normal"
+        private String storageType;
         private LocalDate builtDate = LocalDate.MIN;
 
         /**

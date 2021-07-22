@@ -34,7 +34,7 @@ public class Condo extends Condominium {
         private int unitNumber;
         private int howManyParks;
         private int howManyLockerStorage;
-        private String storageType = "Normal";
+        private String storageType;
         private LocalDate builtDate = LocalDate.MIN;
 
         /**

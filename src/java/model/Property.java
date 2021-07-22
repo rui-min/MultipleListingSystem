@@ -9,18 +9,13 @@ import java.util.UUID;
  */
 public abstract class Property {
     /**
-     * "private" keyword achieves Encapsulation: below attributes are hidden to users,
+     * "Private" keyword achieves Encapsulation: below attributes are hidden to users,
      * and public setters and getters (defined further below) allow
      * clients to access and update private attributes.
      */
     private UUID uuid;
     private String address;
     private int price;
-
-//    /**
-//     * default constructor is private and never called
-//     */
-//    private Property() {}
 
     /**
      * The public constructor is prepared for subclasses to create a new Property with
@@ -34,6 +29,11 @@ public abstract class Property {
         this.address = address;
         this.price = price;
     }
+
+    /**
+     * Default constructor is private and never called
+     */
+    private Property() {}
 
     /**
      * Get the uuid of the property
