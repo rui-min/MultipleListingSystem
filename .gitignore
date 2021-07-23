@@ -2,9 +2,9 @@
 !/src/*
 !.gitignore
 .idea/*
-out/*
+/out/*
 bin/*
-docs/*
+
 
 # github java
 # Compiled class file
