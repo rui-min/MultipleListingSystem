@@ -5,7 +5,7 @@ package model;
  */
 import java.util.UUID;
 
-public class MobileHome extends Residential {
+public abstract class MobileHome extends Residential {
 
     private int parkingSlot = 0;
     private String ownership;

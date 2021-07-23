@@ -104,7 +104,7 @@ public class RecBook {
      * Generates 20 properties. 5 of each: TripleDeckers, DetachedHome, Land, VacationHome.
      */
     public void sampleRecGen(){
-        String[] address = {"Yonge Str", "Leslie Str", "Bayview Ave", "Steele Ave E", "Finch Ave E"};
+        String[] address = {" Yonge Str", " Leslie Str", " Bayview Ave", " Steele Ave E", " Finch Ave E"};
         int[] price = {200000, 300000, 400000, 500000, 600000};
 
         TripleDeckers[] a = new TripleDeckers[5];
@@ -171,10 +171,11 @@ public class RecBook {
             BufferedReader bufRead = new BufferedReader(reader);
             // Read database to find matching record.
             String line = bufRead.readLine();
+            String uuid = id.toString();
             while(line != null){
-                if(line.startsWith(id.toString())){
+                if(line.startsWith(uuid)){
                     mls = mlsRecord.fromReader(line);
-                    this.write(mls);
+
                     // Accessing new record will have it put into cache and update cache weight.
                     if(cache.size() < size) {
                         cache.put(mls.getId(), mls);
@@ -198,24 +199,31 @@ public class RecBook {
      */
     public void remove(UUID id){
         this.cache.remove(id);
+        this.weight.remove(id);
         try {
             FileReader reader = new FileReader(path);
             BufferedReader srcRead = new BufferedReader(reader);
-            Path temp = Files.createTempFile(Path.of("src/resources"),"temp", ".tmp");
-            BufferedWriter tmpWrite = Files.newBufferedWriter(temp, StandardOpenOption.APPEND);
-            String ids = id.toString();
 
+            Path temp = Files.createTempFile(Path.of("src/resources"),"temp", ".tmp");
+            File tmpF = new File(temp.toString());
+            FileWriter writer = new FileWriter(temp.toString(), true);
+            BufferedWriter tmpWrite = new BufferedWriter(writer);
+
+            String uuid = id.toString();
             // Read database to find matching record to skip.
             String line = srcRead.readLine();
             while(line != null){
-                if(!line.startsWith(ids)) {
+                if(!line.startsWith(uuid)) {
                     tmpWrite.write(line);
                     tmpWrite.newLine();
                 }
                 line = srcRead.readLine();
             }
-            Files.move(temp, Path.of(path).resolve(temp.getFileName()), StandardCopyOption.REPLACE_EXISTING);
             reader.close();
+            tmpWrite.close();
+            text.delete();
+            // Files.move(temp, Path.of(path), StandardCopyOption.REPLACE_EXISTING);
+            tmpF.renameTo(text);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -251,7 +259,7 @@ public class RecBook {
      * Return the file path of current instance's record txt.
      * @return String of record txt path.
      */
-    public String getPath() {
+    public String getFilePath() {
         return path;
     }
 
@@ -260,12 +268,46 @@ public class RecBook {
      * If the new directory contains "mls.txt" or "mlsSample.txt", replace it.
      * @param directory String of new directory for relocation.
      */
-    public void setNewPath(String directory) throws IOException {
+    public void setNewFilePath(String directory) throws IOException {
         Path source = Paths.get(path);
         Path target = Paths.get(directory);
         Files.move(source, target.resolve(source.getFileName()), StandardCopyOption.REPLACE_EXISTING);
         path = sample ? directory +"\\mlsSample.txt" : directory +"\\mls.txt";
     }
+
+    /**
+     * Getter of instance's info cache.
+     * @return Hashtable cache.
+     */
+    public Hashtable<UUID, mlsRecord> getRecCache(){
+        return this.cache;
+    }
+
+    /**
+     * Getter of instance's weight cache.
+     * @return Hashtable weight cache.
+     */
+    public Hashtable<UUID, Integer> getWeightCache() {
+        return this.weight;
+    }
+
+    /**
+     * Getter of instance's cache size in int.
+     * @return int cache size.
+     */
+    public int getCacheMaxSize() {
+        return size;
+    }
+
+    /**
+     * Change size of instance's cache. Only greater size is accepted.
+     * @param size int new size.
+     */
+    public void setCacheMaxSize(int size) {
+        if(size>this.size)
+            this.size = size;
+    }
+
 
     /**
      * Getter for class MAX_WEIGHT value.

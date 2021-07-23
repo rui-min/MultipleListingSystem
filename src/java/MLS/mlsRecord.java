@@ -26,12 +26,14 @@ public class mlsRecord {
     public static mlsRecord fromClass(String raw){
         String[] subs = raw.split("[{]", 2);
         String name = subs[0];
-        subs[1] = subs[1].replaceAll("[{]}", "");
+        subs[1] = subs[1].replaceAll("}", "");
 
         // Split info in {} section into UUID, address, price and other info, 4 parts.
         ArrayList<String> msg = new ArrayList<>();
-        for(String field: subs[1].split(", ", 4))
-            msg.add(field.split("=")[1]);
+        for(String field : subs[1].split(", ", 4))
+            msg.add(field.split("=", 2)[1]);
+        if(msg.size() == 3)
+            msg.add("No info");
 
         mlsRecord mls;
         msg.set(3, String.format("%s, %s", name, msg.get(3)));
@@ -130,6 +132,15 @@ public class mlsRecord {
     public String toString(){
         return String.format("%s @@ %s @@ %s @@ %s",
                 this.id, this.address, this.price, this.info);
+    }
+
+    @Override
+    public boolean equals(Object other){
+        mlsRecord target = (mlsRecord) other;
+        return this.getId().equals(target.getId())
+                && this.getAddress().equals(target.getAddress())
+                && this.getPrice() == target.getPrice()
+                && this.info.equals(target.info);
     }
 
     /**
