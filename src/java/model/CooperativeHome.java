@@ -24,22 +24,5 @@ public class CooperativeHome extends Residential {
         return "Cooperative Home";
     }
 
-    /**
-     * Getter for parking slot #.
-     * @return int value of parking slots.
-     */
-    @Override
-    public int howManyParkingSpace() {
-        return parkingSlot;
-    }
-
-    /**
-     * Setter for parking slot #.
-     * @param howManyParks the number of parking spaces.
-     */
-    @Override
-    public void setParkingSpace(int howManyParks) {
-        this.parkingSlot = howManyParks;
-    }
 
 }

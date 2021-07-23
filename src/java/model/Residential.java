@@ -9,9 +9,13 @@ import static java.time.temporal.ChronoUnit.YEARS;
  * Abstract class representing Residential Property (level 2)
  */
 public abstract class Residential extends Property implements ParkingSpaces, Storage {
+    /**
+     * The reference price used to decide whether a home is high value.
+     */
     public static final int REFER_PRICE = 750000;
+
     private int nOfParkingSpace;
-    private String storageType ="No storage";
+    private String storageType;
     private int nOfStorages;
     private LocalDate builtDate = LocalDate.MIN;
     private LocalDate entryDate; // the day on which the object is entered in the system
@@ -81,15 +85,28 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
         this.nOfParkingSpace = howMany;
     }
 
+    /**
+     * Get the number of storages attached to this home.
+     * @return number of storages of the calling Residential object.
+     */
     public int howManyStorage(){
         return this.nOfStorages;
     }
 
+    /**
+     * Set the storage type and amounts.
+     * @param type tyoe of the storages, e.g. Locker, Garage, Basement, etc.
+     * @param howMany how many storages are there in this home.
+     */
     public void setStorage(String type, int howMany){
         this.nOfStorages = howMany;
         this.storageType = type;
     }
 
+    /**
+     * Get the storage type of the home.
+     * @return a string indicating the type of storage.
+     */
     public String getStorageType(){
         return this.storageType;
     }

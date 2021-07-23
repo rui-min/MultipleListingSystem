@@ -16,8 +16,6 @@ public abstract class Freehold extends Residential implements Generations {
      */
     private String type;
     private int numberOfFloors;
-//    private final String TITLE = "java.model.Freehold";
-//    private int howManyGenerations = 1;
     private boolean isMultigeneration;
 
 
@@ -52,14 +50,6 @@ public abstract class Freehold extends Residential implements Generations {
         this.type = type;
     }
 
-//    /**
-//     * Get the final attribute TITLE
-//     * @return TITLE of the java.model.Freehold
-//     */
-//    public String getTITLE() {
-//        return TITLE;
-//    }
-
     /**
      * Get the number of floors
      * @return number of floors
@@ -82,22 +72,22 @@ public abstract class Freehold extends Residential implements Generations {
         this.numberOfFloors = numberOfFloors;
     }
 
-//    /**
-//     * override the abstract method in Generation interface
-//     * get howManyGenerations in this house
-//     * @return the number of generations living here.
-//     */
+    /**
+     * override the abstract method in Generation interface
+     * get howManyGenerations in this house
+     * @return the number of generations living here.
+     */
     @Override
     public boolean isMultigeneration() {
         return this.isMultigeneration;
     }
 
 
-//    /**
-//     * override the abstract method in Generation interface.
-//     * Set isManyGenerations in this house
-//     * @param isMultigeneration ture, if you want to set the property could be multi-generatioal.
-//     */
+    /**
+     * override the abstract method in Generation interface.
+     * Set isManyGenerations in this house
+     * @param isMultigeneration ture, if you want to set the property could be multi-generatioal.
+     */
     @Override
     public void setMultigeneration(boolean isMultigeneration){
         this.isMultigeneration = isMultigeneration;
@@ -114,7 +104,6 @@ public abstract class Freehold extends Residential implements Generations {
                 super.toString() +
                 ", type=" + type +
                 ", numberOfFloors=" + this.numberOfFloors +
-//                ", TITLE=" + TITLE +
                 ", isMultigeneration=" + this.isMultigeneration
                 ;
     }
