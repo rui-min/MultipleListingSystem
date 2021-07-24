@@ -30,8 +30,8 @@ public class ResidentialTest {
         Residential det = new DetachedHome(id2, ad2, 150000);
         Residential dup = new MultiLex(id3, ad3, 5000000);
 
-        assertEquals(semi.getBuiltDate(), null);
-        assertTrue(det.getBuiltDate() == null);
+        assertEquals(semi.getBuiltDate(), -999999999-01-01);
+        assertTrue(det.getBuiltDate() ==LocalDate.MIN);
 
         semi.setBuiltDate(d1);
         det.setBuiltDate(d2);

@@ -66,7 +66,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      */
     public LocalDate getBuiltDate() {
 
-        return this.builtDate == LocalDate.MIN ? null: this.builtDate;
+        return this.builtDate;
     }
 
     /**
