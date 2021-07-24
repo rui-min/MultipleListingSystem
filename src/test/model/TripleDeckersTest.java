@@ -33,7 +33,7 @@ class TripleDeckersTest {
         assertEquals(101,tri1.getUnitNumber(), 0.01);
         assertEquals(0, tri1.howManyParkingSpace(), 0.01);
         assertEquals(0, tri1.howManyStorage(), 0.01);
-        assertEquals(null, tri1.getBuiltDate());
+        assertEquals(-999999999, tri1.getBuiltDate().getYear(), 0.01);
 
         TripleDeckers tri2 = new TripleDeckers.Builder(UUID.randomUUID(),"Yonge",800000)
                 .withUnitNumber(101).withHowManyParks(2).withHowManyLockerStorage(3)
