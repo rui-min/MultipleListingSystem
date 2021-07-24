@@ -10,6 +10,7 @@ public class TownHouse extends Freehold {
         super(uuid, address, price);
     }
 
+
     /**
      * Builder design pattern to facilitate construction of current class object
      */
@@ -29,8 +30,9 @@ public class TownHouse extends Freehold {
         private int nOfStorages;
         private LocalDate builtDate;
         private String type; // multi family or single family
-        private int numberOfStoreys;
         private boolean isMultigeneration;
+        private int numberOfFloors;
+
 
         /**
          * Builder constructor with three mandatory attributes: uuid, address, price
@@ -82,12 +84,12 @@ public class TownHouse extends Freehold {
             return this;
         }
         /**
-//         * Set the number of parks of the property // Todo
-         * @param numberOfStoreys of the property
+         * Set the number of parks of the property
+         * @param numberOfFloors of the property
          * @return the Builder object
          */
-        public Builder withHowManyStorages(int numberOfStoreys){
-            this.numberOfStoreys = numberOfStoreys;
+        public Builder hasHowManyFloors(int numberOfFloors){
+            this.numberOfFloors = numberOfFloors;
             return this;
         }
         /**
@@ -95,8 +97,8 @@ public class TownHouse extends Freehold {
          * @param nOfStorages of the property
          * @return the Builder object
          */
-        public Builder withHowManStorages(int nOfStorages){
-            this.nOfStorages = this.nOfStorages;
+        public Builder hasHowManyStorages(int nOfStorages){
+            this.nOfStorages = nOfStorages;
             return this;
         }
         /**
@@ -104,7 +106,7 @@ public class TownHouse extends Freehold {
          * @param isMultigeneration of the property
          * @return the Builder object
          */
-        public Builder withHowManyLockerStorage(boolean isMultigeneration){
+        public Builder hasGenerations(boolean isMultigeneration){
             this.isMultigeneration = isMultigeneration;
             return this;
         }
@@ -117,10 +119,11 @@ public class TownHouse extends Freehold {
         public TownHouse build(){
             TownHouse th = new TownHouse(this.uuid,this.address,this.price);
             th.setType(this.type);
-            th.setNumberOfFloors(this.numberOfStoreys);
+            th.setNumberOfFloors(this.numberOfFloors);
             th.setStorage(this.storageType,nOfStorages);
             th.setBuiltDate(this.builtDate);
             th.setMultigeneration(this.isMultigeneration);
+            th.setParkingSpace(nOfParkingSpace);
             return th;
         }
     }

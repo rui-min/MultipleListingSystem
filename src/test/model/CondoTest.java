@@ -33,7 +33,7 @@ class CondoTest {
         assertEquals(101,condo1.getUnitNumber(), 0.01);
         assertEquals(0, condo1.howManyParkingSpace(), 0.01);
         assertEquals(0, condo1.howManyStorage(), 0.01);
-        assertEquals(-999999999, condo1.getBuiltDate().getYear(), 0.01);
+        assertEquals(null, condo1.getBuiltDate());
 
         Condo condo2 = new Condo.Builder(UUID.randomUUID(),"Yonge",800000)
                 .withUnitNumber(101).withHowManyParks(2).withHowManyLockerStorage(3)

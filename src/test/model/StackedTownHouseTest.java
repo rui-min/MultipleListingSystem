@@ -33,7 +33,7 @@ class StackedTownHouseTest {
         assertEquals(101,sta1.getUnitNumber(), 0.01);
         assertEquals(0, sta1.howManyParkingSpace(), 0.01);
         assertEquals(0, sta1.howManyStorage(), 0.01);
-        assertEquals(-999999999, sta1.getBuiltDate().getYear(), 0.01);
+        assertEquals(null, sta1.getBuiltDate());
 
         StackedTownHouse sta2 = new StackedTownHouse.Builder(UUID.randomUUID(),"Yonge",800000)
                 .withUnitNumber(101).withHowManyParks(2).withHowManyLockerStorage(3)

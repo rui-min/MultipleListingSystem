@@ -1,23 +1,16 @@
 package model;
- /**
+/**
  * Concrete class representing Recreational and vacation home (level 3)
  */
 import java.time.LocalDate;
 import java.util.UUID;
 
 public class VacationHome extends Freehold {
-    /**
-     * Constructor of VacationHome
-     * @param uuid
-     * @param address
-     * @param price
-     */
+
     public VacationHome(UUID uuid, String address, int price) {
         super(uuid, address, price);
     }
-    /**
-     * Builder design pattern to facilitate construction of current class object
-     */
+
     public static class Builder {
         /**
          * below are mandatory attributes
@@ -34,7 +27,7 @@ public class VacationHome extends Freehold {
         private int nOfStorages;
         private LocalDate builtDate;
         private String type; // multi family or single family
-        private int numberOfStoreys;
+        private int numberOfFloors;
         private boolean isMultigeneration;
 
         /**
@@ -88,11 +81,11 @@ public class VacationHome extends Freehold {
         }
         /**
          * Set the number of parks of the property
-         * @param numberOfStoreys of the property
+         * @param numberOfFloors of the property
          * @return the Builder object
          */
-        public Builder withHowManyStorages(int numberOfStoreys){
-            this.numberOfStoreys = numberOfStoreys;
+        public Builder hasHowManyFloors(int numberOfFloors){
+            this.numberOfFloors = numberOfFloors;
             return this;
         }
         /**
@@ -100,8 +93,8 @@ public class VacationHome extends Freehold {
          * @param nOfStorages of the property
          * @return the Builder object
          */
-        public Builder withHowManStorages(int nOfStorages){
-            this.nOfStorages = this.nOfStorages;
+        public Builder hasHowManyStorages(int nOfStorages){
+            this.nOfStorages = nOfStorages;
             return this;
         }
         /**
@@ -109,7 +102,7 @@ public class VacationHome extends Freehold {
          * @param isMultigeneration of the property
          * @return the Builder object
          */
-        public Builder withHowManyLockerStorage(boolean isMultigeneration){
+        public Builder hasGenerations(boolean isMultigeneration){
             this.isMultigeneration = isMultigeneration;
             return this;
         }
@@ -122,13 +115,14 @@ public class VacationHome extends Freehold {
         public VacationHome build(){
             VacationHome vh = new VacationHome(this.uuid,this.address,this.price);
             vh.setType(this.type);
-            vh.setNumberOfFloors(this.numberOfStoreys);
+            vh.setNumberOfFloors(this.numberOfFloors);
             vh.setStorage(this.storageType,nOfStorages);
             vh.setBuiltDate(this.builtDate);
             vh.setMultigeneration(this.isMultigeneration);
+            vh.setParkingSpace(nOfParkingSpace);
             return vh;
         }
-    }
 
+    }
 
 }
