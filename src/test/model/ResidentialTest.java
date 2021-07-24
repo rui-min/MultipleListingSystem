@@ -12,13 +12,11 @@ public class ResidentialTest {
     UUID id2 = UUID.randomUUID();
     UUID id3 = UUID.randomUUID();
     UUID id4 = UUID.randomUUID();
-//    UUID id5 = UUID.randomUUID();
 
     String ad1 = "Yonge St 101";
     String ad2 = "Yonge St 103";
     String ad3 = "Yonge St 108";
     String ad4 = "Keele St 101";
-//    String ad5 = "Keele St 114";
 
     LocalDate d1 = LocalDate.of(1999, 5, 1);
     LocalDate d2 = LocalDate.of(2018, 3, 21); //new construction
@@ -105,25 +103,7 @@ public class ResidentialTest {
 
     @Test
     public void testToStringAndBuilders() {
-//        Residential semi = new SemiDetached(id1, ad1, 10000);
-//        Residential condo = new Condo(id2, ad2, 10000);
 
-//        Residential fh = new FarmHouse(id4, ad4, 10000);
-
-//        semi.setStorage("Garage", 1);
-//        condo.setStorage("Locker", 2);
-
-//        //fh default
-//
-//        semi.setParkingSpace(1);
-//        condo.setParkingSpace(2);
-
-//        //fh default
-//
-//        semi.setBuiltDate(d1);
-//        condo.setBuiltDate(d2);
-
-//        //fh default
         Residential semi = new SemiDetached.Builder(id1, ad1, 10000)
                 .storageTypeIs("Garage").withHowManyStorages(1).withHowManyParkingSpaces(1)
                 .withHowManyStoreys(2).buildAt(d1).build();

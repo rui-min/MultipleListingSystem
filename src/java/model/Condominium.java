@@ -7,7 +7,7 @@ import java.util.UUID;
  * achieve Abstraction.
  * This abstract class represents the idea: Condominium type (level 3)
  */
-public abstract class Condominium extends Residential implements Storage {
+public abstract class Condominium extends Residential {
     /**
      * unit number of the building
      */
