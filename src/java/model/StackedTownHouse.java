@@ -116,21 +116,21 @@ public class StackedTownHouse extends Condominium {
     }
 
 
-    // quick test
-    public static void main(String[] args) {
-        StackedTownHouse sta = new StackedTownHouse(UUID.randomUUID(),"Yonge",90000);
-        System.out.println(sta.getBuildingType());
-        System.out.println(sta);
-
-        StackedTownHouse sta1 = new StackedTownHouse.Builder(UUID.randomUUID(),"Yonge",90000)
-                .withUnitNumber(101) .build();
-        System.out.println(sta1.getUnitNumber());
-
-        StackedTownHouse sta2 = new StackedTownHouse.Builder(UUID.randomUUID(),"Yonge",800000)
-                .withUnitNumber(101).withHowManyParks(2).withHowManyLockerStorage(3) .build();
-        System.out.println(sta2.getUnitNumber());
-        System.out.println(sta1.equals(sta2));  // True
-        System.out.println(sta1 == sta2);       // False
-        System.out.println(sta2);
-    }
+//    // quick test
+//    public static void main(String[] args) {
+//        StackedTownHouse sta = new StackedTownHouse(UUID.randomUUID(),"Yonge",90000);
+//        System.out.println(sta.getBuildingType());
+//        System.out.println(sta);
+//
+//        StackedTownHouse sta1 = new StackedTownHouse.Builder(UUID.randomUUID(),"Yonge",90000)
+//                .withUnitNumber(101) .build();
+//        System.out.println(sta1.getUnitNumber());
+//
+//        StackedTownHouse sta2 = new StackedTownHouse.Builder(UUID.randomUUID(),"Yonge",800000)
+//                .withUnitNumber(101).withHowManyParks(2).withHowManyLockerStorage(3) .build();
+//        System.out.println(sta2.getUnitNumber());
+//        System.out.println(sta1.equals(sta2));  // True
+//        System.out.println(sta1 == sta2);       // False
+//        System.out.println(sta2);
+//    }
 }
