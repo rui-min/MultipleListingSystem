@@ -173,7 +173,9 @@ public class ResidentialTest {
     @Test
     public void testMultilex(){
         Residential dup = new MultiLex.Builder(id3, ad3, 5000000).withUnits(2).build();
-        Residential tri = new MultiLex.Builder(id4, ad4, 700000).withUnits(3).build();
+        Residential tri = new MultiLex.Builder(id4, ad4, 700000).withUnits(3).buildAt(d1)
+                .isMultigeneration(true).storageTypeIs("Garage").withHowManStorages(1)
+                .withHowManyParkingSpaces(2).withHowManyStoreys(3).build();
 
         String dups = dup.toString();
         String tris = tri.toString();
@@ -191,17 +193,37 @@ public class ResidentialTest {
 
         String tris0 = "Triplex{uuid=" + id4 + ", address=" + ad4 + ", price=700000" + "}, " +
                 "ownership=Freehold, " +
-                "builtDate=Unknown" + ", " +
-                "storageType=null, " +
-                "numberOfStorage=0, " +
-                "numberOfParkingSpace=0, " +
+                "builtDate=" + d1 + ", " +
+                "storageType=Garage, " +
+                "numberOfStorage=1, " +
+                "numberOfParkingSpace=2, " +
                 "isNewConstruction=false, " +
                 "isHighValue=false" +
-                ", type=Multi-family, numberOfFloors=0, isMultigeneration=false" +
+                ", type=Multi-family, numberOfFloors=3, isMultigeneration=true" +
                 ", howManyUnits=3";
 
         assertEquals(tris0, tris);
         assertEquals(dups0, dups);
+    }
+
+    @Test
+    public void testDHBuilder(){
+        DetachedHome d = new DetachedHome.Builder(id4, ad4, 700000).buildAt(d1)
+                .isMultigeneration(true).storageTypeIs("Garage").withHowManStorages(1)
+                .withHowManyParkingSpaces(2).withHowManyStoreys(3).build();
+
+        String d0 = "DetachedHome{uuid=" + id4 + ", address=" + ad4 + ", price=700000" + "}, " +
+                "ownership=Freehold, " +
+                "builtDate=" + d1 + ", " +
+                "storageType=Garage, " +
+                "numberOfStorage=1, " +
+                "numberOfParkingSpace=2, " +
+                "isNewConstruction=false, " +
+                "isHighValue=false" +
+                ", type=null, numberOfFloors=3, isMultigeneration=true";
+
+        String ds = d.toString();
+        assertEquals(d0, ds);
 
     }
 

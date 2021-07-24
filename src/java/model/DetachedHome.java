@@ -103,7 +103,7 @@ public class DetachedHome extends Freehold {
          * @return the Builder object
          */
         public Builder withHowManStorages(int nOfStorages){
-            this.nOfStorages = this.nOfStorages;
+            this.nOfStorages = nOfStorages;
             return this;
         }
 

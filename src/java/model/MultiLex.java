@@ -132,7 +132,7 @@ public class MultiLex extends Freehold {
          * @return the Builder object
          */
         public Builder withHowManStorages(int nOfStorages) {
-            this.nOfStorages = this.nOfStorages;
+            this.nOfStorages = nOfStorages;
             return this;
         }
 
