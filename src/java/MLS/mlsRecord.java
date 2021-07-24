@@ -34,12 +34,10 @@ public class mlsRecord {
             msg.add(field.split("=", 2)[1]);
         if(msg.size() == 3)
             msg.add("No info");
-
-        mlsRecord mls;
         msg.set(3, String.format("%s, %s", name, msg.get(3)));
 
         // Use builder for new mlsRecord creation.
-        mls = new mlsRecord.mlsBuilder(UUID.fromString(msg.get(0)))
+        mlsRecord mls = new mlsRecord.mlsBuilder(UUID.fromString(msg.get(0)))
                 .location(msg.get(1))
                 .price(Integer.parseInt(msg.get(2)))
                 .otherInfo(msg.get(3))
@@ -136,6 +134,8 @@ public class mlsRecord {
 
     @Override
     public boolean equals(Object other){
+        if(!other.getClass().equals(this.getClass()))
+            return false;
         mlsRecord target = (mlsRecord) other;
         return this.getId().equals(target.getId())
                 && this.getAddress().equals(target.getAddress())

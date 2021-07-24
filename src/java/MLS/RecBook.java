@@ -86,14 +86,14 @@ public class RecBook {
     }
 
     /**
-     * If used 1st time when creating sample singleton, cache size is by default 50;
+     * If used 1st time when creating sample singleton, cache size is by default 64;
      * if used after singleton creation, the singleton itself will be returned.
      * @return Sample singleton instance of either default 50 or previously specified cache capacity.
      */
     public static RecBook getSampleIns(){ return RecBook.getSampleIns(64); }
 
     /**
-     * If used 1st time when creating formal singleton, cache size is by default 100;
+     * If used 1st time when creating formal singleton, cache size is by default 128;
      * if used after singleton creation, the singleton itself will be returned.
      * @return Formal singleton instance of either default 100 or previously specified cache capacity.
      */
@@ -142,8 +142,8 @@ public class RecBook {
             FileWriter writer = new FileWriter(path, true);
             BufferedWriter bufWrite = new BufferedWriter(writer);
             if(text.canWrite()){
-                    bufWrite.write(mls.toString());
-                    bufWrite.newLine();
+                bufWrite.write(mls.toString());
+                bufWrite.newLine();
             }
             bufWrite.close();
         }catch(IOException e) {
@@ -239,7 +239,7 @@ public class RecBook {
                 cache.remove(id);
             }
             else
-                weight.put(id,weight.get(id)-1);
+                weight.replace(id, weight.get(id)-1);
     }
 
     /**
