@@ -138,17 +138,38 @@ public class RecBook {
      * @param mls mlsRecord input to be written into database.
      */
     public void write(mlsRecord mls) {
-        try {
-            FileWriter writer = new FileWriter(path, true);
-            BufferedWriter bufWrite = new BufferedWriter(writer);
-            if(text.canWrite()){
-                bufWrite.write(mls.toString());
-                bufWrite.newLine();
-            }
-            bufWrite.close();
-        }catch(IOException e) {
-            e.printStackTrace();
+        UUID id = mls.getId();
+        mlsRecord found = this.get(id, false);
+        boolean toWrite = true;
+        if(found != null) {
+            if(found.equals(mls))
+                toWrite = false;
+            else
+                this.remove(id);
         }
+        
+        if(toWrite) {
+            try {
+                FileWriter writer = new FileWriter(path, true);
+                BufferedWriter bufWrite = new BufferedWriter(writer);
+                if (text.canWrite()) {
+                    bufWrite.write(mls.toString());
+                    bufWrite.newLine();
+                }
+                bufWrite.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Public accessible record access using UUID. Invokes private record access with default weight management system.
+     * @param id UUID of desired entry
+     * @return mlsRecord obj or null if no record found.
+     */
+    public mlsRecord get(UUID id){
+        return this.get(id, true);
     }
 
     /**
@@ -158,14 +179,14 @@ public class RecBook {
      * @param id UUID input of desired entry.
      * @return mlsRecord obj or null if no record found.
      */
-    public mlsRecord get(UUID id) {
+    private mlsRecord get(UUID id, boolean wei) {
         // If id is already in cache, return immediately.
-        if(cache.containsKey(id)) {
+        if(wei && cache.containsKey(id)) {
             weightUpdate(id);
             return cache.get(id);
         }
-        mlsRecord mls = null;
 
+        mlsRecord mls = null;
         try {
             FileReader reader = new FileReader(path);
             BufferedReader bufRead = new BufferedReader(reader);
@@ -175,9 +196,8 @@ public class RecBook {
             while(line != null){
                 if(line.startsWith(uuid)){
                     mls = mlsRecord.fromReader(line);
-
                     // Accessing new record will have it put into cache and update cache weight.
-                    if(cache.size() < size) {
+                    if(wei && cache.size() < size) {
                         cache.put(mls.getId(), mls);
                         weight.put(mls.getId(), NEW_WEIGHT+1);
                         weightUpdate();
