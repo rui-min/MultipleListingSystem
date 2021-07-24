@@ -19,10 +19,10 @@ public class Land extends Property {
         super(uuid, address, price);
     }
 
-    // print test
-    public static void main(String[] args){
-        Land a = new Land(UUID.randomUUID(), "20 ABC", 2000);
-        System.out.println(a.toString());
-        System.out.println(mlsRecord.fromClass(a.toString()));
-    }
+//     print test
+//     public static void main(String[] args){
+//         Land a = new Land(UUID.randomUUID(), "20 ABC", 2000);
+//         System.out.println(a.toString());
+//         System.out.println(mlsRecord.fromClass(a.toString()));
+//     }
 }
