@@ -1,13 +1,11 @@
 package model;
 
+import java.util.UUID;
+
 /**
  * Concrete class representing Cooperative home (level 3)
  */
-import java.util.UUID;
-
 public class CooperativeHome extends Residential {
-
-    private int parkingSlot = 0;
 
     /**
      *Constructor for CooperativeHome obj requiring UUID, address and price.
@@ -19,6 +17,10 @@ public class CooperativeHome extends Residential {
         super(uuid, address, price);
     }
 
+    /**
+     * Getter for ownership type
+     * @return ownership type
+     */
     @Override
     public String getOwnership() {
         return "Cooperative Home";
