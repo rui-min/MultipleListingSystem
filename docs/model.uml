@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>D:/GitHub/2030_A3/src/java/model</OriginalElement>
+  <nodes>
+    <node x="552.4583333333335" y="80.0">model.Land</node>
+    <node x="736.625" y="80.0">model.Residential</node>
+    <node x="961.0" y="240.0">model.Condo</node>
+    <node x="787.0" y="240.0">model.VacationHome</node>
+    <node x="400.50000000000006" y="160.0">model.Freehold</node>
+    <node x="172.0" y="240.0">model.FarmHouse</node>
+    <node x="843.4583333333334" y="0.0">model.Storage</node>
+    <node x="635.0" y="240.0">model.TownHouse</node>
+    <node x="1076.5" y="160.0">model.Condominium</node>
+    <node x="784.4935897435898" y="160.0">model.CooperativeHome</node>
+    <node x="455.00000000000006" y="240.0">model.DetachedHome</node>
+    <node x="0.0" y="240.0">model.SemiDetached</node>
+    <node x="539.4583333333335" y="0.0">model.Property</node>
+    <node x="361.25000000000006" y="80.0">model.Generations</node>
+    <node x="621.4935897435898" y="160.0">model.MobileHome</node>
+    <node x="1079.0" y="240.0">model.TripleDeckers</node>
+    <node x="671.4583333333334" y="0.0">model.ParkingSpaces</node>
+    <node x="1245.0" y="240.0">model.StackedTownHouse</node>
+    <node x="323.00000000000006" y="240.0">model.MultiLex</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="model.VacationHome" target="model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="864.0" y="215.0" />
+      <point x="457.00000000000006" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.TripleDeckers" target="model.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.MobileHome" target="model.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="692.9935897435898" y="135.0" />
+      <point x="800.625" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.SemiDetached" target="model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="76.0" y="215.0" />
+      <point x="457.00000000000006" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.MultiLex" target="model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="379.00000000000006" y="215.0" />
+      <point x="457.00000000000006" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.DetachedHome" target="model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="535.0" y="215.0" />
+      <point x="457.00000000000006" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Land" target="model.Property" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Freehold" target="model.Residential" relationship="GENERALIZATION">
+      <point x="28.25" y="-15.0" />
+      <point x="485.25000000000006" y="135.0" />
+      <point x="800.625" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Condo" target="model.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1010.0" y="215.0" />
+      <point x="1152.0" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Residential" target="model.Property" relationship="GENERALIZATION">
+      <point x="-42.66666666666663" y="-15.0" />
+      <point x="757.9583333333335" y="60.0" />
+      <point x="595.4583333333335" y="60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Residential" target="model.Storage" relationship="REALIZATION">
+      <point x="42.666666666666686" y="-15.0" />
+      <point x="843.2916666666667" y="60.0" />
+      <point x="896.4583333333334" y="60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.CooperativeHome" target="model.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="872.9935897435898" y="135.0" />
+      <point x="800.625" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Residential" target="model.ParkingSpaces" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="800.625" y="50.0" />
+      <point x="747.4583333333334" y="50.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Condominium" target="model.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1152.0" y="135.0" />
+      <point x="800.625" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.FarmHouse" target="model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="237.5" y="215.0" />
+      <point x="457.00000000000006" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.Freehold" target="model.Generations" relationship="REALIZATION">
+      <point x="-28.25" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.TownHouse" target="model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="701.0" y="215.0" />
+      <point x="457.00000000000006" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="model.StackedTownHouse" target="model.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1338.5" y="215.0" />
+      <point x="1152.0" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.8250688705234159" showDependencies="false" x="716.0" y="135.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
