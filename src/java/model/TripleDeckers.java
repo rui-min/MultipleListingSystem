@@ -116,22 +116,4 @@ public class TripleDeckers extends Condominium{
         }
     }
 
-
-//    // quick test
-//    public static void main(String[] args) {
-//        TripleDeckers tri = new TripleDeckers(UUID.randomUUID(),"Yonge",90000);
-//        System.out.println(tri.getBuildingType());
-//        System.out.println(tri);
-//
-//        TripleDeckers tri1 = new TripleDeckers.Builder(UUID.randomUUID(),"Yonge",90000)
-//                .withUnitNumber(101) .build();
-//        System.out.println(tri1.getUnitNumber());
-//
-//        TripleDeckers tri2 = new TripleDeckers.Builder(UUID.randomUUID(),"Yonge",800000)
-//                .withUnitNumber(101).withHowManyParks(2).withHowManyLockerStorage(3) .build();
-//        System.out.println(tri2.getUnitNumber());
-//        System.out.println(tri1.equals(tri2));  // True
-//        System.out.println(tri1 == tri2);       // False
-//        System.out.println(tri2);
-//    }
 }

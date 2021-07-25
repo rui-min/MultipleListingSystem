@@ -113,26 +113,5 @@ public class Condo extends Condominium {
             return condo;
         }
     }
-
-
-//    // quick test
-//    public static void main(String[] args) {
-//        Condo condo = new Condo(UUID.randomUUID(),"Yonge",90000);
-//        System.out.println(condo.getBuildingType());
-//        System.out.println(condo); System.out.println("===============================");
-//
-//        Condo condo1 = new Condo.Builder(UUID.randomUUID(),"Yonge",90000)
-//                .withUnitNumber(101) .build();
-//        System.out.println(condo1.getUnitNumber());
-//        System.out.println(condo1); System.out.println("===============================");
-//
-//        Condo condo2 = new Condo.Builder(UUID.randomUUID(),"Yonge",800000)
-//                .withUnitNumber(101).withHowManyParks(2).withHowManyLockerStorage(3) .build();
-//        System.out.println(condo2.getUnitNumber());
-//        System.out.println(condo2); System.out.println("===============================");
-//
-//        System.out.println(condo1.equals(condo2));  // True
-//        System.out.println(condo1 == condo2);       // False
-//
-//    }
+    
 }

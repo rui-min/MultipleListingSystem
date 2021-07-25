@@ -107,9 +107,4 @@ public abstract class Property {
                 this.getBuildingType(), this.getUuid(), this.getAddress(), this.getPrice());
     }
 
-//    // quick test
-//    public static void main(String[] args) {
-//        Property tri = new TripleDeckers(UUID.randomUUID(),"Yonge",90000);
-//        System.out.println(tri);
-//    }
 }
