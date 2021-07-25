@@ -66,7 +66,7 @@ public class TownHouse extends Freehold {
             return this;
         }
         /**
-//         * Set the number of parks of the property // Todo
+         * Set the type of the storage
          * @param type of the property
          * @return the Builder object
          */
@@ -75,7 +75,7 @@ public class TownHouse extends Freehold {
             return this;
         }
         /**
-//         * Set the number of parks of the property // Todo
+         * Set built date of the property
          * @param builtDate of the property
          * @return the Builder object
          */

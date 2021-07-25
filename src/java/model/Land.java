@@ -1,7 +1,5 @@
 package model;
 
-import MLS.mlsRecord;
-
 import java.util.UUID;
 
 /**
