@@ -30,7 +30,7 @@ public class ResidentialTest {
         Residential det = new DetachedHome(id2, ad2, 150000);
         Residential dup = new MultiLex(id3, ad3, 5000000);
 
-        assertEquals(semi.getBuiltDate(), -999999999-01-01);
+        assertEquals(semi.getBuiltDate(), LocalDate.MIN);
         assertTrue(det.getBuiltDate() ==LocalDate.MIN);
 
         semi.setBuiltDate(d1);
@@ -39,7 +39,7 @@ public class ResidentialTest {
 
         assertEquals(semi.getBuiltDate(), d1);
         assertTrue(det.getBuiltDate() == d2);
-        assertNull(dup.getBuiltDate());
+        assertEquals(dup.getBuiltDate(), LocalDate.MIN);
 
         //test exception
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -169,4 +169,62 @@ public class ResidentialTest {
         assertEquals(coopString, coopString0);
         assertEquals(fhString, fhString0);
     }
+
+    @Test
+    public void testMultilex(){
+        Residential dup = new MultiLex.Builder(id3, ad3, 5000000).withUnits(2).build();
+        Residential tri = new MultiLex.Builder(id4, ad4, 700000).withUnits(3).buildAt(d1)
+                .isMultigeneration(true).storageTypeIs("Garage").withHowManStorages(1)
+                .withHowManyParkingSpaces(2).withHowManyStoreys(3).build();
+
+        String dups = dup.toString();
+        String tris = tri.toString();
+
+        String dups0 ="Duplex{uuid=" + id3 + ", address=" + ad3 + ", price=5000000" + "}, " +
+                "ownership=Freehold, " +
+                "builtDate=Unknown" + ", " +
+                "storageType=null, " +
+                "numberOfStorage=0, " +
+                "numberOfParkingSpace=0, " +
+                "isNewConstruction=false, " +
+                "isHighValue=true" +
+                ", type=Multi-family, numberOfFloors=0, isMultigeneration=false" +
+                ", howManyUnits=2";
+
+        String tris0 = "Triplex{uuid=" + id4 + ", address=" + ad4 + ", price=700000" + "}, " +
+                "ownership=Freehold, " +
+                "builtDate=" + d1 + ", " +
+                "storageType=Garage, " +
+                "numberOfStorage=1, " +
+                "numberOfParkingSpace=2, " +
+                "isNewConstruction=false, " +
+                "isHighValue=false" +
+                ", type=Multi-family, numberOfFloors=3, isMultigeneration=true" +
+                ", howManyUnits=3";
+
+        assertEquals(tris0, tris);
+        assertEquals(dups0, dups);
+    }
+
+    @Test
+    public void testDHBuilder(){
+        DetachedHome d = new DetachedHome.Builder(id4, ad4, 700000).buildAt(d1)
+                .isMultigeneration(true).storageTypeIs("Garage").withHowManStorages(1)
+                .withHowManyParkingSpaces(2).withHowManyStoreys(3).build();
+
+        String d0 = "DetachedHome{uuid=" + id4 + ", address=" + ad4 + ", price=700000" + "}, " +
+                "ownership=Freehold, " +
+                "builtDate=" + d1 + ", " +
+                "storageType=Garage, " +
+                "numberOfStorage=1, " +
+                "numberOfParkingSpace=2, " +
+                "isNewConstruction=false, " +
+                "isHighValue=false" +
+                ", type=null, numberOfFloors=3, isMultigeneration=true";
+
+        String ds = d.toString();
+        assertEquals(d0, ds);
+
+    }
+
 }
