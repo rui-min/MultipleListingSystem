@@ -14,11 +14,11 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      */
     public static final int REFER_PRICE = 750000;
 
-    private int nOfParkingSpace;
-    private String storageType;
-    private int nOfStorages;
-    private LocalDate builtDate = LocalDate.MIN;
-    private LocalDate entryDate; // the day on which the object is entered in the system
+    private   int         nOfParkingSpace;
+    private   String      storageType;
+    private   int         nOfStorages;
+    private   LocalDate   builtDate = LocalDate.MIN;
+    private   LocalDate   entryDate; // the day on which the object is entered in the system
 
     /**
      * Constructor to be called in the subclass constructor.
@@ -41,7 +41,7 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
 
     /**
      * Check if the building is a new construction at present.
-     * @return true, if the building is constructed with in 5 years; false, if it is built more than 5 years.
+     * @return true, if the building is constructed within 5 years; false, if it has been built more than 5 years.
      */
     public boolean isNew(){
         return YEARS.between(this.builtDate, LocalDate.now()) < 5;
@@ -65,7 +65,6 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
      * @return built date of the residential property
      */
     public LocalDate getBuiltDate() {
-
         return this.builtDate;
     }
 
@@ -143,4 +142,6 @@ public abstract class Residential extends Property implements ParkingSpaces, Sto
                 this.isHighValue()
             );
     }
+
+
 }
