@@ -1,1 +1,1 @@
-# (Group Project) Simplified Mulitiple Listing System with Java OOP
+# (Group Project) Simplified Mulitiple Listing System with Java & Spring
