@@ -1,16 +1,9 @@
 package mls.server_property.model;
+//todo
+// constuctors, uuid, JPA annotations
 
-import java.util.UUID;
-
-/**
- * Abstract class is a class that cannot be made instances of in Java and it helps
- * achieve Abstraction.
- * This abstract class represents the idea: Condominium type (level 3)
- */
 public abstract class Condominium extends Residential {
-    /**
-     * unit number of the building
-     */
+
     private int unitNumber;
 
     /**
@@ -19,7 +12,7 @@ public abstract class Condominium extends Residential {
      * @param address the unique address of the property, with unit No. if applicable
      * @param price selling price of the listed property
      */
-    public Condominium(UUID uuid, String address, int price) {
+    public Condominium(Long uuid, String address, int price) {
         super(uuid, address, price);
     }
 

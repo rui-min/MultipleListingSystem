@@ -9,12 +9,12 @@ import java.util.UUID;
 public class DetachedHome extends Freehold {
 
     /**
-     * Construct a new DatachedHome given its UUID, address and price.
+     * Construct a new DatachedHome given its Long, address and price.
      * @param uuid the unique id of the new DatachedHome
      * @param address the address of the new DatachedHome
      * @param price the price of the new DatachedHome
      */
-    public DetachedHome(UUID uuid, String address, int price) {
+    public DetachedHome(Long uuid, String address, int price) {
         super(uuid, address, price);
     }
 
@@ -24,7 +24,7 @@ public class DetachedHome extends Freehold {
      */
     public static class Builder {
 
-        private UUID uuid;
+        private Long uuid;
         private String address;
         private int price;
         private int nOfParkingSpace;
@@ -41,7 +41,7 @@ public class DetachedHome extends Freehold {
          * @param address the unique address of the Property object
          * @param price selling price of the listed Property object
          */
-        public Builder(UUID uuid, String address, int price) {
+        public Builder(Long uuid, String address, int price) {
             this.uuid = uuid;
             this.address = address;
             this.price = price;

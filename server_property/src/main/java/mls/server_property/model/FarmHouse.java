@@ -3,9 +3,8 @@ package mls.server_property.model;
  * Concrete class representing Farm House (level 4)
  */
 import java.time.LocalDate;
-import java.util.UUID;
 public class FarmHouse extends Freehold {
-    public FarmHouse(UUID uuid, String address, int price) {
+    public FarmHouse(Long uuid, String address, int price) {
         super(uuid, address, price);
     }
 
@@ -14,7 +13,7 @@ public class FarmHouse extends Freehold {
         /**
          * below are mandatory attributes
          */
-        private UUID uuid;
+        private Long uuid;
         private String address;
         private int price;
 
@@ -37,7 +36,7 @@ public class FarmHouse extends Freehold {
          * @param address the unique address of the property
          * @param price   selling price of the listed property
          */
-        public Builder(UUID uuid, String address, int price) {
+        public Builder(Long uuid, String address, int price) {
             this.uuid = uuid;
             this.address = address;
             this.price = price;
