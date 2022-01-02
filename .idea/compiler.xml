@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="application" />
         <module name="front_client" />
-        <module name="server_property" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
