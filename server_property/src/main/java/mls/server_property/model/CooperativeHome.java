@@ -12,7 +12,7 @@ public class CooperativeHome extends Residential {
      * @param price price of the property.
      */
     public CooperativeHome(Long uuid, String address, int price) {
-        super(uuid, address, price);
+        super(address, price);
     }
 
     /**

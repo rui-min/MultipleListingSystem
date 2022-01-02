@@ -13,7 +13,7 @@ public class Land extends Property {
      * @param price   an initial price set to the listing property
      */
     public Land(Long uuid, String address, int price) {
-        super(uuid, address, price);
+        super(address, price);
     }
 
 

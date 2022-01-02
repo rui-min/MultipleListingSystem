@@ -5,7 +5,7 @@ package mls.server_property.model;
 import java.time.LocalDate;
 public class FarmHouse extends Freehold {
     public FarmHouse(Long uuid, String address, int price) {
-        super(uuid, address, price);
+        super(address, price);
     }
 
 

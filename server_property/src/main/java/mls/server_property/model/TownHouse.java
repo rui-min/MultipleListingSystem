@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class TownHouse extends Freehold {
     public TownHouse(Long uuid, String address, int price) {
-        super(uuid, address, price);
+        super(address, price);
     }
 
 }

@@ -1,44 +1,44 @@
-create table Condo(
+CREATE TABLE Condo(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY     AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- condominium
-unit_No           varchar(50)    not null
+unit_No           VARCHAR(50)    NOT NULL
 );
 
-create table StackedTownHouse(
+CREATE TABLE StackedTownHouse(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY       AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- condominium
-unit_No           varchar(50)    not null
+unit_No           VARCHAR(50)    NOT NULL
 );
 
-create table TripleDeckers(
+CREATE TABLE TripleDeckers(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY         AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- condominium
-unit_No           varchar(50)    not null
+unit_No           VARCHAR(50)    NOT NULL
 );

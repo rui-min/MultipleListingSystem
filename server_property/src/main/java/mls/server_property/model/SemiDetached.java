@@ -7,7 +7,7 @@ import java.time.LocalDate;
  */
 public class SemiDetached extends Freehold {
     public SemiDetached(Long uuid, String address, int price) {
-        super(uuid, address, price);
+        super(address, price);
     }
 
 }

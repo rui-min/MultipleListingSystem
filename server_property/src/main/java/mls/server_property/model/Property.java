@@ -2,13 +2,7 @@ package mls.server_property.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.MappedSuperclass;
-
+import javax.persistence.*;
 
 @MappedSuperclass
 public abstract class Property {
@@ -25,8 +19,8 @@ public abstract class Property {
     private int price;
 
     @JsonCreator
-    public Property(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-        this.id = id;
+    public Property(@JsonProperty("address") String address, @JsonProperty("price") int price) {
+//        this.id = id;
         this.address = address;
         this.price = price;
     }

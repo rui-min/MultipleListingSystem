@@ -2,25 +2,24 @@ package mls.server_property.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @MappedSuperclass
 public abstract class Freehold extends Residential {
-    @Column(name = "familyType")
+    @Column(name = "family_type")
     private String type;
 
     @Column(name = "floors")
     private int numberOfFloors;
 
-    @Column(name = "isMultiGen")
+    @Column(name = " is_multi_gen")
     private boolean isMultigeneration;
 
     protected Freehold(){super();}
 
     @JsonCreator
-    public Freehold(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(id, address, price);
+    public Freehold( @JsonProperty("address") String address, @JsonProperty("price") int price) {
+        super(address, price);
         this.type = null;
         this.numberOfFloors = 0;
         this.isMultigeneration = false;

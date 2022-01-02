@@ -2,10 +2,9 @@ package mls.server_property.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.sql.Date;
 import static java.time.temporal.ChronoUnit.YEARS;
 
 @MappedSuperclass
@@ -13,23 +12,23 @@ public abstract class Residential extends Property{
 
     public static final int REFER_PRICE = 750000;
 
-    @Column(name="noParkingSpace")
+    @Column(name="no_parking_space")
     private   int         nOfParkingSpace;
-    @Column(name="storageType")
+    @Column(name="storage_type")
     private   String      storageType;
-    @Column(name="noStorage")
+    @Column(name="no_storage")
     private   int         nOfStorages;
-    @Column(name="buildDate")
-    private   LocalDate   builtDate = LocalDate.MIN;
-    @Column(name="entryDate")
-    private   LocalDate   entryDate; // the day on which the object is entered in the system
+    @Column(name=" build_date")
+    private   Date   builtDate = Date.valueOf("1900-1-1");
+    @Column(name=" entry_date")
+    private   Date   entryDate; // the day on which the object is entered in the system
 
     protected Residential(){super();}
 
     @JsonCreator
-    public Residential(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(id, address, price);
-        this.entryDate = LocalDate.now();
+    public Residential( @JsonProperty("address") String address, @JsonProperty("price") int price) {
+        super( address, price);
+        this.entryDate = Date.valueOf(LocalDate.now());
     }
 
     public boolean isHighValue() {
@@ -37,17 +36,17 @@ public abstract class Residential extends Property{
     }
 
     public boolean isNew(){
-        return YEARS.between(this.builtDate, LocalDate.now()) < 5;
+        return YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5;
     }
 
     public void setBuiltDate(LocalDate d) throws IllegalArgumentException{
-        if (d.isAfter(entryDate))
+        if (d.isAfter(entryDate.toLocalDate()))
             throw new IllegalArgumentException("Built date after today");
         else
-            this.builtDate = d;
+            this.builtDate = Date.valueOf(d);
     }
 
-    public LocalDate getBuiltDate() {
+    public Date getBuiltDate() {
         return this.builtDate;
     }
 
@@ -86,7 +85,7 @@ public abstract class Residential extends Property{
                         "isHighValue=%s",
                 super.toString(),
                 this.getOwnership(),
-                this.builtDate != LocalDate.MIN? this.builtDate : "Unknown",
+                this.builtDate != Date.valueOf("1900-1-1")? this.builtDate : "Unknown",
                 this.storageType,
                 this.nOfStorages,
                 this.nOfParkingSpace,

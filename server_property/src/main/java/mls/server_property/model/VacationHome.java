@@ -3,17 +3,18 @@ package mls.server_property.model;
  * Concrete class representing Recreational and vacation home (level 3)
  */
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 
 @Entity
-@Table(name="VacationHome")
+@Table(name="vacationhome")
 public class VacationHome extends Freehold {
 
     protected VacationHome(){
         super();
     }
-    public VacationHome(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(id, address, price);
+    public VacationHome( @JsonProperty("address") String address, @JsonProperty("price") int price) {
+        super(address, price);
     }
+
 }

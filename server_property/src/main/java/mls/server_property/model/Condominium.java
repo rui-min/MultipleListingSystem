@@ -13,7 +13,7 @@ public abstract class Condominium extends Residential {
      * @param price selling price of the listed property
      */
     public Condominium(Long uuid, String address, int price) {
-        super(uuid, address, price);
+        super(address, price);
     }
 
     /**

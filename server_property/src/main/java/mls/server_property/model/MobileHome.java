@@ -14,7 +14,7 @@ public class MobileHome extends Residential {
      * @param price price of property in int.
      */
     public MobileHome(Long uuid, String address, int price) {
-        super(uuid, address, price);
+        super(address, price);
     }
 
     /**
