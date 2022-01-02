@@ -1,46 +1,38 @@
 package mls.server_property.model;
 
-import java.util.UUID;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.*;
 
-/**
- * Abstract class is a class that cannot be made instances of in Java and it helps
- * achieve Abstraction.
- * This abstract class represents the idea: Property (level 1)
- */
+@MappedSuperclass
 public abstract class Property {
-    /**
-     * "Private" keyword achieves Encapsulation: below attributes are hidden to users,
-     * and public setters and getters (defined further below) allow
-     * clients to access and update private attributes.
-     */
-    private UUID uuid;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private Long id;
+
+    @Column(name="address")
     private String address;
+
+    @Column(name="price")
     private int price;
 
-    /**
-     * The public constructor is prepared for subclasses to create a new Property with
-     * given uuid, address and price.
-     * @param uuid the unique uuid of the property
-     * @param address the unique address of the property
-     * @param price selling price of the listed property
-     */
-    public Property(UUID uuid, String address, int price) {
-        this.uuid = uuid;
+    @JsonCreator
+    public Property(@JsonProperty("address") String address, @JsonProperty("price") int price) {
+//        this.id = id;
         this.address = address;
         this.price = price;
     }
 
-    /**
-     * Default constructor is private and never called
-     */
-    private Property() {}
+    protected Property() {}
 
     /**
-     * Get the uuid of the property
-     * @return uuid of the property
+     * Get the id of the property
+     * @return id of the property
      */
-    public UUID getUuid() {
-        return uuid;
+    public Long getId() {
+        return id;
     }
 
     /**
@@ -103,8 +95,8 @@ public abstract class Property {
      */
     @Override
     public String toString() {
-        return String.format("%s{uuid=%s, address=%s, price=%d}",
-                this.getBuildingType(), this.getUuid(), this.getAddress(), this.getPrice());
+        return String.format("%s{id=%s, address=%s, price=%d}",
+                this.getBuildingType(), this.getId(), this.getAddress(), this.getPrice());
     }
 
 }

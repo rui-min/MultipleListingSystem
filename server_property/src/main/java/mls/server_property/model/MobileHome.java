@@ -1,7 +1,5 @@
 package mls.server_property.model;
 
-import java.util.UUID;
-
 /**
  * Concrete class representing Mobile home (level 3)
  */
@@ -11,12 +9,12 @@ public class MobileHome extends Residential {
 
     /**
      * Simple constructor for MobileHome.
-     * @param uuid UUID of the entry.
+     * @param uuid Long of the entry.
      * @param address address of property as String.
      * @param price price of property in int.
      */
-    public MobileHome(UUID uuid, String address, int price) {
-        super(uuid, address, price);
+    public MobileHome(Long uuid, String address, int price) {
+        super(address, price);
     }
 
     /**

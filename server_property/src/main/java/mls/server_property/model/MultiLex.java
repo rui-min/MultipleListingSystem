@@ -3,21 +3,20 @@ package mls.server_property.model; /**
  * Concrete class representing MultiLex (level 4)
  */
 import java.time.LocalDate;
-import java.util.UUID;
 
 public class MultiLex extends Freehold {
 
     private int nOfUnits;
 
     /**
-     * Construct a new MultiLex given its UUID, address and price.
+     * Construct a new MultiLex given its Long, address and price.
      *
      * @param uuid    the unique id of the new MultiLex.
      * @param address the address of the new MultiLex.
      * @param price   the price of the new MultiLex.
      */
-    public MultiLex(UUID uuid, String address, int price) {
-        super(uuid, address, price);
+    public MultiLex(Long uuid, String address, int price) {
+        super( address, price);
         this.setType("Multi-family");
     }
 
@@ -57,7 +56,7 @@ public class MultiLex extends Freehold {
      */
     public static class Builder {
 
-        private UUID uuid;
+        private Long uuid;
         private String address;
         private int price;
         private int nOfParkingSpace;
@@ -75,7 +74,7 @@ public class MultiLex extends Freehold {
          * @param address the unique address of the Property object
          * @param price   selling price of the listed Property object
          */
-        public Builder(UUID uuid, String address, int price) {
+        public Builder(Long uuid, String address, int price) {
             this.uuid = uuid;
             this.address = address;
             this.price = price;
