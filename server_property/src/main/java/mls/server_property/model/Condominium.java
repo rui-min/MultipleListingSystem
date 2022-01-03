@@ -1,19 +1,25 @@
 package mls.server_property.model;
 //todo
 // constuctors, uuid, JPA annotations
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.*;
 
+@MappedSuperclass
 public abstract class Condominium extends Residential {
-
+    @Column(unitNumber = "unitNumber")
     private int unitNumber;
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
-     * @param uuid the unique uuid of the property
      * @param address the unique address of the property, with unit No. if applicable
      * @param price selling price of the listed property
      */
-    public Condominium(Long uuid, String address, int price) {
+    protected Freehold(){super();}
+    @JsonCreator
+    public Condominium(@JsonProperty("address") String address, @JsonProperty("price") int price) {
         super(address, price);
+        this.unitNumber = 0;
     }
 
     /**
