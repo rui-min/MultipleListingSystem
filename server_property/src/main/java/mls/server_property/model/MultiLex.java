@@ -1,11 +1,19 @@
 
+
 package mls.server_property.model; /**
  * Concrete class representing MultiLex (level 4)
  */
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.time.LocalDate;
 
+@MappedSuperclass
 public class MultiLex extends Freehold {
 
+    @Column(name = "nOfUnits")
     private int nOfUnits;
 
     /**
@@ -16,10 +24,15 @@ public class MultiLex extends Freehold {
      * @param price   the price of the new MultiLex.
      */
     public MultiLex(Long uuid, String address, int price) {
-        super( address, price);
+        super(address, price);
         this.setType("Multi-family");
     }
 
+    @JsonCreator
+    public MultiLex(@JsonProperty("address") String address, @JsonProperty("price") int price) {
+        super(address, price);
+        this.nOfUnits = 5;
+    }
     /**
      * Specify how many units are there in this MultiLex.
      *
