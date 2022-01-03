@@ -1,7 +1,8 @@
-package mls.server_property.model;
+package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -20,8 +21,8 @@ public abstract class Property {
     private int price;
 
     @JsonCreator
-    public Property(@JsonProperty("address") String address, @JsonProperty("price") int price) {
-//        this.id = id;
+    public Property(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
+        this.id = id;
         this.address = address;
         this.price = price;
     }

@@ -2,7 +2,6 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import mls.server_property.domain.Property;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -20,18 +19,15 @@ public abstract class Residential extends Property {
      */
     public static final int REFER_PRICE = 750000;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column(name="nOfParkingSpace")
+    @Column(name="no_parking_space")
     private   int         nOfParkingSpace;
-    @Column(name="storageType")
+    @Column(name="storage_type")
     private   String      storageType;
-    @Column(name="nOfStorages")
+    @Column(name="no_storage")
     private   int         nOfStorages;
-    @Column(name="builtDate")
+    @Column(name="build_date")
     private   Date   builtDate = Date.valueOf("1900-1-1");
-    @Column(name="entryDate")
+    @Column(name="entry_date")
     private   Date   entryDate; // the day on which the object is entered in the system
 
     /**
@@ -40,8 +36,8 @@ public abstract class Residential extends Property {
      * @param price price of the new residential property
      */
     @JsonCreator
-    public Residential(@JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(address, price);
+    public Residential(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
+        super(id, address, price);
         this.entryDate= Date.valueOf(LocalDate.now());
     }
 
