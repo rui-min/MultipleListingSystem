@@ -1,103 +1,104 @@
-create table VacationHome(
+CREATE TABLE VacationHome(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id                BIGINT          NOT NULL        AUTO_INCREMENT,
+address           VARCHAR(300)    NOT NULL,
+price             INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- freehold
-familyType	     varchar(50)	 Default null, -- single family/ multifamily
-floors           int             Default 1,
-isMultiGen	     boolean		 Default null
+family_type	     VARCHAR(50)	     DEFAULT NULL, -- single family/ multifamily
+floors           INT                 DEFAULT 1,
+is_multi_gen	 BOOLEAN			 DEFAULT NULL,
+PRIMARY KEY (id)
 );
 
-create table SemiDetached(
+CREATE TABLE SemiDetached(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY     AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- freehold
-familyType	     varchar(50)	 Default null, -- single family/ multifamily
-floors           int             Default 1,
-isMultiGen	     boolean		 Default null
+family_type	     VARCHAR(50)	     DEFAULT NULL, -- single family/ multifamily
+floors           INT                 DEFAULT 1,
+is_multi_gen	 BOOLEAN		     DEFAULT NULL
 );
 
-create table FarmHouse(
+CREATE TABLE FarmHouse(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY  AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- freehold
-familyType	     varchar(50)	 Default null, -- single family/ multifamily
-floors           int             Default 1,
-isMultiGen	     boolean		 Default null
+family_type	     VARCHAR(50)	     DEFAULT NULL, -- single family/ multifamily
+floors           INT                 DEFAULT 1,
+is_multi_gen	 BOOLEAN		     DEFAULT NULL
 );
 
-create table TownHouse(
+CREATE TABLE TownHouse(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY  AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- freehold
-familyType	     varchar(50)	 Default null, -- single family/ multifamily
-floors           int             Default 1,
-isMultiGen	     boolean		 Default null
+family_type	     VARCHAR(50)	     DEFAULT NULL, -- single family/ multifamily
+floors           INT                 DEFAULT 1,
+is_multi_gen	 BOOLEAN		     DEFAULT NULL
 );
 
-create table DetachedHome(
+CREATE TABLE DetachedHome(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY      AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- freehold
-familyType	     varchar(50)	 Default null, -- single family/ multifamily
-floors           int             Default 1,
-isMultiGen	     boolean		 Default null
+family_type	     VARCHAR(50)	     DEFAULT NULL, -- single family/ multifamily
+floors           INT                 DEFAULT 1,
+is_multi_gen	 BOOLEAN		     DEFAULT NULL
 );
 
-create table Multilex(
+CREATE TABLE Multilex(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY      AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int             default 0,
-noStorage        int             default 0,
-storageType      varchar(50)     default "Unknown",
-entryDate        date            not null,
-buildDate        date,
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE,
  -- freehold
-familyType	     varchar(50)	 Default null, -- single family/ multifamily
-floors           int             Default 1,
-isMultiGen	     boolean		 Default null,
+family_type	     VARCHAR(50)	     DEFAULT NULL, -- single family/ multifamily
+floors           INT                 DEFAULT 1,
+is_multi_gen	 BOOLEAN		     DEFAULT NULL,
 -- multilex
-units            int             Default 2
+units            INT             DEFAULT 2
 );

@@ -1,32 +1,32 @@
-create table CooperativeHome(
+CREATE TABLE CooperativeHome(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL        PRIMARY KEY      AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int,
-noStorage        int,
-storageType      varchar(50),
-entryDate        date            not null,
-buildDate        date
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE
 );
 
-create table MobileHome(
+CREATE TABLE MobileHome(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null,
+id               BIGINT          NOT NULL     PRIMARY KEY    AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL,
 -- residential
-noParkingSpace   int,
-noStorage        int,
-storageType      varchar(50),
-entryDate        date            not null,
-buildDate        date
+no_parking_space  INT             DEFAULT 0,
+no_storage        INT             DEFAULT 0,
+storage_type      VARCHAR(50)     DEFAULT "Unknown",
+entry_date        DATE            NOT NULL,
+build_date        DATE
 );
 
-create table Land(
+CREATE TABLE Land(
 -- property 
-id               bigint          not null        primary key,
-address          varchar(300)    not null,
-price            int             not null
+id               BIGINT          NOT NULL        PRIMARY KEY    AUTO_INCREMENT,
+address          VARCHAR(300)    NOT NULL,
+price            INT             NOT NULL
 )
