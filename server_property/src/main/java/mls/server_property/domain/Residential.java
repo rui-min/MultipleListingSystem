@@ -30,6 +30,8 @@ public abstract class Residential extends Property {
     @Column(name="entry_date")
     private   Date   entryDate; // the day on which the object is entered in the system
 
+    protected Residential(){super();}
+
     /**
      * Constructor to be called in the subclass constructor.
      * @param address address of the new residential property

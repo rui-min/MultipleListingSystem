@@ -1,14 +1,15 @@
 package mls.server_property;
 
-import mls.server_property.model.VacationHome;
-import mls.server_property.repository.vhRepo;
+import mls.server_property.domain.VacationHome;
+import mls.server_property.repositories.VocationHomeRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ServerPropertyApplicationTests {
-    @Autowired vhRepo vhRepo;
+    @Autowired
+    VocationHomeRepo vhRepo;
 	@Test
 	void contextLoads() {
 	    VacationHome vh1 = new VacationHome("a", 1000000);
