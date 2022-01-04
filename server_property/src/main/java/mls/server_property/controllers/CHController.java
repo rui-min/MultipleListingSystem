@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/vh")
+@RequestMapping("api/ch")
 public class CHController {
     @Autowired
     private CooperativeHomeRepo chRepo;
@@ -29,14 +29,14 @@ public class CHController {
         chRepo.deleteById(id);
     }
 
-    @PutMapping("/update-record")
-    public void updateProduct(@RequestBody CooperativeHome product) {
-        chRepo.save(product);
+    @PutMapping("/update")
+    public void updateProduct(@RequestBody CooperativeHome ch) {
+        chRepo.save(ch);
     }
 
-    @PostMapping("/post-record")
-    public void postProduct(@RequestBody CooperativeHome product) {
-        chRepo.save(product);
+    @PostMapping("/add")
+    public void postProduct(@RequestBody CooperativeHome ch) {
+        chRepo.save(ch);
     }
 
 }
