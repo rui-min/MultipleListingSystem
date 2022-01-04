@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-/**
- * Concrete class representing Cooperative home (level 3)
- */
 @Entity
 @Table(name="cooperativehome")
 public class CooperativeHome extends Residential {
