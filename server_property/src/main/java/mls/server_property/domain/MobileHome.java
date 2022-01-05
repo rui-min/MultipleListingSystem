@@ -5,11 +5,14 @@ package mls.server_property.domain;
  */
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.persistence.*;
 
-@MappedSuperclass
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="MobileHome")
 public class MobileHome extends Residential {
-
+    @Column(ownership = "ownership")
     private String ownership;
 
     /**
@@ -17,9 +20,11 @@ public class MobileHome extends Residential {
      * @param address address of property as String.
      * @param price price of property in int.
      */
+    protected MobileHome(){super();}
     @JsonCreator
-    public MobileHome(@JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(address, price);
+    public MobileHome(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
+        super(id, address, price);
+        this.ownership = "/";
     }
 
     /**
@@ -38,6 +43,5 @@ public class MobileHome extends Residential {
     public String getOwnership() {
         return this.ownership;
     }
-
 
 }
