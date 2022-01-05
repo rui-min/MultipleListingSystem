@@ -5,19 +5,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.sql.Date;
 
-/**
- * Concrete class representing Cooperative home (level 3)
- */
 @Entity
 @Table(name="cooperativehome")
 public class CooperativeHome extends Residential {
 
-    protected CooperativeHome(){ super(); }
+    public CooperativeHome(){ super(); }
 
     @JsonCreator
-    public CooperativeHome(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(id, address, price);
+    public CooperativeHome(@JsonProperty("id") Long id,@JsonProperty("address") String address,
+                       @JsonProperty("price") int price,
+                       @JsonProperty("nOfParkingSpace") int nOfParkingSpace,
+                       @JsonProperty("storageType") String storageType,
+                       @JsonProperty("nOfStorages") int nOfStorages,
+                       @JsonProperty("builtDate") Date builtDate) {
+        super(id, address, price,nOfParkingSpace,storageType,nOfStorages,builtDate);
     }
 
     /**
@@ -26,7 +29,7 @@ public class CooperativeHome extends Residential {
      */
     @Override
     public String getOwnership() {
-        return "Cooperative Home";
+        return "Cooperative";
     }
 
 
