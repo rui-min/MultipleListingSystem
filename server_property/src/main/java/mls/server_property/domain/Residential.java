@@ -30,28 +30,18 @@ public abstract class Residential extends Property {
     @Column(name="entry_date")
     private   Date   entryDate; // the day on which the object is entered in the system
 
-    public Residential(){super();}
+    protected Residential(){super();}
 
+    /**
+     * Constructor to be called in the subclass constructor.
+     * @param address address of the new residential property
+     * @param price price of the new residential property
+     */
     @JsonCreator
-    public Residential(@JsonProperty("id") Long id,@JsonProperty("address") String address,
-                       @JsonProperty("price") int price,
-                       @JsonProperty("nOfParkingSpace") int nOfParkingSpace,
-                       @JsonProperty("storageType") String storageType,
-                       @JsonProperty("nOfStorages") int nOfStorages,
-                       @JsonProperty("builtDate") Date builtDate) {
+    public Residential(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
         super(id, address, price);
-        this.nOfParkingSpace = nOfParkingSpace;
-        this.storageType = storageType;
-        this.nOfStorages = nOfStorages;
-        this.builtDate = builtDate;
-        this.entryDate= Date.valueOf(LocalDate.now());  // auto generate entryDate
+        this.entryDate= Date.valueOf(LocalDate.now());
     }
-
-//    @JsonCreator
-//    public Residential(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-//        super(id, address, price);
-//        this.entryDate= Date.valueOf(LocalDate.now());
-//    }
 
     /**
      * Check if the home is a high valued home.
