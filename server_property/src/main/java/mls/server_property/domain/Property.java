@@ -2,6 +2,7 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+<<<<<<< Updated upstream
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -23,10 +24,36 @@ public abstract class Property {
     @JsonCreator
     public Property(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
         this.id = id;
+=======
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+
+import java.io.Serializable;
+@Getter
+@Setter
+@NoArgsConstructor
+@MappedSuperclass
+public abstract class Property implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String address;
+    private int price;
+
+    @JsonCreator
+    public Property(@JsonProperty("address") String address, @JsonProperty("price") int price) {
+//        this.id = id;
+>>>>>>> Stashed changes
         this.address = address;
         this.price = price;
     }
 
+<<<<<<< Updated upstream
     protected Property() {}
 
     /**
@@ -68,6 +95,8 @@ public abstract class Property {
     public void setPrice(int price) {
         this.price = price;
     }
+=======
+>>>>>>> Stashed changes
 
     /**
      * Called by subclass instance.
@@ -101,8 +130,11 @@ public abstract class Property {
                 this.getBuildingType(), this.getId(), this.getAddress(), this.getPrice());
     }
 
+<<<<<<< Updated upstream
     @Override
     public int hashCode() {
         return Objects.hash(address);
     }
+=======
+>>>>>>> Stashed changes
 }

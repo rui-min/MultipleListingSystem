@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/mls_application/pom.xml" />
         <option value="$PROJECT_DIR$/application/pom.xml" />
         <option value="$PROJECT_DIR$/front_client/pom.xml" />
+        <option value="$PROJECT_DIR$/server_property/pom.xml" />
       </list>
     </option>
   </component>

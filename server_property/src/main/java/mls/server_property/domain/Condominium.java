@@ -1,4 +1,5 @@
 package mls.server_property.domain;
+<<<<<<< Updated upstream
 //todo
 // constuctors, uuid, JPA annotations
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -8,10 +9,24 @@ import javax.persistence.*;
 @MappedSuperclass
 public abstract class Condominium extends Residential {
     @Column(unitNumber = "unitNumber")
+=======
+
+import lombok.NoArgsConstructor;
+
+import javax.persistence.MappedSuperclass;
+
+//todo
+// constuctors, uuid, JPA annotations
+@NoArgsConstructor
+@MappedSuperclass
+public abstract class Condominium extends Residential {
+
+>>>>>>> Stashed changes
     private int unitNumber;
 
     /**
      * Subclass constructor must call superclass's non-private constructor for inheritance.
+<<<<<<< Updated upstream
      * @param address the unique address of the property, with unit No. if applicable
      * @param price selling price of the listed property
      */
@@ -22,6 +37,21 @@ public abstract class Condominium extends Residential {
         this.unitNumber = 0;
     }
 
+=======
+     * @param uuid the unique uuid of the property
+     * @param address the unique address of the property, with unit No. if applicable
+     * @param price selling price of the listed property
+     */
+    public Condominium(Long uuid, String address, int price) {
+        super(address, price);
+    }
+
+    public Condominium(String address, int price) {
+        super(address, price);
+    }
+
+
+>>>>>>> Stashed changes
     /**
      * Abstract method to be completed in subclass to return ownership type as a string
      * @return the type of ownership as a string

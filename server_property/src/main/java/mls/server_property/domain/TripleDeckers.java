@@ -1,9 +1,21 @@
 package mls.server_property.domain;
+<<<<<<< Updated upstream
+=======
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import java.time.LocalDate;
+>>>>>>> Stashed changes
 
 
 /**
  * Concrete class representing Building: Triple Deckers (level 4)
  */
+<<<<<<< Updated upstream
+=======
+@Entity
+@NoArgsConstructor
+>>>>>>> Stashed changes
 public class TripleDeckers extends Condominium{
 
     /**
@@ -16,5 +28,8 @@ public class TripleDeckers extends Condominium{
         super(uuid, address, price);
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }
