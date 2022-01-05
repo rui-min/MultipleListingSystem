@@ -1,4 +1,4 @@
-CREATE TABLE demo.VacationHome(
+CREATE TABLE VacationHome(
 -- property 
 id                BIGINT          NOT NULL        AUTO_INCREMENT,
 address           VARCHAR(300)    NOT NULL,
