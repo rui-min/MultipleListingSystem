@@ -16,6 +16,7 @@ public class MultiLex extends Freehold {
     @Column(name = "nOfUnits")
     private int nOfUnits;
 
+    public  MultiLex(){}
     /**
      * Construct a new MultiLex given its Long, address and price.
      *
