@@ -2,41 +2,45 @@ package mls.server_property.controllers;
 
 import mls.server_property.domain.CooperativeHome;
 import mls.server_property.domain.Property;
-import mls.server_property.repositories.CooperativeHomeRepo;
+import mls.server_property.services.LandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/vh")
-public class CHController {
+@RequestMapping("api/land")
+public class LandController {
     @Autowired
-    private CooperativeHomeRepo chRepo;
+    private LandService landService;    // final cannot be "Autowired"
+
+//    public LandController(LandService landService) {
+//        this.landService = landService;
+//    }
 
     @GetMapping("/")
     public Iterable<Property> index() {
-        return chRepo.findAll();
+        return landService.getLandRepo().findAll();
     }
 
     @GetMapping("/{id}")
     public Optional<Property> getPropertyById(@PathVariable long id) {
-        return chRepo.findById(id);
+        return landService.getLandRepo().findById(id);
     }
 
     @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable long id) {
-        chRepo.deleteById(id);
+        landService.getLandRepo().deleteById(id);
     }
 
     @PutMapping("/update-record")
     public void updateProduct(@RequestBody CooperativeHome product) {
-        chRepo.save(product);
+        landService.getLandRepo().save(product);
     }
 
     @PostMapping("/post-record")
     public void postProduct(@RequestBody CooperativeHome product) {
-        chRepo.save(product);
+        landService.getLandRepo().save(product);
     }
 
 }
