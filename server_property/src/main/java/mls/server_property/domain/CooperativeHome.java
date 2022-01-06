@@ -10,13 +10,13 @@ import javax.persistence.Table;
  * Concrete class representing Cooperative home (level 3)
  */
 @Entity
-@Table(name="cooperativehome")
-public class CooperativeHome extends Residential {
+@Table(name="Residential")
+public class Residential extends Residential {
 
-    protected CooperativeHome(){ super(); }
+    protected Residential(){ super(); }
 
     @JsonCreator
-    public CooperativeHome(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
+    public Residential(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
         super(id, address, price);
     }
 
