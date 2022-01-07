@@ -21,9 +21,5 @@ public abstract class ResidentialService extends PropertyService{
     }
 
     // Other basic crud methods are inherited from ABS PropertyService class
-    // Ex. use addNewProperty(Residential residential) for adding residential or sub concrete-obj
-//    public ResidentialRepo getResidentialRepo() {
-//        return residentialRepo;
-//    }
 
 }

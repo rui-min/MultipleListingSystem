@@ -1,7 +1,7 @@
 package mls.server_property;
 
 import mls.server_property.domain.VacationHome;
-import mls.server_property.repositories.VocationHomeRepo;
+import mls.server_property.repositories.VacationHomeRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ServerPropertyApplicationTests {
     @Autowired
-    VocationHomeRepo vhRepo;
+    VacationHomeRepo vhRepo;
 	@Test
 	void contextLoads() {
         VacationHome vh1 = new VacationHome("a", 1000000);
