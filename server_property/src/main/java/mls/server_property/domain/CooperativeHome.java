@@ -1,23 +1,18 @@
 package mls.server_property.domain;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 /**
  * Concrete class representing Cooperative home (level 3)
  */
-@Entity
-@Table(name="cooperativehome")
 public class CooperativeHome extends Residential {
 
-    protected CooperativeHome(){ super(); }
-
-    @JsonCreator
-    public CooperativeHome(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(id, address, price);
+    /**
+     *Constructor for CooperativeHome obj requiring Long, address and price.
+     * @param uuid Long of the instance.
+     * @param address address of the property.
+     * @param price price of the property.
+     */
+    public CooperativeHome(Long uuid, String address, int price) {
+        super(address, price);
     }
 
     /**

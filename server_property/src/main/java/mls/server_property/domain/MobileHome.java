@@ -1,21 +1,26 @@
 package mls.server_property.domain;
 
-/**
- * Concrete class representing Mobile home (level 3)
- */
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.*;
+@Entity
+@Table(name = "MobileHome")
 public class MobileHome extends Residential {
-
+    @Column(name = "MobileHome")
     private String ownership;
-
+    public MobileHome() {super();}
     /**
      * Simple constructor for MobileHome.
-     * @param uuid Long of the entry.
      * @param address address of property as String.
      * @param price price of property in int.
      */
-    public MobileHome(Long uuid, String address, int price) {
-        super(address, price);
+    @JsonCreator
+    public MobileHome(@JsonProperty("id") Long id,@JsonProperty("address") String address, @JsonProperty("price") int price) {
+        super(id, address, price);
     }
+
+
 
     /**
      * Setter for ownership type

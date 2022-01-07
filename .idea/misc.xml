@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="com.fasterxml.jackson.annotation.JsonCreator" />
+    </list>
+  </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/docs/javaDoc" />
     <option name="OTHER_OPTIONS" value="-J-Duser.language=en -J-Duser.country=US" />
@@ -10,6 +15,7 @@
         <option value="$PROJECT_DIR$/mls_application/pom.xml" />
         <option value="$PROJECT_DIR$/application/pom.xml" />
         <option value="$PROJECT_DIR$/front_client/pom.xml" />
+        <option value="$PROJECT_DIR$/server_property/pom.xml" />
       </list>
     </option>
   </component>
