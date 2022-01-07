@@ -21,8 +21,6 @@ public class LandService extends  PropertyService{
         this.landRepo = (LandRepo) propertyRepo;
     }
 
-    public LandRepo getLandRepo() {
-        return landRepo;
-    }
+
     // Other basic crud methods are inherited from ABS PropertyService class
 }

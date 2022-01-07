@@ -93,12 +93,17 @@ public abstract class Property {
 
     /**
      * Override Object class's toString() method. Create a string representation of this Property
+     *
      * @return the string representation of this Property
      */
     @Override
     public String toString() {
-        return String.format("%s{id=%s, address=%s, price=%d}",
-                this.getBuildingType(), this.getId(), this.getAddress(), this.getPrice());
+        return "Property{" +
+                "id=" + id +
+                ", address='" + address + '\'' +
+                ", price=" + price +
+                ", buildingType='" + getBuildingType() + '\'' +
+                '}';
     }
 
     @Override

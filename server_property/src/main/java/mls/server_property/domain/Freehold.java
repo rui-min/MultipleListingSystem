@@ -18,8 +18,10 @@ public abstract class Freehold extends Residential {
     protected Freehold(){super();}
 
     @JsonCreator
-    public Freehold( @JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(address, price);
+    public Freehold( @JsonProperty("id")Long id,
+                     @JsonProperty("address") String address,
+                     @JsonProperty("price") int price) {
+        super(id, address, price);
         this.type = null;
         this.numberOfFloors = 0;
         this.isMultigeneration = false;
