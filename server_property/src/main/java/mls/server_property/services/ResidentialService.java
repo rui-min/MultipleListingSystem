@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public abstract class ResidentialService extends PropertyService{
 
     // Use class specific xxxRepo for additional method implementations
-    private final ResidentialRepo residentialRepo;
+    private ResidentialRepo residentialRepo;
 
     // Constructor injection & Alias cast
     // In case of multiple inheritance,specify Qualifier("xxxRepo") the same as @Repository("xxxRepo")
@@ -20,8 +20,10 @@ public abstract class ResidentialService extends PropertyService{
         this.residentialRepo = (ResidentialRepo) propertyRepo;
     }
 
-    public ResidentialRepo getResidentialRepo() {
-        return residentialRepo;
-    }
     // Other basic crud methods are inherited from ABS PropertyService class
+    // Ex. use addNewProperty(Residential residential) for adding residential or sub concrete-obj
+//    public ResidentialRepo getResidentialRepo() {
+//        return residentialRepo;
+//    }
+
 }
