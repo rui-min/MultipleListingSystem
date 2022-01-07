@@ -4,6 +4,8 @@ package mls.server_property.domain;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
+import java.sql.Date;
+import java.util.Objects;
 
 @MappedSuperclass
 public abstract class Condominium extends Residential {
@@ -11,10 +13,14 @@ public abstract class Condominium extends Residential {
     private int unitNumber;
 
     protected Condominium(){super();}
+
     @JsonCreator
-    public Condominium(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-        super(id, address, price);
-        this.unitNumber = 0;
+    public Condominium(@JsonProperty("id") Long id, @JsonProperty("address") String address,
+                       @JsonProperty("price") int price, @JsonProperty("no_parking_space") int nOfParkingSpace,
+                       @JsonProperty("storage_type") String storageType, @JsonProperty("no_storage") int nOfStorages,
+                       @JsonProperty("build_date") Date builtDate, @JsonProperty("unit_No") int unitNumber) {
+        super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate);
+        this.unitNumber = unitNumber;
     }
 
     /**
@@ -42,6 +48,7 @@ public abstract class Condominium extends Residential {
         this.unitNumber = unitNumber;
     }
 
+
     /**
      * Override equals() method. Evaluate objects' equality using attribute values.
      * For simplification, it is assumed that same address and unit number represents same property.
@@ -64,8 +71,7 @@ public abstract class Condominium extends Residential {
      */
     @Override
     public String toString() {
-        return  super.toString() +
-                ", unitNumber=" + unitNumber;
+        return  super.toString() + ", unitNumber=" + unitNumber;
     }
 
 }
