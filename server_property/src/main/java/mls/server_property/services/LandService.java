@@ -1,13 +1,12 @@
 package mls.server_property.services;
 
-import mls.server_property.domain.Land;
 import mls.server_property.repositories.LandRepo;
 import mls.server_property.repositories.PropertyRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("landServ")
 public class LandService extends  PropertyService{
 
     // Use class specific xxxRepo for additional method implementations
