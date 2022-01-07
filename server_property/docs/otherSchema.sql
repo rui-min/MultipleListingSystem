@@ -1,4 +1,4 @@
-CREATE TABLE CooperativeHome(
+CREATE TABLE Residential(
 -- property 
 id               BIGINT          NOT NULL        PRIMARY KEY      AUTO_INCREMENT,
 address          VARCHAR(300)    NOT NULL,

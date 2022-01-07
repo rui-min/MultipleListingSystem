@@ -3,7 +3,7 @@ create table StackedTownHouse(id               bigint          not null        p
 create table Condo(id               bigint          not null        primary key);
 create table Land(id               bigint          not null        primary key);
 create table MobileHome(id               bigint          not null        primary key);
-create table CooperativeHome(id               bigint          not null        primary key);
+create table Residential(id               bigint          not null        primary key);
 create table Multilex(id               bigint          not null        primary key);
 create table DetachedHome(id               bigint          not null        primary key);
 create table TownHouse(id               bigint          not null        primary key);
