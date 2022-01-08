@@ -3,8 +3,7 @@ package mls.server_property.domain;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.sql.Date;
 import java.time.LocalDate;
 

@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="front_client" />
         <module name="application" />
+        <module name="front_client" />
         <module name="server_property" />
       </profile>
     </annotationProcessing>
@@ -16,7 +16,6 @@
       <module name="front_client" target="11" />
       <module name="mls_application" target="11" />
       <module name="server_property" target="11" />
-      <module name="server_property (1)" target="11" />
       <module name="server_propertyBackup" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -26,7 +25,6 @@
       <module name="front_client" options="-parameters" />
       <module name="mls_application" options="-parameters" />
       <module name="server_property" options="-parameters" />
-      <module name="server_property (1)" options="-parameters" />
       <module name="server_propertyBackup" options="-parameters" />
     </option>
   </component>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>D:/GitHub/MultipleListingSystem/server_property/src/main/java/mls/server_property/model</OriginalElement>
+  <nodes>
+    <node x="579.375" y="0.0">mls.server_property.model.ParkingSpaces</node>
+    <node x="490.99999999999994" y="240.0">mls.server_property.model.SemiDetached</node>
+    <node x="940.0" y="160.0">mls.server_property.model.Freehold</node>
+    <node x="0.0" y="240.0">mls.server_property.model.Condo</node>
+    <node x="1017.0" y="240.0">mls.server_property.model.MultiLex</node>
+    <node x="283.99999999999994" y="240.0">mls.server_property.model.StackedTownHouse</node>
+    <node x="1300.0" y="240.0">mls.server_property.model.TownHouse</node>
+    <node x="843.0" y="240.0">mls.server_property.model.VacationHome</node>
+    <node x="441.5494186046511" y="160.0">mls.server_property.model.CooperativeHome</node>
+    <node x="764.375" y="80.0">mls.server_property.model.Land</node>
+    <node x="751.375" y="0.0">mls.server_property.model.Property</node>
+    <node x="545.375" y="80.0">mls.server_property.model.Residential</node>
+    <node x="118.0" y="240.0">mls.server_property.model.TripleDeckers</node>
+    <node x="638.5494186046511" y="160.0">mls.server_property.model.MobileHome</node>
+    <node x="453.37499999999994" y="0.0">mls.server_property.model.Storage</node>
+    <node x="1149.0" y="240.0">mls.server_property.model.FarmHouse</node>
+    <node x="130.1686046511627" y="160.0">mls.server_property.model.Condominium</node>
+    <node x="663.0" y="240.0">mls.server_property.model.DetachedHome</node>
+    <node x="934.0" y="80.0">mls.server_property.model.Generations</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mls.server_property.model.TripleDeckers" target="mls.server_property.model.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="191.0" y="215.0" />
+      <point x="205.6686046511627" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.Land" target="mls.server_property.model.Property" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.CooperativeHome" target="mls.server_property.model.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="530.0494186046511" y="135.0" />
+      <point x="609.375" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.Condominium" target="mls.server_property.model.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="205.6686046511627" y="135.0" />
+      <point x="609.375" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.Freehold" target="mls.server_property.model.Generations" relationship="REALIZATION">
+      <point x="28.25" y="-15.0" />
+      <point x="1024.75" y="135.0" />
+      <point x="1001.5" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.SemiDetached" target="mls.server_property.model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="567.0" y="215.0" />
+      <point x="996.5" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.Residential" target="mls.server_property.model.Storage" relationship="REALIZATION">
+      <point x="-32.0" y="-15.0" />
+      <point x="577.375" y="60.0" />
+      <point x="580.875" y="60.0" />
+      <point x="580.875" y="50.0" />
+      <point x="506.37499999999994" y="50.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.StackedTownHouse" target="mls.server_property.model.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="377.49999999999994" y="215.0" />
+      <point x="205.6686046511627" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.MobileHome" target="mls.server_property.model.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="710.0494186046511" y="135.0" />
+      <point x="609.375" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.Condo" target="mls.server_property.model.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="49.0" y="215.0" />
+      <point x="205.6686046511627" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.Residential" target="mls.server_property.model.ParkingSpaces" relationship="REALIZATION">
+      <point x="-32.0" y="-15.0" />
+      <point x="577.375" y="60.0" />
+      <point x="580.875" y="60.0" />
+      <point x="580.875" y="50.0" />
+      <point x="655.375" y="50.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.DetachedHome" target="mls.server_property.model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="743.0" y="215.0" />
+      <point x="996.5" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.TownHouse" target="mls.server_property.model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1366.0" y="215.0" />
+      <point x="996.5" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.Freehold" target="mls.server_property.model.Residential" relationship="GENERALIZATION">
+      <point x="-28.25" y="-15.0" />
+      <point x="968.25" y="135.0" />
+      <point x="609.375" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.MultiLex" target="mls.server_property.model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1073.0" y="215.0" />
+      <point x="996.5" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.FarmHouse" target="mls.server_property.model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1214.5" y="215.0" />
+      <point x="996.5" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.VacationHome" target="mls.server_property.model.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="920.0" y="215.0" />
+      <point x="996.5" y="215.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="mls.server_property.model.Residential" target="mls.server_property.model.Property" relationship="GENERALIZATION">
+      <point x="32.0" y="-15.0" />
+      <point x="641.375" y="60.0" />
+      <point x="807.375" y="60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="716.0" y="135.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

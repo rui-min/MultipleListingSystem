@@ -3,11 +3,10 @@ package mls.server_property.domain;
  * Concrete class representing Farm House (level 4)
  */
 import java.time.LocalDate;
-
 public class FarmHouse extends Freehold {
-//    public FarmHouse(Long uuid, String address, int price) {
-//        super(address, price);
-//    }
+    public FarmHouse(Long uuid, String address, int price) {
+        super(address, price);
+    }
 
 
     public static class Builder {
@@ -126,16 +125,16 @@ public class FarmHouse extends Freehold {
          * @return Condo using the previously collected information
          * provided to the Builder object.
          */
-//        public FarmHouse build() {
-//            FarmHouse fh = new FarmHouse(this.uuid, this.address, this.price);
-//            fh.setType(this.type);
-//            fh.setNumberOfFloors(this.numberOfFloors);
-//            fh.setStorage(this.storageType, nOfStorages);
-//            fh.setBuiltDate(this.builtDate);
-//            fh.setMultigeneration(this.isMultigeneration);
-//            fh.setParkingSpace(nOfParkingSpace);
-//            return fh;
-//        }
+        public FarmHouse build() {
+            FarmHouse fh = new FarmHouse(this.uuid, this.address, this.price);
+            fh.setType(this.type);
+            fh.setNumberOfFloors(this.numberOfFloors);
+            fh.setStorage(this.storageType, nOfStorages);
+            fh.setBuiltDate(this.builtDate);
+            fh.setMultigeneration(this.isMultigeneration);
+            fh.setParkingSpace(nOfParkingSpace);
+            return fh;
+        }
 
     }
 

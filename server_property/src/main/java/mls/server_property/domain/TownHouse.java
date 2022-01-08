@@ -4,8 +4,8 @@ package mls.server_property.domain;
  */
 
 public class TownHouse extends Freehold {
-//    public TownHouse(Long uuid, String address, int price) {
-//        super(address, price);
-//    }
+    public TownHouse(Long uuid, String address, int price) {
+        super(address, price);
+    }
 
 }

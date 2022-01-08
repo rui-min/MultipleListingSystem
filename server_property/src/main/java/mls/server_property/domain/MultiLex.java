@@ -16,7 +16,7 @@ public class MultiLex extends Freehold {
      * @param price   the price of the new MultiLex.
      */
     public MultiLex(Long uuid, String address, int price) {
-//        super( address, price);
+        super( address, price);
         this.setType("Multi-family");
     }
 

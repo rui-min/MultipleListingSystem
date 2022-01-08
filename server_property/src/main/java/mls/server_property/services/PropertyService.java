@@ -2,7 +2,6 @@ package mls.server_property.services;
 
 import mls.server_property.domain.Property;
 import mls.server_property.repositories.PropertyRepo;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,17 +15,16 @@ public abstract class PropertyService {
     private PropertyRepo propRepo;
 
     // ABS can't @Autowire construct
-    // TODO: Qualifier??
-    public PropertyService(@Qualifier("CondoRepo") PropertyRepo propRepo) {
+    public PropertyService(PropertyRepo propRepo) {
         this.propRepo = propRepo;
     }
 
     // Non-abstract, inheritable general crud methods
     public List<Property> getProperties(){ return propRepo.findAll(); }
 
-    public Property getProperties(Long id) throws Throwable {
-        return (Property) propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
-                String.format("No property with id %d exists", id))); }
+    public Property getProperties(Long id){
+        return propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
+            String.format("No property with id %d exists", id))); }
 
     public List<Property> getProperties(List<Long> ids){
         return propRepo.findAllById(ids);
@@ -48,8 +46,8 @@ public abstract class PropertyService {
     }
 
     @Transactional
-    public void updateProperty(Long id, String address, int price) throws Throwable {
-        Property property = (Property) propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
+    public void updateProperty(Long id, String address, int price){
+        Property property = propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
                 String.format("No property with id %d exists", id)));
         if(property.getPrice() != price)
             property.setPrice(price);
