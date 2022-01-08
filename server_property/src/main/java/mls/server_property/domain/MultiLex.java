@@ -15,10 +15,10 @@ public class MultiLex extends Freehold {
      * @param address the address of the new MultiLex.
      * @param price   the price of the new MultiLex.
      */
-    public MultiLex(Long uuid, String address, int price) {
-        super( address, price);
-        this.setType("Multi-family");
-    }
+//    public MultiLex(Long uuid, String address, int price) {
+//        super( address, price);
+//        this.setType("Multi-family");
+//    }
 
     /**
      * Specify how many units are there in this MultiLex.
@@ -162,15 +162,15 @@ public class MultiLex extends Freehold {
          * @return MultiLex using the previously collected information
          * provided to the Builder object.
          */
-        public MultiLex build() {
-            MultiLex mul = new MultiLex(this.uuid, this.address, this.price);
-            mul.setNumberOfFloors(this.numberOfStoreys);
-            mul.setStorage(this.storageType, nOfStorages);
-            mul.setBuiltDate(this.builtDate);
-            mul.setMultigeneration(this.isMultigeneration);
-            mul.setParkingSpace(this.nOfParkingSpace);
-            mul.nOfUnits = this.nOfUnits;
-            return mul;
-        }
+//        public MultiLex build() {
+//            MultiLex mul = new MultiLex(this.uuid, this.address, this.price);
+//            mul.setNumberOfFloors(this.numberOfStoreys);
+//            mul.setStorage(this.storageType, nOfStorages);
+//            mul.setBuiltDate(this.builtDate);
+//            mul.setMultigeneration(this.isMultigeneration);
+//            mul.setParkingSpace(this.nOfParkingSpace);
+//            mul.nOfUnits = this.nOfUnits;
+//            return mul;
+//        }
     }
 }

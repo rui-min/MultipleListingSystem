@@ -33,15 +33,15 @@ public abstract class Freehold extends Residential {
         this.type = type;
         this.numberOfFloors = numberOfFloors;
         this.isMultigeneration = isMultigeneration;
-=======
-    public Freehold( @JsonProperty("id")Long id,
-                     @JsonProperty("address") String address,
-                     @JsonProperty("price") int price) {
-        super(id, address, price);
-        this.type = null;
-        this.numberOfFloors = 0;
-        this.isMultigeneration = false;
     }
+//    public Freehold( @JsonProperty("id")Long id,
+//                     @JsonProperty("address") String address,
+//                     @JsonProperty("price") int price) {
+//        super(id, address, price);
+//        this.type = null;
+//        this.numberOfFloors = 0;
+//        this.isMultigeneration = false;
+//    }
 
     public String getType() {
         return type;

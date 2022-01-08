@@ -4,6 +4,7 @@ package mls.server_property.domain;
  */
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name="vacationhome")
@@ -12,6 +13,12 @@ public class VacationHome extends Freehold {
     protected VacationHome(){
         super();
     }
+
+    @Override
+    public String getOwnership() {
+        return null;
+    }
+
     public VacationHome( @JsonProperty("id") Long id,
                          @JsonProperty("address") String address,
                          @JsonProperty("price") int price,
