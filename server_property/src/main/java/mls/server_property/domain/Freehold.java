@@ -3,7 +3,6 @@ package mls.server_property.domain;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
-import java.sql.Date;
 
 @MappedSuperclass
 public abstract class Freehold extends Residential {
@@ -18,30 +17,13 @@ public abstract class Freehold extends Residential {
 
     protected Freehold(){super();}
 
-    @JsonCreator
-    public Freehold(@JsonProperty("id") Long id,
-                    @JsonProperty("address") String address,
-                    @JsonProperty("price") int price,
-                    @JsonProperty("no_parking_space") int nOfParkingSpace,
-                    @JsonProperty("storage_type") String storageType,
-                    @JsonProperty("no_storage") int nOfStorages,
-                    @JsonProperty("build_date") Date builtDate,
-                    @JsonProperty("family_type") String type,
-                    @JsonProperty("floors") int numberOfFloors,
-                    @JsonProperty("is_multi_gen") boolean isMultigeneration) {
-        super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate);
-        this.type = type;
-        this.numberOfFloors = numberOfFloors;
-        this.isMultigeneration = isMultigeneration;
-=======
-    public Freehold( @JsonProperty("id")Long id,
-                     @JsonProperty("address") String address,
-                     @JsonProperty("price") int price) {
-        super(id, address, price);
-        this.type = null;
-        this.numberOfFloors = 0;
-        this.isMultigeneration = false;
-    }
+//    @JsonCreator
+//    public Freehold( @JsonProperty("address") String address, @JsonProperty("price") int price) {
+//        super(address, price);
+//        this.type = null;
+//        this.numberOfFloors = 0;
+//        this.isMultigeneration = false;
+//    }
 
     public String getType() {
         return type;
@@ -76,9 +58,9 @@ public abstract class Freehold extends Residential {
     public String toString() {
         return
                 super.toString() +
-                ", type=" + type +
-                ", numberOfFloors=" + this.numberOfFloors +
-                ", isMultigeneration=" + this.isMultigeneration
+                        ", type=" + type +
+                        ", numberOfFloors=" + this.numberOfFloors +
+                        ", isMultigeneration=" + this.isMultigeneration
                 ;
     }
 }

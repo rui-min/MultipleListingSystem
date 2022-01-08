@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="application" />
-        <module name="server_property" />
         <module name="front_client" />
+        <module name="server_property" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +16,7 @@
       <module name="front_client" target="11" />
       <module name="mls_application" target="11" />
       <module name="server_property" target="11" />
+      <module name="server_propertyBackup" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -24,6 +25,7 @@
       <module name="front_client" options="-parameters" />
       <module name="mls_application" options="-parameters" />
       <module name="server_property" options="-parameters" />
+      <module name="server_propertyBackup" options="-parameters" />
     </option>
   </component>
 </project>

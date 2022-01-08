@@ -22,8 +22,8 @@ public abstract class PropertyService {
     // Non-abstract, inheritable general crud methods
     public List<Property> getProperties(){ return propRepo.findAll(); }
 
-    public Property getProperties(Long id){
-        return propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
+    public Property getProperties(Long id) throws Throwable {
+        return (Property) propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
             String.format("No property with id %d exists", id))); }
 
     public List<Property> getProperties(List<Long> ids){
@@ -46,8 +46,8 @@ public abstract class PropertyService {
     }
 
     @Transactional
-    public void updateProperty(Long id, String address, int price){
-        Property property = propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
+    public void updateProperty(Long id, String address, int price) throws Throwable {
+        Property property = (Property) propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
                 String.format("No property with id %d exists", id)));
         if(property.getPrice() != price)
             property.setPrice(price);
