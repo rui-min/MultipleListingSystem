@@ -29,60 +29,32 @@ public abstract class Property {
 
     protected Property() {}
 
-    /**
-     * Get the id of the property
-     * @return id of the property
-     */
     public Long getId() {
         return id;
     }
 
-    /**
-     * Get the address of the property
-     * @return address of the property
-     */
     public String getAddress() {
         return address;
     }
 
-    /**
-     * Set the address of the property
-     * @param address address of the property
-     */
+
     public void setAddress(String address) {
         this.address = address;
     }
 
-    /**
-     * Get the price of the property
-     * @return price of the property
-     */
     public int getPrice() {
         return price;
     }
 
-    /**
-     * Set the price of the property
-     * @param price price of the property
-     */
     public void setPrice(int price) {
         this.price = price;
     }
 
-    /**
-     * Called by subclass instance.
-     * @return return the concrete class name of a subclass instance.
-     */
     public String getBuildingType() {
         return this.getClass().getSimpleName();
     }
 
-    /**
-     * Override Object class's equals() method. Evaluate objects' equality using attribute values
-     * For simplification, it is assumed that same address represents same property.
-     * @param o other Object for comparison
-     * @return a boolean value "true" if specified attribute values are same, otherwise "false"
-     */
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

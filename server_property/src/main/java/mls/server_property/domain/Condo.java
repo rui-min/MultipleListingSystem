@@ -23,5 +23,4 @@ public class Condo extends Condominium {
     }
 
     public Condo() {}
-
 }

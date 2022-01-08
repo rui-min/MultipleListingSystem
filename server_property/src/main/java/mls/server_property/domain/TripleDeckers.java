@@ -1,6 +1,4 @@
 package mls.server_property.domain;
-
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -24,7 +22,6 @@ public class TripleDeckers extends Condominium{
         }
 
         public TripleDeckers() {}
-
 
 
 }

@@ -1,11 +1,8 @@
 package mls.server_property.domain;
-//todo
-// constuctors, uuid, JPA annotations
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Objects;
 
 @MappedSuperclass
 public abstract class Condominium extends Residential {
