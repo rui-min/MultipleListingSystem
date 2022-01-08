@@ -8,11 +8,8 @@ public class PropertyController {
     @Autowired
     private LoadBalancerClient loadBalancerClient;
     private String getProductBaseUri() {
-        ServiceInstance instance = loadBalancerClient.choose("localhost: 8090/server");
+        ServiceInstance instance = loadBalancerClient.choose("localhost: 8090/");
         return instance.getUri().toString() + "/api/product/";
     }
-
-
-
 
 }
