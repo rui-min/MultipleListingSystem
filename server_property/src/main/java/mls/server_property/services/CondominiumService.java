@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @Service("condominiumServ")
 public abstract class CondominiumService extends ResidentialService{
     private CondominiumRepo condominiumRepo;
-
+//todo
     @Autowired
     public CondominiumService(@Qualifier("condominiumRepo") ResidentialRepo residentialRepo) {
         super(residentialRepo);

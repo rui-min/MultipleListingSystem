@@ -5,17 +5,18 @@ import mls.server_property.repositories.FreeholdRepo;
 
 import java.util.List;
 
-public abstract class FreeholdService extends PropertyService {
-    private FreeholdRepo freeHoldRepo;
+public abstract class FreeholdService<T extends Freehold> extends PropertyService {
+    private FreeholdRepo<T> freeHoldRepo;
 
     public FreeholdService(FreeholdRepo repo) {
         super(repo);
         this.freeHoldRepo = repo;
     }
 
-    public List<Freehold> findFreeholds() {
+    public List<T> findFreeholds() {
        return freeHoldRepo.findAll();
     }
+
 
 
 }
