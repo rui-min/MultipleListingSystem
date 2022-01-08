@@ -9,13 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/property/land") // Put url prefix as concrete class inheritance form
-public class LandController extends PropertyController {
-
-    private final LandService landService;
-
+public class LandController {
     @Autowired
-    public LandController(@Qualifier("landServ") PropertyService propService){
-        super(propService);
-        landService = (LandService) propService;
-    }
+    private LandService landService;
+
 }

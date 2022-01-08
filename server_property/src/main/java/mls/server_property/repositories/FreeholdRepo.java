@@ -1,14 +1,15 @@
 package mls.server_property.repositories;
 
 import mls.server_property.domain.Freehold;
-import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@NoRepositoryBean
-public interface FreeholdRepo<T extends Freehold> extends ResidentialRepo<T>{
-    Optional<List<T>> findFreeholdByType(String type);
-    Optional<List<T>> findFreeholdByMultiGenerationType(boolean isMultigeneration);
-    Optional<List<T>> findFreeholdByNumberOfFloors(int numberOfFloors);
+@Repository
+public interface FreeholdRepo extends JpaRepository<Freehold, Long> {
+    Optional<List<Freehold>> findFreeholdByType(String type);
+    Optional<List<Freehold>> findFreeholdByIsMultigeneration(boolean isMultigeneration);
+    Optional<List<Freehold>> findFreeholdByNumberOfFloors(int numberOfFloors);
 }
