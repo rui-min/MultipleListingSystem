@@ -2,20 +2,19 @@ package mls.server_property.services;
 
 import mls.server_property.domain.Freehold;
 import mls.server_property.repositories.FreeholdRepo;
+import mls.server_property.repositories.PropertyRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public abstract class FreeholdService<T extends Freehold> extends PropertyService {
-    private FreeholdRepo<T> freeHoldRepo;
+public class FreeholdService {
+    @Autowired
+    private  FreeholdRepo freeHoldRepo;
 
-    public FreeholdService(FreeholdRepo repo) {
-        super(repo);
-        this.freeHoldRepo = repo;
-    }
-
-    public List<T> findFreeholds() {
+    public List<Freehold> findAllFreeholds() {
        return freeHoldRepo.findAll();
     }
+    public 
 
 
 

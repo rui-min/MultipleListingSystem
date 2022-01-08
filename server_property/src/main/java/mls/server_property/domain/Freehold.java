@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.sql.Date;
-
-@MappedSuperclass
+@Entity
+@DiscriminatorColumn(name="f_type")
+@Table(name="freehold")
+@DiscriminatorValue("f")
 public abstract class Freehold extends Residential {
     @Column(name = "family_type")
     private String type;

@@ -2,7 +2,7 @@ package mls.server_property.services;
 
 import mls.server_property.domain.Property;
 import mls.server_property.repositories.PropertyRepo;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,15 +11,14 @@ import java.util.Optional;
 
 @Service("propServ")
 public abstract class PropertyService {
+    private final PropertyRepo propRepo;
 
-    // Not final, every child service can access and have one propRepo for aliasing
-    private PropertyRepo propRepo;
-
-    // ABS can't @Autowire construct
-    // TODO: check below line
-    public PropertyService(@Qualifier("CondoRepo") PropertyRepo propRepo) {
+    @Autowired
+    protected PropertyService(PropertyRepo propRepo) {
         this.propRepo = propRepo;
     }
+
+    // Not final, every child service can access and have one propRepo for aliasing
 
     // Non-abstract, inheritable general crud methods
     public List<Property> getProperties(){ return propRepo.findAll(); }
