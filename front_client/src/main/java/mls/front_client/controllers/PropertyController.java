@@ -20,6 +20,12 @@ import java.util.Optional;
 public class PropertyController {
     @Autowired
     private LoadBalancerClient loadBalancerClient;
+    private String getProductBaseUri() {
+        ServiceInstance instance = loadBalancerClient.choose("localhost: 8090/server");
+        return instance.getUri().toString() + "/api/product/";
+    }
+
+
 
     private String getPropertyTypeUri() {
         ServiceInstance instance = loadBalancerClient.choose("server_property");

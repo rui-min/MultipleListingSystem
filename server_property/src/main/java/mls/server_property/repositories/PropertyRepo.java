@@ -8,15 +8,15 @@ import java.util.List;
 import java.util.Optional;
 
 @NoRepositoryBean
-public interface PropertyRepo<Property> extends JpaRepository<Property , Long> {
+public interface PropertyRepo<T extends Property> extends JpaRepository<T , Long> {
 
     // Duplicate queries
-//    Optional<T> findPropertyByAddress(String address);
-//
-//    Optional<T> findPropertyById(Long id);
-//
-//    // Functional queries
-//    Optional<List<T>> findPropertiesByPriceBetween(int lowerBound, int upperBound);
-//
-//    Optional<List<T>> findPropertiesByAddressContains(String partialAddress);
+    Optional<T> findPropertyByAddress(String address);
+
+    Optional<T> findPropertyById(Long id);
+
+    // Functional queries
+    Optional<List<T>> findPropertiesByPriceBetween(int lowerBound, int upperBound);
+
+    Optional<List<T>> findPropertiesByAddressContains(String partialAddress);
 }
