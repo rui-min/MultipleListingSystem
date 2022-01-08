@@ -2,8 +2,12 @@ package mls.server_property.domain;
 /**
  * Concrete class representing Recreational and vacation home (level 3)
  */
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.persistence.*;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.sql.Date;
 
 @Entity
 @Table(name="vacationhome")

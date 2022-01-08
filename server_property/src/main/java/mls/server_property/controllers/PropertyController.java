@@ -21,7 +21,7 @@ public abstract class PropertyController {
     }
 
     @GetMapping("{id}")
-    public Property getPropertyById(@PathVariable("id") Long id) {
+    public Property getPropertyById(@PathVariable("id") Long id) throws Throwable {
         return propService.getProperties(id);
     }
 
@@ -38,7 +38,7 @@ public abstract class PropertyController {
     @PutMapping("{id}")
     public void updateRecord(@PathVariable("id") Long id,
                              @RequestParam(required = false) String address,
-                             @RequestParam(required = false) int price) {
+                             @RequestParam(required = false) int price) throws Throwable {
         propService.updateProperty(id, address, price);
     }
 

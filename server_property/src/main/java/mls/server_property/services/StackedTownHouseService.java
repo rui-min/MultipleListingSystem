@@ -1,6 +1,5 @@
 package mls.server_property.services;
 
-import mls.server_property.repositories.CondoRepo;
 import mls.server_property.repositories.ResidentialRepo;
 import mls.server_property.repositories.StackedTownHouseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
