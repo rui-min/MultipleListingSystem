@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b5e529a0-0c72-42f4-a458-457d25e28632" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/controllers/LandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/controllers/LandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/controllers/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/controllers/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/CondominiumRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/CondominiumRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/FreeholdRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/FreeholdRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/PropertyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/PropertyRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/ResidentialRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/ResidentialRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/services/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/services/PropertyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="23OXbzTFunohYU9O9pnyy5NgGrU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ServerPropertyApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mls.server_property.ServerPropertyApplication" />
+      <module name="server_property" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mls.server_property.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ServerPropertyApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5e529a0-0c72-42f4-a458-457d25e28632" name="Changes" comment="" />
+      <created>1641606183548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641606183548</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mls/server_property/services/PropertyService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mls/server_property/controllers/LandController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

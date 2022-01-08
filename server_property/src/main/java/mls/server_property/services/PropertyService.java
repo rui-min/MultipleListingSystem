@@ -33,11 +33,11 @@ public abstract class PropertyService {
     }
 
     public void addNewProperty(Property property){
-        Optional<Property> propOpt = propRepo.findPropertyByAddress(property.getAddress());
-        if(propOpt.isPresent()){
-            throw new IllegalStateException("Property exists at this address");
-        }
-        propRepo.save(property);
+//        Optional<Property> propOpt = propRepo.findPropertyByAddress(property.getAddress());
+//        if(propOpt.isPresent()){
+//            throw new IllegalStateException("Property exists at this address");
+//        }
+//        propRepo.save(property);
     }
 
     public void removeProperty(Long id){

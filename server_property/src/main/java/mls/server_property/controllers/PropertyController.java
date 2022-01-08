@@ -15,7 +15,7 @@ public abstract class PropertyController {
 
     public PropertyController(@Qualifier("propServ") PropertyService propService){ this.propService = propService;}
 
-    @GetMapping
+    @GetMapping("/index")
     public List<Property> index() {
         return propService.getProperties();
     }
