@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b5e529a0-0c72-42f4-a458-457d25e28632" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/ServerPropertyApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/bookstrap/bootstrap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/controllers/CondominiumController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/controllers/LandController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/controllers/PropertyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/controllers/ResidentialController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/Condo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/Condominium.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/CooperativeHome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/DetachedHome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/FarmHouse$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/FarmHouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/Freehold.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/Land.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/MobileHome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/MultiLex$Builder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/MultiLex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/Property.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/Residential.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/SemiDetached.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/StackedTownHouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/TownHouse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/TripleDeckers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/domain/VacationHome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/CondoRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/CondominiumRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/CooperativeHomeRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/FreeholdRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/LandRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/MobileHomeRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/PropertyRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/ResidentialRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/StackedTownHouseRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/TripleDeckersRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/repositories/VacationHomeRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/services/CondoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/services/CondominiumService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/services/FreeholdService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/services/LandService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/services/PropertyService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/services/ResidentialService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/services/StackedTownHouseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mls/server_property/services/TripleDeckersService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/mls/server_property/ServerPropertyApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="23OXbzTFunohYU9O9pnyy5NgGrU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../MultipleListingSystem/server_property" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ServerPropertyApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mls.server_property.ServerPropertyApplication" />
+      <module name="server_property" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mls.server_property.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ServerPropertyApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5e529a0-0c72-42f4-a458-457d25e28632" name="Changes" comment="" />
+      <created>1641606183548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641606183548</updated>
+    </task>
+    <servers />
+  </component>
+</project>
