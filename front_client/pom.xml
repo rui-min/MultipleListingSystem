@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>mls</groupId>
-	<artifactId>server_property</artifactId>
+	<artifactId>front_client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>server_property</name>
-	<description>sub_server</description>
+	<name>front_client</name>
+	<description>sub_front</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
