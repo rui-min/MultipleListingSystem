@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5e529a0-0c72-42f4-a458-457d25e28632" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/controllers/LandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/controllers/LandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/controllers/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/controllers/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/CondominiumRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/CondominiumRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/FreeholdRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/FreeholdRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/PropertyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/PropertyRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/ResidentialRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/repositories/ResidentialRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mls/server_property/services/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mls/server_property/services/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
