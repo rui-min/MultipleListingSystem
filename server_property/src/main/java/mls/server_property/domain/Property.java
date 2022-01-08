@@ -37,6 +37,7 @@ public abstract class Property {
         return address;
     }
 
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -52,6 +53,7 @@ public abstract class Property {
     public String getBuildingType() {
         return this.getClass().getSimpleName();
     }
+
 
     @Override
     public boolean equals(Object o) {

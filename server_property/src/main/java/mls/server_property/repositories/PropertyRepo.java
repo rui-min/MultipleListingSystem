@@ -19,6 +19,4 @@ public interface PropertyRepo<T extends Property> extends JpaRepository<Property
     Optional<List<T>> findPropertiesByPriceBetween(int lowerBound, int upperBound);
 
     Optional<List<T>> findPropertiesByAddressContains(String partialAddress);
-
-
 }

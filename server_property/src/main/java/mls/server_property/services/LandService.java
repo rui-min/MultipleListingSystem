@@ -14,9 +14,10 @@ public class LandService extends  PropertyService{
     // Constructor injection & Alias cast
     // In case of multiple inheritance,specify Qualifier("xxxRepo") the same as @Repository("xxxRepo")
     @Autowired
-    public LandService(@Qualifier("landRepo") LandRepo propertyRepo) {
+
+    public LandService(@Qualifier("landRepo") PropertyRepo propertyRepo) {
         super(propertyRepo);
-        this.landRepo = propertyRepo;
+        this.landRepo = (LandRepo) propertyRepo;
     }
 
 

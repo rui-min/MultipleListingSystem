@@ -1,5 +1,4 @@
 package mls.server_property.domain;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -23,7 +22,6 @@ public class CooperativeHome extends Residential {
     }
 
     protected CooperativeHome() { }
-
     /**
      * Getter for ownership type
      * @return ownership type

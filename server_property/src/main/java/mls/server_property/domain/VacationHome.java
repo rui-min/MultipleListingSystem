@@ -4,8 +4,6 @@ package mls.server_property.domain;
  */
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
-import java.sql.Date;
-
 
 @Entity
 @Table(name="vacationhome")
