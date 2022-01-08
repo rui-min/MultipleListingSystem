@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public abstract class PropertyController {
+public class PropertyController {
     // All sub controller can extend this controller for basic crud service calls
 
     private PropertyService propService;

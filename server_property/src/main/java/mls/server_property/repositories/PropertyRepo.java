@@ -3,20 +3,21 @@ package mls.server_property.repositories;
 import mls.server_property.domain.Property;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@NoRepositoryBean
-public interface PropertyRepo<T extends Property> extends JpaRepository<T , Long> {
+@Repository
+public interface PropertyRepo extends JpaRepository<Property, Long> {
 
     // Duplicate queries
-    Optional<T> findPropertyByAddress(String address);
+    Optional<Property> findPropertyByAddress(String address);
 
-    Optional<T> findPropertyById(Long id);
+    Optional<Property> findPropertyById(Long id);
 
     // Functional queries
-    Optional<List<T>> findPropertiesByPriceBetween(int lowerBound, int upperBound);
+    Optional<List<Property>> findPropertiesByPriceBetween(int lowerBound, int upperBound);
 
-    Optional<List<T>> findPropertiesByAddressContains(String partialAddress);
+    Optional<List<Property>> findPropertiesByAddressContains(String partialAddress);
 }

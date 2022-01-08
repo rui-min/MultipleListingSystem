@@ -9,10 +9,10 @@ import java.time.LocalDate;
 
 import static java.time.temporal.ChronoUnit.YEARS;
 
-/**
- * Abstract class representing Residential Property (level 2)
- */
-@MappedSuperclass
+@Entity
+@DiscriminatorColumn(name="r_type")
+@DiscriminatorValue("r")
+@Table(name="residential")
 public abstract class Residential extends Property {
     /**
      * The reference price used to decide whether a home is high value.
