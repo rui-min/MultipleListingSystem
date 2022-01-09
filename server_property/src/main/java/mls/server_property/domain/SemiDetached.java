@@ -181,7 +181,7 @@ public class SemiDetached extends Freehold {
         /**
          * Specify how many units are there in the MultiLex object the builder is going to build.
          *
-         * @param n number of units in the MultiLex.
+         * @param n number of units in the SemiDetached.
          */
         public SemiDetached.Builder withUnits(int n) {
             this.nOfUnits = n;
