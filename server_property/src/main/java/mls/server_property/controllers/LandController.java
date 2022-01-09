@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/property/land") // Put url prefix as concrete class inheritance form
+@RequestMapping("api/property/Land") // Put url prefix as concrete class inheritance form
 public class LandController extends PropertyController {
 
     private final LandService landService;
