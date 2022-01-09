@@ -1,33 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@lydiaxchen 
-lydiaxchen
-/
-MultipleListingSystem
-Public
-forked from rui-min/MultipleListingSystem
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-MultipleListingSystem/server_property/src/main/java/mls/server_property/domain/DetachedHome.java /
-@lydiaxchen
-lydiaxchen add DetachedHome generator and builder
-Latest commit de802a4 now
- History
- 2 contributors
-@rui-min@lydiaxchen
-213 lines (181 sloc)  6.79 KB
-   
 package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -36,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
- * Concrete class representing DetachedHome (level 4)
+ * Concrete class representing Detached Home (level 4)
  */
 
 
@@ -72,9 +42,9 @@ import java.time.LocalDate;
         /**
          * Construct a new VacationHome given its id, address and price.
          *
-         * @param uuid    the unique id of the new VacationHome.
-         * @param address the address of the new VacationHome.
-         * @param price   the price of the new VacationHome.
+         * @param uuid    the unique id of the new DetachedHome.
+         * @param address the address of the new DetachedHome.
+         * @param price   the price of the new DetachedHome.
          */
         public DetachedHome(Long uuid, String address, int price) {
             super(address, price);
@@ -215,9 +185,9 @@ import java.time.LocalDate;
             }
 
             /**
-             * Specify how many units are there in the DetachedHome object the builder is going to build.
+             * Specify how many units are there in the MultiLex object the builder is going to build.
              *
-             * @param n number of units in the MultiLex.
+             * @param n number of units in the DetachedHome.
              */
             public mls.server_property.domain.DetachedHome.Builder withUnits(int n) {
                 this.nOfUnits = n;
@@ -227,7 +197,7 @@ import java.time.LocalDate;
             /**
              * Finalize the construction of a DetachedHome.
              *
-             * @return DetachedHome using the previously collected information
+             * @return MultiLex using the previously collected information
              * provided to the Builder object.
              */
             public mls.server_property.domain.DetachedHome build() {
