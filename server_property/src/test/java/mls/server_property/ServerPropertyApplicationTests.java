@@ -29,6 +29,7 @@ class ServerPropertyApplicationTests {
       landRepo.save(l4);
       long i = vacationHomeRepo.count();
       long j = landRepo.count();
+      long k = 0;
 	}
 
 }

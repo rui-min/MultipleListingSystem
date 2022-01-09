@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Optional;
 @Repository
 public interface ResidentialRepo extends JpaRepository<Residential, Long> {
-    Optional<List<Residential>> findResidentialByNOfParkingSpace(int nOfParkingSpace);
-    Optional<List<Residential>> findResidentialByStorageType(String storageType);
-    Optional<List<Residential>> findResidentialByNOfStorages(int nOfStorages);
-    Optional<List<Residential>> findResidentialByBuiltDate(Date builtDate);
-    Optional<List<Residential>> findResidentialByEntryDate(Date entryDate);
+//    Optional<List<Residential>> findResidentialBynOfParkingSpace(int nOfParkingSpace);
+//    Optional<List<Residential>> findResidentialBystorageType(String storageType);
+//    Optional<List<Residential>> findResidentialBynOfStorages(int nOfStorages);
+//    Optional<List<Residential>> findResidentialByBuiltDate(Date builtDate);
+//    Optional<List<Residential>> findResidentialByEntryDate(Date entryDate);
 }

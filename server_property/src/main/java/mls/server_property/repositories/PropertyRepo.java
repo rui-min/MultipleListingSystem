@@ -10,14 +10,14 @@ import java.util.Optional;
 
 @Repository
 public interface PropertyRepo extends JpaRepository<Property, Long> {
-
-    // Duplicate queries
-    Optional<Property> findPropertyByAddress(String address);
-
-    Optional<Property> findPropertyById(Long id);
-
-    // Functional queries
-    Optional<List<Property>> findPropertiesByPriceBetween(int lowerBound, int upperBound);
-
-    Optional<List<Property>> findPropertiesByAddressContains(String partialAddress);
+//
+//    // Duplicate queries
+//    Optional<Property> findPropertyByAddress(String address);
+//    Optional<Property> findPropertiesByAddressAndPriceBetween(String address, int lowerBound, int upperBound);
+//    Optional<Property> findPropertyById(Long id);
+//
+//    // Functional queries
+//    Optional<List<Property>> findPropertiesByPriceBetween(int lowerBound, int upperBound);
+//
+//    Optional<List<Property>> findPropertiesByAddressContains(String partialAddress);
 }
