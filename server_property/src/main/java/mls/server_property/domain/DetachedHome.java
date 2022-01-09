@@ -82,7 +82,7 @@ import java.time.LocalDate;
 
         @Override
         public String toString() {
-            return "VacationHome{" +
+            return "DetachedHome{" +
                     "address='" + address + '\'' +
                     ", price=" + price +
                     '}';
