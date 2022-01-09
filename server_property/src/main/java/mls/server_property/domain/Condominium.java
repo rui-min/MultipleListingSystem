@@ -6,8 +6,10 @@ import java.sql.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+//@DiscriminatorValue("c")
+//@DiscriminatorColumn(name = "c_type")
 public abstract class Condominium extends Residential {
-    @Column(name = "unitNumber")
+    @Column(name = "unit_number")
     private int unitNumber;
 
     protected Condominium(){super();}
