@@ -10,8 +10,8 @@ import java.time.LocalDate;
 import static java.time.temporal.ChronoUnit.YEARS;
 
 @Entity
-@DiscriminatorColumn(name="r_type")
-@DiscriminatorValue("r")
+//@DiscriminatorColumn(name="r_type")
+//@DiscriminatorValue("r")
 @Table(name="residential")
 public abstract class Residential extends Property {
     /**

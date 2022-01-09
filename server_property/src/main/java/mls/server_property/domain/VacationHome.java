@@ -8,7 +8,7 @@ import java.sql.Date;
 
 @Entity
 @Table(name="vacationhome")
-@DiscriminatorValue("v")
+
 public class VacationHome extends Freehold {
 
     protected VacationHome(){

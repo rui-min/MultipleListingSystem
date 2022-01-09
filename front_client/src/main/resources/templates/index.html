@@ -14,10 +14,10 @@
     <h1>Property Search</h1>
     <hr>
     <!--    https://getbootstrap.com/docs/5.1/forms/layout/-->
-    <form class="row gx-3 gy-2 align-items-center">
+    <form class="row gx-3 gy-2 align-items-center" th:onsubmit="|submit(event)|">
         <div class="col-sm-4">
-            <label class="visually-hidden" for="specificSizeInputName">Name</label>
-            <input type="text" class="form-control" id="specificSizeInputName" placeholder="Input address">
+            <label class="visually-hidden" for="address">Name</label>
+            <input type="text" class="form-control" id="address" placeholder="Input address">
         </div>
         <div class="col-auto">
             <label class="visually-hidden" for="specificMinSelect">Min Price</label>
@@ -59,6 +59,12 @@
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
     </form>
-
+    <script>
+        function submit(){
+            var id = document.getElementById("id")).value;
+            var type = document.getElementById("type").value;
+            if(id != 0) form.attr("action", "/" + type + id);
+        }
+    </script>
 </body>
 </html>

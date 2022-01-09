@@ -5,6 +5,6 @@ import mls.server_property.domain.Land;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository("landRepo")
+@Repository
 public interface LandRepo extends JpaRepository<Land, Long> {
 }

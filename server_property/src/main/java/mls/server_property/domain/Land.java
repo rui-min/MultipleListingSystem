@@ -7,9 +7,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-/**
- * Concrete class representing listed vacant land (level 2)
- */
 @Entity
 @Table(name = "land")
 public class Land extends Property {

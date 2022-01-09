@@ -14,7 +14,7 @@ public class FreeholdService {
     public List<Freehold> findAllFreeholds() {
        return freeHoldRepo.findAll();
     }
-    public 
+    
 
 
 
