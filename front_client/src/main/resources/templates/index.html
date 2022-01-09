@@ -14,18 +14,18 @@
     <h1>Property Search</h1>
     <hr>
     <!--    https://getbootstrap.com/docs/5.1/forms/layout/-->
-    <form class="row gx-3 gy-2 align-items-center">
+    <form th:action="@{/formdto}" th:object="${formdto}" method="post" class="row gx-3 gy-2 align-items-center">
         <div class="col-sm-4">
-            <label class="visually-hidden" for="specificSizeInputName">Name</label>
-            <input type="text" class="form-control" id="specificSizeInputName" placeholder="Input address">
+            <label class="visually-hidden" for="address">Address</label>
+            <input th:value="${address}" type="text" class="form-control" id="address" name="address" placeholder="Input address">
         </div>
         <div class="col-auto">
-            <label class="visually-hidden" for="specificMinSelect">Min Price</label>
-            <input type="text" class="form-control" id="specificMinSelect" placeholder="$ Min">
+            <label class="visually-hidden" for="min_price">Min Price</label>
+            <input th:value="${minPrice}" type="number" min="0" class="form-control" id="min_price" name="min_price" placeholder="$ Min">
         </div>
 <!--        <div class="col-auto">-->
-<!--            <label class="visually-hidden" for="specificMinSelect">Min Price</label>-->
-<!--            <select class="form-select" id="specificMinSelect">-->
+<!--            <label class="visually-hidden" for="min_price">Min Price</label>-->
+<!--            <select class="form-select" id="min_price">-->
 <!--                <option selected>Min price...</option>-->
 <!--                <option value="1">One</option>-->
 <!--                <option value="2">Two</option>-->
@@ -33,12 +33,12 @@
 <!--            </select>-->
 <!--        </div>-->
         <div class="col-auto">
-            <label class="visually-hidden" for="specificMaxSelect">Max Price</label>
-            <input type="text" class="form-control" id="specificMaxSelect" placeholder="$ Max">
+            <label class="visually-hidden" for="max_price">Max Price</label>
+            <input th:value="${maxPrice}" type="number" class="form-control" id="max_price" name="max_price" placeholder="$ Max">
         </div>
 <!--        <div class="col-auto">-->
-<!--            <label class="visually-hidden" for="specificMaxSelect">Max Price</label>-->
-<!--            <select class="form-select" id="specificMaxSelect">-->
+<!--            <label class="visually-hidden" for="max_price">Max Price</label>-->
+<!--            <select class="form-select" id="max_price">-->
 <!--                <option selected>Max price...</option>-->
 <!--                <option value="1">One</option>-->
 <!--                <option value="2">Two</option>-->
@@ -46,17 +46,18 @@
 <!--            </select>-->
 <!--        </div>-->
         <div class="col-auto">
-            <label class="visually-hidden" for="specificTypeSelect">Type</label>
-            <select class="form-select" id="specificTypeSelect">
-                <option selected>Choose Type...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <label class="visually-hidden" for="type">Type</label>
+            <select th:value="${propertyType}" class="form-select" id="type" name="type">
+                <option disabled>Choose Type...</option>
+                <option th:each="type:${T(mls.front_client.dto.AllTypes).values()}"
+                        th:value="${type}"
+                        th:text="${type}">Property
+                </option>
             </select>
         </div>
 
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" value="submit" class="btn btn-primary">Search</button>
         </div>
     </form>
 
