@@ -34,6 +34,9 @@ public abstract class Freehold extends Residential {
         this.numberOfFloors = numberOfFloors;
         this.isMultigeneration = isMultigeneration;
     }
+
+    public Freehold(String address, int price) {
+    }
 //    public Freehold( @JsonProperty("id")Long id,
 //                     @JsonProperty("address") String address,
 //                     @JsonProperty("price") int price) {
