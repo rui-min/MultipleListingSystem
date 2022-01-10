@@ -10,7 +10,8 @@ import java.util.Optional;
 
 @Repository
 public interface FreeholdRepo<T extends Freehold> extends PropertyRepo<T> {
-    Optional<List<T>> findBytype(String type);
-    Optional<List<T>> findByisMultigenerationTrue();
-    Optional<List<T>> findBynumberOfFloors(int numberOfFloors);
+    Optional<List<T>> findByType(String type);
+    Optional<List<T>> findByIsMultigenerationTrue();
+    Optional<List<T>> findByIsMultigenerationFalse();
+    Optional<List<T>> findByNumberOfFloors(int numberOfFloors);
 }
