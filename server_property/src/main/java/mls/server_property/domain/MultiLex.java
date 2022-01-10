@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "multilex")
+//@Table(name = "multilex")
 public class MultiLex extends Freehold {
 
     private int nOfUnits;

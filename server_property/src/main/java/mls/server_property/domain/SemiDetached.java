@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "semidetached")
+//@Table(name = "semidetached")
 public class SemiDetached extends Freehold {
 //todo constructor
 }

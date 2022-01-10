@@ -10,7 +10,7 @@ import java.sql.Date;
  * Concrete class representing Building: Triple Deckers (level 4)
  */
 @Entity
-@Table(name = "TripleDeckers")
+//@Table(name = "TripleDeckers")
 public class TripleDeckers extends Condominium{
 
         @JsonCreator

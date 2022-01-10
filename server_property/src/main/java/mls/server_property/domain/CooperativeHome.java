@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.sql.Date;
 
 @Entity
-@Table(name = "cooperativehome")
+//@Table(name = "cooperativehome")
 public class CooperativeHome extends Residential {
 
     @JsonCreator
