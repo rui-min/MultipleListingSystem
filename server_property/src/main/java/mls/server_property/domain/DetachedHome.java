@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "detachedhome")
+//@Table(name = "detachedhome")
 public class DetachedHome extends Freehold {
 
 //    public DetachedHome(Long uuid, String address, int price) {

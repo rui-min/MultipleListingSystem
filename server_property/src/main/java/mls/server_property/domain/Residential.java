@@ -12,7 +12,7 @@ import static java.time.temporal.ChronoUnit.YEARS;
 @Entity
 //@DiscriminatorColumn(name="r_type")
 //@DiscriminatorValue("r")
-@Table(name="residential")
+//@Table(name="residential")
 public abstract class Residential extends Property {
     /**
      * The reference price used to decide whether a home is high value.

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "farmhouse")
+//@Table(name = "farmhouse")
 public class FarmHouse extends Freehold {
 //    public FarmHouse(Long uuid, String address, int price) {
 //        super(address, price);

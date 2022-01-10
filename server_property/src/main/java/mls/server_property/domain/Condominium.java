@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.JOINED)
 //@DiscriminatorValue("c")
 //@DiscriminatorColumn(name = "c_type")
 public abstract class Condominium extends Residential {

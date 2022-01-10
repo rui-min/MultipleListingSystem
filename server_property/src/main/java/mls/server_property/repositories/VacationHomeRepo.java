@@ -5,5 +5,5 @@ import mls.server_property.domain.VacationHome;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository
-public interface VacationHomeRepo extends JpaRepository<VacationHome, Long> {
+public interface VacationHomeRepo extends FreeholdRepo<VacationHome> {
 }
