@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.util.Objects;
 @Entity
-//@Inheritance(strategy = InheritanceType.JOINED)
-//@DiscriminatorColumn(name="p_type")
+@DiscriminatorColumn(name="p_type")
 @Table(name="property")
+@DiscriminatorValue("property")
 public abstract class Property {
 
     @Id
@@ -22,7 +22,8 @@ public abstract class Property {
     @Column(name="price")
     private int price;
 
-//    private String dtype;
+    @Column(name="p_type", insertable = false, updatable = false)
+    private String ptype;
 
     @JsonCreator
     public Property(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
