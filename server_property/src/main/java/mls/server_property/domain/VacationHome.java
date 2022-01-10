@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name="vacationhome")
+//@Table(name="vacationhome")
 
 public class VacationHome extends Freehold {
 

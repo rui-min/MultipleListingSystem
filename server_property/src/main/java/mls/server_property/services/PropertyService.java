@@ -1,5 +1,6 @@
 //package mls.server_property.services;
 //
+//import mls.server_property.domain.Freehold;
 //import mls.server_property.domain.Property;
 //import mls.server_property.repositories.PropertyRepo;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +10,12 @@
 //import java.util.List;
 //import java.util.Optional;
 //
-//@Service("propServ")
+//@Service
 //public class PropertyService {
-//    @Autowired
-//    private PropertyRepo propRepo;
+//    @Autowired private PropertyRepo<Property> propRepo;
+//    @Autowired private PropertyRepo<Freehold> freeholdPropertyRepo;
+////    @Autowired
 //
-//    // Not final, every child service can access and have one propRepo for aliasing
-//
-//    // Non-abstract, inheritable general crud methods
 //    public List<Property> getProperties(){ return propRepo.findAll(); }
 //
 //    public Property getProperties(Long id) throws Throwable {
@@ -28,7 +27,7 @@
 //    }
 //
 //    public void addNewProperty(Property property){
-//        Optional<Property> propOpt = propRepo.findPropertyByAddress(property.getAddress());
+//        Optional<Property> propOpt = propRepo.findByAddress(property.getAddress());
 //        if(propOpt.isPresent()){
 //            throw new IllegalStateException("Property exists at this address");
 //        }

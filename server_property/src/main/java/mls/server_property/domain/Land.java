@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "land")
+//@Table(name = "land")
 public class Land extends Property {
 
     /**

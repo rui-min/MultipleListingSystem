@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "townhouse")
+//@Table(name = "townhouse")
 public class TownHouse extends Freehold {
 //todo constructor
 

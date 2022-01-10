@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.sql.Date;
 @Entity
 //@DiscriminatorColumn(name="f_type")
-@Table(name="freehold")
+//@Table(name="freehold")
 //@DiscriminatorValue("f")
 public abstract class Freehold extends Residential {
     @Column(name = "family_type")

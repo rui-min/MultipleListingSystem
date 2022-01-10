@@ -11,7 +11,7 @@ import java.sql.Date;
  * Concrete class representing Building: Condo (level 4)
  */
 @Entity
-@Table(name = "condo")
+//@Table(name = "condo")
 public class Condo extends Condominium {
 
     @JsonCreator

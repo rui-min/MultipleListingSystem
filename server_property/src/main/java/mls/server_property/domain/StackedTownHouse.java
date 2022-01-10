@@ -11,7 +11,7 @@ import java.sql.Date;
  * Concrete class representing Building: Stacked Townhouse (level 4)
  */
 @Entity
-@Table(name = "stackedtownhouse")
+//@Table(name = "stackedtownhouse")
 public class StackedTownHouse extends Condominium {
 
     @JsonCreator

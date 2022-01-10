@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "MobileHome")
+//@Table(name = "MobileHome")
 public class MobileHome extends Residential {
     @Column(name = "ownership")
     private String ownership;
