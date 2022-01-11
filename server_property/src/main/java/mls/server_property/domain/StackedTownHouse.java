@@ -2,16 +2,25 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.sql.Date;
 
 /**
  * Concrete class representing Building: Stacked Townhouse (level 4)
  */
 @Entity
-@Table(name = "stackedtownhouse")
+//@Table(name = "stackedtownhouse")
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@SuperBuilder
+@Data
+@DiscriminatorValue("Property_Residential_Condominium_StackedTownHouse")
 public class StackedTownHouse extends Condominium {
 
     @JsonCreator
@@ -22,5 +31,4 @@ public class StackedTownHouse extends Condominium {
         super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate,unitNumber);
     }
 
-    public StackedTownHouse() {}
 }

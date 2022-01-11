@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
-public interface VacationHomeRepo extends FreeholdRepo {
+@Repository("vacationHomeRepo")
+public interface VacationHomeRepo extends FreeholdRepo<VacationHome> {
 
 }

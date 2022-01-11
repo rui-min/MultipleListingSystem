@@ -5,14 +5,15 @@ import mls.server_property.domain.Residential;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import java.sql.Date;
+import java.util.List;
 import java.util.Optional;
 
 @NoRepositoryBean
-public interface ResidentialRepo extends PropertyRepo{
+public interface ResidentialRepo<T extends Residential> extends PropertyRepo<T>{
     // Duplicate queries
-    Optional<Residential> findResidentialByNOfParkingSpace(int nOfParkingSpace);
-    Optional<Residential> findResidentialByStorageType(String storageType);
-    Optional<Residential> findResidentialByNOfStorages(int nOfStorages);
-    Optional<Residential> findResidentialByBuiltDate(Date builtDate);
-    Optional<Residential> findResidentialByEntryDate(Date entryDate);
+    Optional<List<T>> findResidentialByNOfParkingSpace(int nOfParkingSpace);
+    Optional<List<T>> findResidentialByStorageType(String storageType);
+    Optional<List<T>> findResidentialByNOfStorages(int nOfStorages);
+    Optional<List<T>> findResidentialByBuiltDate(Date builtDate);
+    Optional<List<T>> findResidentialByEntryDate(Date entryDate);
 }

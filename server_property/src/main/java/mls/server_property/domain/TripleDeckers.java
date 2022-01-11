@@ -3,16 +3,25 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.sql.Date;
 
 /**
  * Concrete class representing Building: Triple Deckers (level 4)
  */
 @Entity
-@Table(name = "TripleDeckers")
+//@Table(name = "TripleDeckers")
+@DiscriminatorValue("Property_Residential_Condominium_TripleDeckers")
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@SuperBuilder
+@Data
 public class TripleDeckers extends Condominium{
 
         @JsonCreator
@@ -22,9 +31,5 @@ public class TripleDeckers extends Condominium{
                      @JsonProperty("build_date") Date builtDate, @JsonProperty("unit_No") int unitNumber) {
             super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate,unitNumber);
         }
-
-        public TripleDeckers() {}
-
-
 
 }

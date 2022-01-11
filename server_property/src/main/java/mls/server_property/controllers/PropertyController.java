@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public abstract class PropertyController {
+@RequestMapping(path = "api/property")
+public class PropertyController<T extends Property> {
     // All sub controller can extend this controller for basic crud service calls
 
-    private PropertyService propService;
+    private PropertyService<T> propService;
 
     public PropertyController(@Qualifier("propServ") PropertyService propService){ this.propService = propService;}
 
     @GetMapping
-    public List<Property> index() {
+    public List<T> index() {
         return propService.getProperties();
     }
 
@@ -26,7 +27,7 @@ public abstract class PropertyController {
     }
 
     @GetMapping()
-    public List<Property> getPropertiesById(@RequestParam List<Long> ids){
+    public List<T> getPropertiesById(@RequestParam List<Long> ids){
         return propService.getProperties(ids);
     }
 
@@ -43,7 +44,7 @@ public abstract class PropertyController {
     }
 
     @PostMapping("/post-record")
-    public void registerNewRecord(@RequestBody Property property) {
+    public void registerNewRecord(@RequestBody T property) {
         propService.addNewProperty(property);
     }
 }

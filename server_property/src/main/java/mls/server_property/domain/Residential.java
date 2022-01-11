@@ -2,8 +2,14 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -13,6 +19,11 @@ import static java.time.temporal.ChronoUnit.YEARS;
  * Abstract class representing Residential Property (level 2)
  */
 @MappedSuperclass
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@SuperBuilder
 public abstract class Residential extends Property {
     /**
      * The reference price used to decide whether a home is high value.
@@ -29,8 +40,6 @@ public abstract class Residential extends Property {
     private   Date   builtDate = Date.valueOf("1900-1-1");
     @Column(name="entry_date")
     private   Date   entryDate; // the day on which the object is entered in the system
-
-    protected Residential(){super();}       // empty constructor a must
 
     /**
       * Full args constructor to be called in the subclass constructor.
@@ -91,87 +100,9 @@ public abstract class Residential extends Property {
     }
 
     /**
-     * Get the built date of a Residential Property
-     * @return built date of the residential property
-     */
-    public Date getBuiltDate() {
-        return this.builtDate;
-    }
-
-    /**
-     * Methods from the ParkingSpace interface. Get number of parking spaces.
-     * @return number of parking spaces
-     */
-    public int howManyParkingSpace(){
-        return this.nOfParkingSpace;
-    }
-
-    /**
-     * Set number of parking spaces.
-     * @param howMany number of parking spaces
-     */
-    public void setParkingSpace(int howMany) {
-        this.nOfParkingSpace = howMany;
-    }
-
-    /**
-     * Get the number of storages attached to this home.
-     * @return number of storages of the calling Residential object.
-     */
-    public int howManyStorage(){
-        return this.nOfStorages;
-    }
-
-    /**
-     * Set the storage type and amounts.
-     * @param type tyoe of the storages, e.g. Locker, Garage, Basement, etc.
-     * @param howMany how many storages are there in this home.
-     */
-    public void setStorage(String type, int howMany){
-        this.nOfStorages = howMany;
-        this.storageType = type;
-    }
-
-    /**
-     * Get the storage type of the home.
-     * @return a string indicating the type of storage.
-     */
-    public String getStorageType(){
-        return this.storageType;
-    }
-
-    /**
      * Abstract method to be completed in subclass to return ownership type as a string
      * @return the type of ownership as a string
      */
     public abstract String getOwnership();
-
-
-
-    /**
-     * Return the string representation of the calling object.
-     * @return a String representation
-     */
-    @Override
-    public String toString(){
-        return String.format("%s, " +
-                        "ownership=%s, " +
-                        "builtDate=%s, " +
-                        "storageType=%s, " +
-                        "numberOfStorage=%d, " +
-                        "numberOfParkingSpace=%d, " +
-                        "isNewConstruction=%s, " +
-                        "isHighValue=%s",
-                super.toString(),
-                this.getOwnership(),
-                this.builtDate != Date.valueOf("1900-1-1")? this.builtDate : "Unknown",
-                this.storageType,
-                this.nOfStorages,
-                this.nOfParkingSpace,
-                this.isNew(),
-                this.isHighValue()
-            );
-    }
-
 
 }

@@ -3,15 +3,20 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 /**
  * Concrete class representing listed vacant land (level 2)
  */
-@Entity
-@Table(name = "land")
+@Entity(name = "land")
+//@Table(name = "land")
+@DiscriminatorValue("Property_Land")
+@NoArgsConstructor
+@SuperBuilder
 public class Land extends Property {
 
     /**
@@ -25,17 +30,5 @@ public class Land extends Property {
                 @JsonProperty("address")String address,
                 @JsonProperty("price")int price) {
         super(id, address, price);
-    }
-
-    public Land() {}
-
-    @Override
-    public String toString() {
-        return "Land{" +
-                "id=" + getId() +
-                ", address='" + getAddress() + '\'' +
-                ", price=" + getPrice() +
-                ", buildingType='" + getBuildingType() + '\'' +
-                '}';
     }
 }

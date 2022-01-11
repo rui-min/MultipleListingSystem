@@ -3,13 +3,17 @@ package mls.server_property.domain;
 // constuctors, uuid, JPA annotations
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Objects;
 
 @MappedSuperclass
+@Data
+@SuperBuilder
 public abstract class Condominium extends Residential {
-    @Column(name = "unitNumber")
+    @Column
     private int unitNumber;
 
     protected Condominium(){super();}
@@ -32,21 +36,6 @@ public abstract class Condominium extends Residential {
         return "Condominium";
     }
 
-    /**
-     * Get unit number of the condominium type property
-     * @return unit number of condominium type property
-     */
-    public int getUnitNumber() {
-        return unitNumber;
-    }
-
-    /**
-     * Set unit number of the condominium type property
-     * @param unitNumber unit number of condominium type property
-     */
-    public void setUnitNumber(int unitNumber) {
-        this.unitNumber = unitNumber;
-    }
 
 
     /**

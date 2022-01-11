@@ -2,16 +2,26 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
 import java.sql.Date;
 
 @Entity
-@Table(name = "MobileHome")
+//@Table(name = "MobileHome")
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@SuperBuilder
+@Data
+@DiscriminatorValue("Property_Residential_MobileHome")
 public class MobileHome extends Residential {
-    @Column(name = "ownership")
+    @Column
     private String ownership;
-    public MobileHome() {super();}
 
 
     /**
@@ -29,15 +39,6 @@ public class MobileHome extends Residential {
     }
 
 
-
-    /**
-     * Setter for ownership type
-     * @param ownership ownership type
-     */
-    public void setOwnership(String ownership){
-        this.ownership = ownership;
-    }
-
     /**
      * Getter for ownership type
      * @return ownership type
@@ -47,10 +48,10 @@ public class MobileHome extends Residential {
         return this.ownership;
     }
 
-    @Override
-    public String toString() {
-        return "MobileHome{" +
-                super.toString()+ '\'' +
-                "} " + "ownership='" + ownership;
-    }
+//    @Override
+//    public String toString() {
+//        return "MobileHome{" +
+//                super.toString()+ '\'' +
+//                "} " + "ownership='" + ownership;
+//    }
 }

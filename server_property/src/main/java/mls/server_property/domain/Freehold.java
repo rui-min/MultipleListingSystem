@@ -1,68 +1,47 @@
 package mls.server_property.domain;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
+@SuperBuilder
+@Getter
+@Setter
+@ToString
 public abstract class Freehold extends Residential {
-    @Column(name = "family_type")
+    @Column
     private String type;
 
-    @Column(name = "floors")
+    @Column
     private int numberOfFloors;
 
-    @Column(name = " is_multi_gen")
+    @Column
     private boolean isMultigeneration;
 
     protected Freehold(){super();}
 
-    @JsonCreator
-    public Freehold( @JsonProperty("id")Long id,
-                     @JsonProperty("address") String address,
-                     @JsonProperty("price") int price) {
-        super(id, address, price);
-        this.type = null;
-        this.numberOfFloors = 0;
-        this.isMultigeneration = false;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public int getNumberOfFloors() {
-        return numberOfFloors;
-    }
+//    @JsonCreator
+//    public Freehold( @JsonProperty("id")Long id,
+//                     @JsonProperty("address") String address,
+//                     @JsonProperty("price") int price) {
+//        super(id, address, price);
+//        this.type = null;
+//        this.numberOfFloors = 0;
+//        this.isMultigeneration = false;
+//    }
 
     @Override
     public String getOwnership() {
         return "Freehold";
     }
 
-    public void setNumberOfFloors(int numberOfFloors) {
-        this.numberOfFloors = numberOfFloors;
-    }
-
     public boolean isMultigeneration() {
         return this.isMultigeneration;
     }
 
-    public void setMultigeneration(boolean isMultigeneration){
-        this.isMultigeneration = isMultigeneration;
-    }
-
-    @Override
-    public String toString() {
-        return
-                super.toString() +
-                ", type=" + type +
-                ", numberOfFloors=" + this.numberOfFloors +
-                ", isMultigeneration=" + this.isMultigeneration
-                ;
-    }
 }

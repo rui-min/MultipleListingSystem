@@ -2,19 +2,30 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.Objects;
 
-@MappedSuperclass
-public abstract class Property {
+//@MappedSuperclass
+@Entity(name = "property")
+@Table(name = "realproperty")
+@Inheritance
+@DiscriminatorColumn(name = "property_type", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("Property")
+@Data
+@SuperBuilder
+@NoArgsConstructor
+public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="id", updatable = false)
     private Long id;
 
-    @Column(name="address")
+    @Column(name="address", nullable = false, unique = true)
     private String address;
 
     @Column(name="price")
@@ -24,48 +35,6 @@ public abstract class Property {
     public Property(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
         this.id = id;
         this.address = address;
-        this.price = price;
-    }
-
-    protected Property() {}
-
-    /**
-     * Get the id of the property
-     * @return id of the property
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * Get the address of the property
-     * @return address of the property
-     */
-    public String getAddress() {
-        return address;
-    }
-
-    /**
-     * Set the address of the property
-     * @param address address of the property
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    /**
-     * Get the price of the property
-     * @return price of the property
-     */
-    public int getPrice() {
-        return price;
-    }
-
-    /**
-     * Set the price of the property
-     * @param price price of the property
-     */
-    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -89,21 +58,6 @@ public abstract class Property {
         if (o == null || getClass() != o.getClass()) return false;
         Property other = (Property) o;
         return this.address.equals(other.address);
-    }
-
-    /**
-     * Override Object class's toString() method. Create a string representation of this Property
-     *
-     * @return the string representation of this Property
-     */
-    @Override
-    public String toString() {
-        return "Property{" +
-                "id=" + id +
-                ", address='" + address + '\'' +
-                ", price=" + price +
-                ", buildingType='" + getBuildingType() + '\'' +
-                '}';
     }
 
     @Override

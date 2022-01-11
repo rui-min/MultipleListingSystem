@@ -9,29 +9,29 @@ import java.util.List;
 import java.util.Optional;
 
 @Service("propServ")
-public abstract class PropertyService {
+public abstract class PropertyService<T extends Property> {
 
     // Not final, every child service can access and have one propRepo for aliasing
-    private PropertyRepo propRepo;
+    private PropertyRepo<T> propRepo;
 
     // ABS can't @Autowire construct
-    public PropertyService(PropertyRepo propRepo) {
+    public PropertyService( PropertyRepo propRepo) {
         this.propRepo = propRepo;
     }
 
     // Non-abstract, inheritable general crud methods
-    public List<Property> getProperties(){ return propRepo.findAll(); }
+    public List<T> getProperties(){ return propRepo.findAll(); }
 
-    public Property getProperties(Long id){
+    public T getProperties(Long id){
         return propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
             String.format("No property with id %d exists", id))); }
 
-    public List<Property> getProperties(List<Long> ids){
+    public List<T> getProperties(List<Long> ids){
         return propRepo.findAllById(ids);
     }
 
-    public void addNewProperty(Property property){
-        Optional<Property> propOpt = propRepo.findPropertyByAddress(property.getAddress());
+    public void addNewProperty(T property){
+        Optional<T> propOpt = propRepo.findPropertyByAddress(property.getAddress());
         if(propOpt.isPresent()){
             throw new IllegalStateException("Property exists at this address");
         }

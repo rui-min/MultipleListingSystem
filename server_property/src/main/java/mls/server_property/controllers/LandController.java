@@ -14,8 +14,8 @@ public class LandController extends PropertyController {
     private final LandService landService;
 
     @Autowired
-    public LandController(@Qualifier("landServ") PropertyService propService){
+    public LandController(LandService propService){
         super(propService);
-        landService = (LandService) propService;
+        landService = propService;
     }
 }
