@@ -46,7 +46,9 @@ public abstract class Residential extends Property {
         this.nOfParkingSpace = nOfParkingSpace;
         this.storageType = storageType;
         this.nOfStorages = nOfStorages;
-        this.builtDate = builtDate;
+        if (builtDate!=null) {
+            this.builtDate = builtDate;
+        }
         this.entryDate= Date.valueOf(LocalDate.now());
     }
 

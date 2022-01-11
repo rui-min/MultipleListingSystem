@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface ResidentialRepo<T extends Residential> extends PropertyRepo<T> {
     Optional<List<T>> findByNofParkingSpace(int nOfParkingSpace);
     Optional<List<T>> findByStorageType(String storageType);
-    Optional<List<T>> findBynOfStorages(int nOfStorages);
+    Optional<List<T>> findByNofStorages(int nOfStorages);
     Optional<List<T>> findByBuiltDate(Date builtDate);
     Optional<List<T>> findByEntryDate(Date entryDate);
 }

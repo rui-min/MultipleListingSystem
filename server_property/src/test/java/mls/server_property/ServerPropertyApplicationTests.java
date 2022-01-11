@@ -1,13 +1,12 @@
 package mls.server_property;
 
-import mls.server_property.domain.Land;
-import mls.server_property.domain.VacationHome;
-import mls.server_property.repositories.LandRepo;
-import mls.server_property.repositories.VacationHomeRepo;
+import mls.server_property.domain.*;
+import mls.server_property.repositories.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,8 +34,7 @@ class ServerPropertyApplicationTests {
 //        long k = 0;
 //        Optional<List<Land>> optList1= ldRepo.findByAddressContainsAndPriceBetween("z",100,100000000);
 //        System.out.println(optList.get().get(1));
-//        Optional<List<VacationHome>> optList2= vhRepo.findByNofParkingSpace(2);
-        Optional<List<VacationHome>> optList2= vhRepo.findByStorageType("haha");
+        Optional<List<VacationHome>> optList3= vhRepo.findByBuiltDate(Date.valueOf("12"));
 	}
 
 }
