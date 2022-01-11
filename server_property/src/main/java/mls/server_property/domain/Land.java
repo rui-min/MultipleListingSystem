@@ -24,7 +24,7 @@ public class Land extends Property {
         super(id, address, price);
     }
 
-    public Land() {}
+    protected Land() {}
 
     @Override
     public String toString() {
