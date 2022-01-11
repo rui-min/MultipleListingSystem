@@ -19,20 +19,21 @@ public abstract class Residential extends Property {
      */
     public static final int REFER_PRICE = 750000;
 
+    // !! Must be wrapper class "Integer" instead of "int" because DB by default assigns null
     @Column(name="no_parking_space")
-    private   int         nOfParkingSpace;
+    private   Integer     nOfParkingSpace;
     @Column(name="storage_type")
     private   String      storageType;
     @Column(name="no_storage")
-    private   int         nOfStorages;
+    private   Integer     nOfStorages;
     @Column(name="build_date")
     private   Date   builtDate = Date.valueOf("1900-1-1");
     @Column(name="entry_date")
     private   Date   entryDate; // the day on which the object is entered in the system
     @Column(name = "is_high_value")
-    private   boolean isHighValue;
+    private   Boolean isHighValue;
     @Column(name = "is_new")
-    private   boolean isNew;
+    private   Boolean isNew;
 
     protected Residential(){super();}       // empty constructor a must
 
@@ -55,9 +56,7 @@ public abstract class Residential extends Property {
         }
         this.entryDate= Date.valueOf(LocalDate.now());
         this.isHighValue = this.getPrice() >= REFER_PRICE;
-        this.isNew = builtDate!= null?
-                YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5
-                :false;
+        this.isNew = builtDate != null && YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5;
     }
 
     public boolean isHighValue() {

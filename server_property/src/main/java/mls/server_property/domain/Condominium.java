@@ -10,7 +10,7 @@ import java.sql.Date;
 //@DiscriminatorColumn(name = "c_type")
 public abstract class Condominium extends Residential {
     @Column(name = "unit_number")
-    private int unitNumber;
+    private Integer unitNumber;
 
     protected Condominium(){super();}
 

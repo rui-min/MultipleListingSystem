@@ -10,7 +10,7 @@ import java.time.LocalDate;
 //@Table(name = "multilex")
 public class MultiLex extends Freehold {
 
-    private int nOfUnits;
+    private Integer nOfUnits;
 
  //todo constructor
 
