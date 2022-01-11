@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface FreeholdRepo<T extends Freehold> extends PropertyRepo<T> {
+public interface FreeholdRepo<T extends Freehold> extends ResidentialRepo<T> {
     Optional<List<T>> findByType(String type);
     Optional<List<T>> findByIsMultigenerationTrue();
     Optional<List<T>> findByIsMultigenerationFalse();
