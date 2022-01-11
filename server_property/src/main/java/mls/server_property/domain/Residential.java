@@ -50,16 +50,6 @@ public abstract class Residential extends Property {
         this.entryDate= Date.valueOf(LocalDate.now());
     }
 
-//    /**
-//     * Constructor to be called in the subclass constructor.
-//     */
-//
-//    @JsonCreator
-//    public Residential(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-//        super(id, address, price);
-//        this.entryDate= Date.valueOf(LocalDate.now());
-//    }
-
     /**
      * Check if the home is a high valued home.
      * @return ture, if the calling object is a high value home;

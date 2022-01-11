@@ -33,8 +33,10 @@ class ServerPropertyApplicationTests {
 //        long i = vhRepo.count();
 //        long j = ldRepo.count();
 //        long k = 0;
-//        Optional<List<Land>> optList= ldRepo.findByAddressContainsAndPriceBetween("z",100,100000000);
+//        Optional<List<Land>> optList1= ldRepo.findByAddressContainsAndPriceBetween("z",100,100000000);
 //        System.out.println(optList.get().get(1));
+//        Optional<List<VacationHome>> optList2= vhRepo.findByNofParkingSpace(2);
+
 	}
 
 }
