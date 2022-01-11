@@ -29,6 +29,10 @@ public abstract class Residential extends Property {
     private   Date   builtDate = Date.valueOf("1900-1-1");
     @Column(name="entry_date")
     private   Date   entryDate; // the day on which the object is entered in the system
+    @Column(name = "is_high_value")
+    private   boolean isHighValue;
+    @Column(name = "is_new")
+    private   boolean isNew;
 
     protected Residential(){super();}       // empty constructor a must
 
@@ -50,23 +54,24 @@ public abstract class Residential extends Property {
             this.builtDate = builtDate;
         }
         this.entryDate= Date.valueOf(LocalDate.now());
+        this.isHighValue = this.getPrice() >= REFER_PRICE;
+        this.isNew = builtDate!= null?
+                YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5
+                :false;
     }
 
-    /**
-     * Check if the home is a high valued home.
-     * @return ture, if the calling object is a high value home;
-     */
     public boolean isHighValue() {
-        return this.getPrice() >= REFER_PRICE;
+        return isHighValue;
     }
 
-    /**
-     * Check if the building is a new construction at present.
-     * @return true, if the building is constructed within 5 years;
-     *          false, if it has been built more than 5 years.
-     */
-    public boolean isNew(){
-        return YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5;
+    @Override
+    public void setPrice(int price) {
+        this.setPrice(price);
+        this.isHighValue = this.getPrice() >= REFER_PRICE;
+    }
+
+    public boolean isNew() {
+        return isNew;
     }
 
     /**
@@ -78,8 +83,12 @@ public abstract class Residential extends Property {
     public void setBuiltDate(LocalDate d) throws IllegalArgumentException{
         if (d.isAfter(entryDate.toLocalDate()))
             throw new IllegalArgumentException("Built date after today");
-        else
+        else {
             this.builtDate = Date.valueOf(d);
+            this.isNew = builtDate!= null?
+                    YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5
+                    :false;
+        }
     }
 
     /**

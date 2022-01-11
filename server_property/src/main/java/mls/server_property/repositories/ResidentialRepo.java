@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Optional;
 @Repository
 public interface ResidentialRepo<T extends Residential> extends PropertyRepo<T> {
-    Optional<List<T>> findByNofParkingSpace(int nOfParkingSpace);
+    Optional<List<T>> findBynOfParkingSpace(int nOfParkingSpace);
     Optional<List<T>> findByStorageType(String storageType);
-    Optional<List<T>> findByNofStorages(int nOfStorages);
+    Optional<List<T>> findBynOfStorages(int nOfStorages);
     Optional<List<T>> findByBuiltDate(Date builtDate);
     Optional<List<T>> findByEntryDate(Date entryDate);
 }
