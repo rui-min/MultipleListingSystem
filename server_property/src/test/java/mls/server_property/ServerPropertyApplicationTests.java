@@ -36,7 +36,7 @@ class ServerPropertyApplicationTests {
 //        Optional<List<Land>> optList1= ldRepo.findByAddressContainsAndPriceBetween("z",100,100000000);
 //        System.out.println(optList.get().get(1));
 //        Optional<List<VacationHome>> optList2= vhRepo.findByNofParkingSpace(2);
-
+        Optional<List<VacationHome>> optList2= vhRepo.findByStorageType("haha");
 	}
 
 }
