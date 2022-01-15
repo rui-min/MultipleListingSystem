@@ -65,7 +65,7 @@ public abstract class Residential extends Property {
 
     @Override
     public void setPrice(int price) {
-        this.setPrice(price);
+        super.setPrice(price);
         this.isHighValue = this.getPrice() >= REFER_PRICE;
     }
 
@@ -84,9 +84,7 @@ public abstract class Residential extends Property {
             throw new IllegalArgumentException("Built date after today");
         else {
             this.builtDate = Date.valueOf(d);
-            this.isNew = builtDate!= null?
-                    YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5
-                    :false;
+            this.isNew = YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5;
         }
     }
 
@@ -102,7 +100,7 @@ public abstract class Residential extends Property {
      * Methods from the ParkingSpace interface. Get number of parking spaces.
      * @return number of parking spaces
      */
-    public int howManyParkingSpace(){
+    public Integer howManyParkingSpace(){
         return this.nOfParkingSpace;
     }
 
@@ -118,7 +116,7 @@ public abstract class Residential extends Property {
      * Get the number of storages attached to this home.
      * @return number of storages of the calling Residential object.
      */
-    public int howManyStorage(){
+    public Integer howManyStorage(){
         return this.nOfStorages;
     }
 
