@@ -36,9 +36,9 @@ class ServerPropertyApplicationTests {
         ldRepo.save(l4);
         long i = vhRepo.count();
         long j = ldRepo.count();
-        // query did not return a unique result: should protect this in service file
+        //below query did not return a unique result: should protect this in service file
 //        System.out.println(vhRepo.findByAddress("a"));
-        System.out.println( vhRepo.count());
+        System.out.println(vhRepo.count());
         System.out.println(ldRepo.count());
 
         System.out.println(pRepo.findAll());
