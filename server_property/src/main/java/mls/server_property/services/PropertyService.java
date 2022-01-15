@@ -1,10 +1,7 @@
 package mls.server_property.services;
 
 import mls.server_property.domain.*;
-import mls.server_property.repositories.FreeholdRepo;
-import mls.server_property.repositories.PropertyRepo;
-import mls.server_property.repositories.ResidentialRepo;
-import mls.server_property.repositories.VacationHomeRepo;
+import mls.server_property.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,17 +11,20 @@ import java.util.Optional;
 
 @Service
 public class PropertyService {
+    // Avoid reporting no bean error for pRepo
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired private PropertyRepo<Property> propRepo;
+
     @Autowired private FreeholdRepo<Freehold> freeholdRepo;
     @Autowired private ResidentialRepo<Residential> residentialRepo;
     @Autowired private VacationHomeRepo vacationHomeRepo;
-//    @Autowired private PropertyRepo landPropertyRepo;
+    @Autowired private LandRepo landPropertyRepo;
 //    @Autowired
 
-    public List<Property> getProperties(){ return propRepo.findAll(); }
+    public List<Property> getAllProperties(){ return propRepo.findAll(); }
 
     public Property getProperties(Long id) throws Throwable {
-        return (Property) propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
+        return propRepo.findById(id).orElseThrow(() -> new IllegalStateException(
             String.format("No property with id %d exists", id))); }
 
     public List<Property> getProperties(List<Long> ids){
