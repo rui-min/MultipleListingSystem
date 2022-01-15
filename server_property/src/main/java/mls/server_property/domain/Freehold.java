@@ -4,17 +4,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.sql.Date;
-
-@MappedSuperclass
+@Entity
+//@DiscriminatorColumn(name="f_type")
+//@Table(name="freehold")
+//@DiscriminatorValue("f")
 public abstract class Freehold extends Residential {
     @Column(name = "family_type")
     private String type;
 
     @Column(name = "floors")
-    private int numberOfFloors;
+    private Integer numberOfFloors;
 
     @Column(name = " is_multi_gen")
-    private boolean isMultigeneration;
+    private Boolean isMultigeneration;
 
     protected Freehold(){super();}
 
@@ -34,17 +36,6 @@ public abstract class Freehold extends Residential {
         this.numberOfFloors = numberOfFloors;
         this.isMultigeneration = isMultigeneration;
     }
-
-    public Freehold(String address, int price) {
-    }
-//    public Freehold( @JsonProperty("id")Long id,
-//                     @JsonProperty("address") String address,
-//                     @JsonProperty("price") int price) {
-//        super(id, address, price);
-//        this.type = null;
-//        this.numberOfFloors = 0;
-//        this.isMultigeneration = false;
-//    }
 
     public String getType() {
         return type;

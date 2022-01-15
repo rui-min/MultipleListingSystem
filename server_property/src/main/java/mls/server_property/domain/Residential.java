@@ -9,26 +9,31 @@ import java.time.LocalDate;
 
 import static java.time.temporal.ChronoUnit.YEARS;
 
-/**
- * Abstract class representing Residential Property (level 2)
- */
-@MappedSuperclass
+@Entity
+//@DiscriminatorColumn(name="r_type")
+//@DiscriminatorValue("r")
+//@Table(name="residential")
 public abstract class Residential extends Property {
     /**
      * The reference price used to decide whether a home is high value.
      */
     public static final int REFER_PRICE = 750000;
 
+    // !! Must be wrapper class "Integer" instead of "int" because DB by default assigns null
     @Column(name="no_parking_space")
-    private   int         nOfParkingSpace;
+    private   Integer     nOfParkingSpace;
     @Column(name="storage_type")
     private   String      storageType;
     @Column(name="no_storage")
-    private   int         nOfStorages;
+    private   Integer     nOfStorages;
     @Column(name="build_date")
     private   Date   builtDate = Date.valueOf("1900-1-1");
     @Column(name="entry_date")
     private   Date   entryDate; // the day on which the object is entered in the system
+    @Column(name = "is_high_value")
+    private   Boolean isHighValue;
+    @Column(name = "is_new")
+    private   Boolean isNew;
 
     protected Residential(){super();}       // empty constructor a must
 
@@ -46,35 +51,26 @@ public abstract class Residential extends Property {
         this.nOfParkingSpace = nOfParkingSpace;
         this.storageType = storageType;
         this.nOfStorages = nOfStorages;
-        this.builtDate = builtDate;
+        if (builtDate!=null) {
+            this.builtDate = builtDate;
+        }
         this.entryDate= Date.valueOf(LocalDate.now());
+        this.isHighValue = this.getPrice() >= REFER_PRICE;
+        this.isNew = builtDate != null && YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5;
     }
 
-//    /**
-//     * Constructor to be called in the subclass constructor.
-//     */
-//
-//    @JsonCreator
-//    public Residential(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {
-//        super(id, address, price);
-//        this.entryDate= Date.valueOf(LocalDate.now());
-//    }
-
-    /**
-     * Check if the home is a high valued home.
-     * @return ture, if the calling object is a high value home;
-     */
-    public boolean isHighValue() {
-        return this.getPrice() >= REFER_PRICE;
+    public Boolean isHighValue() {
+        return isHighValue;
     }
 
-    /**
-     * Check if the building is a new construction at present.
-     * @return true, if the building is constructed within 5 years;
-     *          false, if it has been built more than 5 years.
-     */
-    public boolean isNew(){
-        return YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5;
+    @Override
+    public void setPrice(int price) {
+        super.setPrice(price);
+        this.isHighValue = this.getPrice() >= REFER_PRICE;
+    }
+
+    public Boolean isNew() {
+        return isNew;
     }
 
     /**
@@ -86,8 +82,10 @@ public abstract class Residential extends Property {
     public void setBuiltDate(LocalDate d) throws IllegalArgumentException{
         if (d.isAfter(entryDate.toLocalDate()))
             throw new IllegalArgumentException("Built date after today");
-        else
+        else {
             this.builtDate = Date.valueOf(d);
+            this.isNew = YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5;
+        }
     }
 
     /**
@@ -102,7 +100,7 @@ public abstract class Residential extends Property {
      * Methods from the ParkingSpace interface. Get number of parking spaces.
      * @return number of parking spaces
      */
-    public int howManyParkingSpace(){
+    public Integer howManyParkingSpace(){
         return this.nOfParkingSpace;
     }
 
@@ -118,7 +116,7 @@ public abstract class Residential extends Property {
      * Get the number of storages attached to this home.
      * @return number of storages of the calling Residential object.
      */
-    public int howManyStorage(){
+    public Integer howManyStorage(){
         return this.nOfStorages;
     }
 

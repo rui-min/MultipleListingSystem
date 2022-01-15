@@ -1,11 +1,12 @@
 package mls.server_property.domain;
-/**
- * Concrete class representing Town house (level 4)
- */
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+@Entity
+//@Table(name = "townhouse")
 public class TownHouse extends Freehold {
-//    public TownHouse(Long uuid, String address, int price) {
-//        super(address, price);
-//    }
+//todo constructor
 
 }

@@ -2,21 +2,25 @@ package mls.server_property.repositories;
 
 import mls.server_property.domain.Property;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.NoRepositoryBean;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@NoRepositoryBean
-public interface PropertyRepo<Property> extends JpaRepository<Property , Long> {
+@Repository
+public interface PropertyRepo<T extends Property> extends JpaRepository<T, Long> {
+//    @Query("select p from #{#entityName} p where type(p) = :type and p.address = :addr")
+//    Optional<T> findByAddress(@Param("addr") String address, @Param("type") String d_type);
 
-    // Duplicate queries
-//    Optional<T> findPropertyByAddress(String address);
-//
-//    Optional<T> findPropertyById(Long id);
-//
-//    // Functional queries
-//    Optional<List<T>> findPropertiesByPriceBetween(int lowerBound, int upperBound);
-//
-//    Optional<List<T>> findPropertiesByAddressContains(String partialAddress);
+    Optional<T> findByAddress(String address);
+    Optional<List<T>> findByAddressContainsAndPriceBetween(String partialAddress, int lowerBound, int upperBound);
+    Optional<List<T>> findByPriceBetween(int lowerBound, int upperBound);
+    Optional<List<T>> findByAddressContains(String partialAddress);
+
+//    //need validation: T extends Freehold
+//    @Query("select f from #{#entityName} f where f.type = ?1")
+//    Optional<List<T>> findFreeholdByFamilyType(String type);
+//    Optional<List<T>> findFreeholdByIsMultigeneration(boolean isMultigeneration);
+
+
 }

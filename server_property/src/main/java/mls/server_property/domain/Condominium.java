@@ -4,10 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.sql.Date;
 
-@MappedSuperclass
+@Entity
+//@Inheritance(strategy = InheritanceType.JOINED)
+//@DiscriminatorValue("c")
+//@DiscriminatorColumn(name = "c_type")
 public abstract class Condominium extends Residential {
-    @Column(name = "unitNumber")
-    private int unitNumber;
+    @Column(name = "unit_number")
+    private Integer unitNumber;
 
     protected Condominium(){super();}
 
