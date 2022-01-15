@@ -59,7 +59,7 @@ public abstract class Residential extends Property {
         this.isNew = builtDate != null && YEARS.between(this.builtDate.toLocalDate(), LocalDate.now()) < 5;
     }
 
-    public boolean isHighValue() {
+    public Boolean isHighValue() {
         return isHighValue;
     }
 
@@ -69,7 +69,7 @@ public abstract class Residential extends Property {
         this.isHighValue = this.getPrice() >= REFER_PRICE;
     }
 
-    public boolean isNew() {
+    public Boolean isNew() {
         return isNew;
     }
 

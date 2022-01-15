@@ -11,6 +11,11 @@ import java.util.Optional;
 
 @SpringBootTest(classes=ServerPropertyApplication.class)
 class ServerPropertyApplicationTests {
+    // Avoid reporting no bean error for pRepo
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    @Autowired
+    PropertyRepo<Property> pRepo;
+
     @Autowired
     LandRepo ldRepo;
 
@@ -35,6 +40,8 @@ class ServerPropertyApplicationTests {
 //        System.out.println(vhRepo.findByAddress("a"));
         System.out.println( vhRepo.count());
         System.out.println(ldRepo.count());
+
+        System.out.println(pRepo.findAll());
 
         Optional<List<Land>> optList1= ldRepo.findByAddressContainsAndPriceBetween("z",100,100000000);
         System.out.println(optList1.get().get(1));
