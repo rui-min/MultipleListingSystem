@@ -10,6 +10,8 @@ import java.sql.Date;
 //@Table(name = "cooperativehome")
 public class CooperativeHome extends Residential {
 
+    protected CooperativeHome() {}
+
     @JsonCreator
     public CooperativeHome( @JsonProperty("id") Long id,
                             @JsonProperty("address") String address,
@@ -21,7 +23,6 @@ public class CooperativeHome extends Residential {
         super(id,address,price,nOfParkingSpace,storageType,nOfStorages,builtDate);
     }
 
-    protected CooperativeHome() { }
     /**
      * Getter for ownership type
      * @return ownership type

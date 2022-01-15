@@ -15,12 +15,14 @@ class ServerPropertyApplicationTests {
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     PropertyRepo<Property> pRepo;
-
     @Autowired
     LandRepo ldRepo;
-
     @Autowired
     VacationHomeRepo vhRepo;
+    @Autowired
+    MultiLexRepo mlRepo;
+    @Autowired
+    StackedTownHouseRepo stRepo;
 
 	@Test
 	void contextLoads() {
@@ -32,6 +34,14 @@ class ServerPropertyApplicationTests {
         ldRepo.save(l2);
         vhRepo.save(v1);
         vhRepo.save(v2);
+        MultiLex m1 = new MultiLex(null, "bza", 111111, 1, "small", 1, null, null, 3, true);
+        mlRepo.save(m1);
+        StackedTownHouse st1= new StackedTownHouse(null,"zef",221111,1,null,2,null,4);
+        StackedTownHouse st2= new StackedTownHouse(null,"abc",321111,1,null,2,null,7);
+        StackedTownHouse st3= new StackedTownHouse(null,"ezez",821111,1,null,2,null,4);
+        stRepo.save(st1);
+        stRepo.save(st2);
+        stRepo.save(st3);
         //below query did not return a unique result: should protect this in service file
 //        System.out.println(vhRepo.findByAddress("a"));
         System.out.println(vhRepo.count());

@@ -9,7 +9,6 @@ import java.util.Objects;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="p_type")
 @Table(name="property")
-//@DiscriminatorValue("property")
 public abstract class Property {
 
     @Id
@@ -22,9 +21,6 @@ public abstract class Property {
 
     @Column(name="price")
     private int price;
-
-    @Column(name="p_type", insertable = false, updatable = false)
-    private String ptype;
 
     @JsonCreator
     public Property(@JsonProperty("id") Long id, @JsonProperty("address") String address, @JsonProperty("price") int price) {

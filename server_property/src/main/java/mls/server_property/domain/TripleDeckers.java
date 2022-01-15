@@ -1,6 +1,7 @@
 package mls.server_property.domain;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -9,6 +10,10 @@ import java.sql.Date;
 /**
  * Concrete class representing Building: Triple Deckers (level 4)
  */
+
+@Getter
+@Setter
+@Builder
 @Entity
 //@Table(name = "TripleDeckers")
 public class TripleDeckers extends Condominium{
@@ -21,7 +26,6 @@ public class TripleDeckers extends Condominium{
             super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate,unitNumber);
         }
 
-        public TripleDeckers() {}
-
+        protected TripleDeckers() {}
 
 }

@@ -45,7 +45,7 @@ public abstract class Freehold extends Residential {
         this.type = type;
     }
 
-    public int getNumberOfFloors() {
+    public Integer getNumberOfFloors() {
         return numberOfFloors;
     }
 
@@ -58,7 +58,7 @@ public abstract class Freehold extends Residential {
         this.numberOfFloors = numberOfFloors;
     }
 
-    public boolean isMultigeneration() {
+    public Boolean isMultigeneration() {
         return this.isMultigeneration;
     }
 

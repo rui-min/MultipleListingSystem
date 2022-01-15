@@ -12,11 +12,25 @@ import java.util.Optional;
 @Service("propServ")
 public class PropertyService {
     @Autowired private PropertyRepo<Property> propertyRepo;
+
+    @Autowired private LandRepo landRepo;
     @Autowired private ResidentialRepo<Residential> residentialRepo;
     @Autowired private FreeholdRepo<Freehold> freeholdRepo;
+    @Autowired private CooperativeHomeRepo cooperativehomeRepo;
+    @Autowired private CondominiumRepo<Condominium> condominiumRepo;
+    @Autowired private MobileHomeRepo mobilehomeRepo;
+
+    @Autowired private SemiDetachedRepo semidetachedRepo;
     @Autowired private VacationHomeRepo vacationhomeRepo;
-    @Autowired private LandRepo landRepo;
-//    @Autowired
+    @Autowired private DetachedHomeRepo detachedhomeRepo;
+
+    @Autowired private FarmHouseRepo farmhouseRepo;
+    @Autowired private MultiLexRepo multilexRepo;
+    @Autowired private TownHouseRepo townhouseRepo;
+
+    @Autowired private TripleDeckersRepo tripledeckersRepo;
+    @Autowired private CondoRepo condoRepo;
+    @Autowired private StackedTownHouseRepo stackedtownhouseRepo;
 
     public List<Property> getAllProperties(){ return propertyRepo.findAll(); }
 
@@ -28,22 +42,46 @@ public class PropertyService {
         return propertyRepo.findAllById(ids);
     }
 
-    public Optional<? extends List<? extends Property>> getProperties(String type, String partialAddress, int lowerBound, int upperBound) {
+    public Optional<? extends List<? extends Property>> getProperties(String type, String partialAddress, int lowerBound, int upperBound)
+                                                    throws IllegalArgumentException {
         switch (type.toLowerCase()) {
             case "property":
                 return propertyRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
                 // no need to "break;" because already return
+            case "land":
+                return landRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
             case "residential":
                 return residentialRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
             case "freehold":
                 return freeholdRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "cooperativehome":
+                return cooperativehomeRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "condominium":
+                return condominiumRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "mobilehome":
+                return mobilehomeRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "semidetached":
+                return semidetachedRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
             case "vacationhome":
                 return vacationhomeRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
-            case "land":
-                return landRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "detachedhome":
+                return detachedhomeRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "farmhouse":
+                return farmhouseRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "multilex":
+                return multilexRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "townhouse":
+                return townhouseRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "tripledeckers":
+                return tripledeckersRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "condo":
+                return condoRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            case "stackedtownhouse":
+                return stackedtownhouseRepo.findByAddressContainsAndPriceBetween(partialAddress, lowerBound, upperBound);
+            default:
+                throw new IllegalArgumentException("Illegal property type");
         }
 
-        return Optional.empty();    // nothing found
     }
 
     public void addNewProperty(Property property){

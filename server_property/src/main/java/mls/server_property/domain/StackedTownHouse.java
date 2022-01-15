@@ -2,6 +2,7 @@ package mls.server_property.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -10,6 +11,9 @@ import java.sql.Date;
 /**
  * Concrete class representing Building: Stacked Townhouse (level 4)
  */
+@Getter
+@Setter
+@Builder
 @Entity
 //@Table(name = "stackedtownhouse")
 public class StackedTownHouse extends Condominium {
@@ -22,6 +26,6 @@ public class StackedTownHouse extends Condominium {
         super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate,unitNumber);
     }
 
-    public StackedTownHouse() {}
+    protected StackedTownHouse() {}
 
 }

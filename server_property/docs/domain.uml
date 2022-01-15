@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>mls.server_property.domain</OriginalElement>
+  <nodes>
+    <node x="995.0" y="584.0">mls.server_property.domain.TripleDeckers</node>
+    <node x="1279.0" y="584.0">mls.server_property.domain.StackedTownHouse</node>
+    <node x="1026.25" y="245.5">mls.server_property.domain.Land</node>
+    <node x="823.0" y="584.0">mls.server_property.domain.SemiDetached</node>
+    <node x="497.0" y="584.0">mls.server_property.domain.VacationHome</node>
+    <node x="1330.0714285714284" y="442.0">mls.server_property.domain.MobileHome</node>
+    <node x="724.5" y="455.0">mls.server_property.domain.CooperativeHome</node>
+    <node x="317.0" y="584.0">mls.server_property.domain.DetachedHome</node>
+    <node x="811.25" y="152.0">mls.server_property.domain.Residential</node>
+    <node x="0.0" y="584.0">mls.server_property.domain.FarmHouse</node>
+    <node x="671.0" y="584.0">mls.server_property.domain.TownHouse</node>
+    <node x="922.0" y="0.0">mls.server_property.domain.Property</node>
+    <node x="1161.0" y="584.0">mls.server_property.domain.Condo</node>
+    <node x="1144.0714285714287" y="442.0">mls.server_property.domain.Condominium</node>
+    <node x="383.5" y="419.0">mls.server_property.domain.Freehold</node>
+    <node x="151.0" y="571.0">mls.server_property.domain.MultiLex</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="mls.server_property.domain.DetachedHome" target="mls.server_property.domain.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="397.0" y="546.0" />
+      <point x="485.5" y="546.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="mls.server_property.domain.Land" target="mls.server_property.domain.Property" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1069.25" y="127.0" />
+      <point x="989.0" y="127.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="mls.server_property.domain.Condo" target="mls.server_property.domain.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1210.0" y="546.0" />
+      <point x="1227.0714285714287" y="546.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="mls.server_property.domain.SemiDetached" target="mls.server_property.domain.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="899.0" y="546.0" />
+      <point x="485.5" y="546.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="mls.server_property.domain.MultiLex" target="mls.server_property.domain.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="224.0" y="546.0" />
+      <point x="485.5" y="546.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="mls.server_property.domain.TownHouse" target="mls.server_property.domain.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="737.0" y="546.0" />
+      <point x="485.5" y="546.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="mls.server_property.domain.TripleDeckers" target="mls.server_property.domain.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1068.0" y="546.0" />
+      <point x="1227.0714285714287" y="546.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="mls.server_property.domain.FarmHouse" target="mls.server_property.domain.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="65.5" y="546.0" />
+      <point x="485.5" y="546.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="mls.server_property.domain.MobileHome" target="mls.server_property.domain.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="1404.5714285714284" y="394.0" />
+      <point x="908.75" y="394.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="mls.server_property.domain.CooperativeHome" target="mls.server_property.domain.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="813.0" y="394.0" />
+      <point x="908.75" y="394.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="mls.server_property.domain.VacationHome" target="mls.server_property.domain.Freehold" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="574.0" y="546.0" />
+      <point x="485.5" y="546.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="mls.server_property.domain.Freehold" target="mls.server_property.domain.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-51.0" />
+      <point x="485.5" y="394.0" />
+      <point x="908.75" y="394.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="mls.server_property.domain.StackedTownHouse" target="mls.server_property.domain.Condominium" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="1372.5" y="546.0" />
+      <point x="1227.0714285714287" y="546.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="mls.server_property.domain.Residential" target="mls.server_property.domain.Property" relationship="GENERALIZATION">
+      <point x="0.0" y="-108.5" />
+      <point x="908.75" y="127.0" />
+      <point x="989.0" y="127.0" />
+      <point x="0.0" y="51.0" />
+    </edge>
+    <edge source="mls.server_property.domain.Condominium" target="mls.server_property.domain.Residential" relationship="GENERALIZATION">
+      <point x="0.0" y="-28.0" />
+      <point x="1227.0714285714287" y="394.0" />
+      <point x="908.75" y="394.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7886666666666666" showDependencies="false" x="740.0" y="313.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

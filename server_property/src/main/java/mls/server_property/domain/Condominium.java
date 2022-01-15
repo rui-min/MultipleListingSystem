@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 //@Inheritance(strategy = InheritanceType.JOINED)
@@ -36,7 +37,7 @@ public abstract class Condominium extends Residential {
      * Get unit number of the condominium type property
      * @return unit number of condominium type property
      */
-    public int getUnitNumber() {
+    public Integer getUnitNumber() {
         return unitNumber;
     }
 
@@ -62,7 +63,7 @@ public abstract class Condominium extends Residential {
         if (!super.equals(o)) return false;
         Condominium other = (Condominium) o;
         return this.getAddress().equals(other.getAddress())
-                && this.getUnitNumber() == other.getUnitNumber();
+                && Objects.equals(this.getUnitNumber(), other.getUnitNumber());
     }
 
     /**

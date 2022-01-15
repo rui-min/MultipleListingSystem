@@ -11,7 +11,7 @@ import java.sql.Date;
 public class MobileHome extends Residential {
     @Column(name = "ownership")
     private String ownership;
-    public MobileHome() {super();}
+    protected MobileHome() {super();}
 
 
     /**
