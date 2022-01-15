@@ -17,41 +17,43 @@ public class PropertyController {
     @Autowired
     public PropertyController(@Qualifier("propServ") PropertyService propService){ this.propService = propService;}
 
-    @GetMapping("")
+    // empty instead of "/" to facilitate both with and without "/" urls
+    @GetMapping
     public List<Property> index() {
         return propService.getAllProperties();
     }
 
-//    @GetMapping("/{id}")
-//    public Property getPropertyById(@PathVariable("id") Long id) throws Throwable {
-//        return propService.getProperties(id);
-//    }
+    @GetMapping("/{id}")
+    public Property getPropertyById(@PathVariable("id") Long id) throws Throwable {
+        return propService.getProperties(id);
+    }
 
     /**
      * @param type must be one of: Property, Land, Residential, Freehold, CooperativeHome,
      *             Condominium, MobileHome, SemiDetached, VacationHome, DetachedHome,
      *             FarmHouse, MultiLex, TownHouse, TripleDeckers, Condo, StackedTownHouse
-     * @param partialAddress optional param (better include)
+     * @param address Partial Address for fuzzy string searching; optional param (better include)
      * @param minPrice optional param (better include)
      * @param maxPrice optional param (better include)
      * @return an Optional list of specified type's properties
      */
-    @GetMapping("/{type}")
+//    @GetMapping("/{type}")    <- will cause ambiguous handler methods error
+    @GetMapping("/type")
     public Optional<? extends List<? extends Property>> getTypeProperties(
-                                            @PathVariable("type") String type,
-                                            @RequestParam(required = false) String partialAddress,
+                                            @RequestParam("type") String type,
+                                            @RequestParam(required = false) String address,
                                             @RequestParam(required = false) Integer minPrice,
                                             @RequestParam(required = false) Integer maxPrice){
-        if (partialAddress==null) partialAddress="";
+        if (address==null) address="";
         if (minPrice==null) minPrice=0;
         if (maxPrice==null) maxPrice=Integer.MAX_VALUE;
-        return propService.getProperties(type,partialAddress,minPrice,maxPrice);
+        return propService.getProperties(type,address,minPrice,maxPrice);
     }
 
-//    @GetMapping("/")
-//    public List<Property> getPropertiesById(@RequestParam List<Long> ids){
-//        return propService.getProperties(ids);
-//    }
+    @GetMapping("/ids")
+    public List<Property> getPropertiesById(@RequestParam List<Long> ids){
+        return propService.getProperties(ids);
+    }
 
     @PutMapping("{id}")
     public void updateRecord(@PathVariable("id") Long id,

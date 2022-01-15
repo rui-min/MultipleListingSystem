@@ -24,18 +24,14 @@ class ServerPropertyApplicationTests {
 
 	@Test
 	void contextLoads() {
-        Land l1 = new Land(1L,"a", 1000000);
-        Land l2 = new Land(2L,"b", 1100000);
-        Land l3 = new Land(3L,"c", 1100000);
-        Land l4 = new Land(4L,"d", 1100000);
-        VacationHome v1 = new VacationHome(null, "a", 1111111, 1, null, 0, null, null, 0, false);
-        vhRepo.save(v1);
+        Land l1 = new Land(null,"ezza", 10000);
+        Land l2 = new Land(null,"b", 110000);
+        VacationHome v1 = new VacationHome(null, "bza", 1111111, 1, null, 0, null, null, 0, false);
+        VacationHome v2 = new VacationHome(null, "edf", 1111, 1, "small", 1, null, null, 3, true);
         ldRepo.save(l1);
         ldRepo.save(l2);
-        ldRepo.save(l3);
-        ldRepo.save(l4);
-        long i = vhRepo.count();
-        long j = ldRepo.count();
+        vhRepo.save(v1);
+        vhRepo.save(v2);
         //below query did not return a unique result: should protect this in service file
 //        System.out.println(vhRepo.findByAddress("a"));
         System.out.println(vhRepo.count());
