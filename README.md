@@ -1,4 +1,4 @@
-# (Group Side Project) Mulitiple Listing System Documentation
+# (Group Project) Mulitiple Listing System Documentation
 This is a web application for CRUD operations developed with Java and Spring Boot. The backend server("server_property") provides RESTful APIs to the frontend("front_client"). Attention: only backend ("server_property" folder) is currently finished.
 
 # Quick Start
