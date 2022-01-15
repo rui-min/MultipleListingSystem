@@ -17,31 +17,34 @@ public class PropertyController {
     @Autowired
     public PropertyController(@Qualifier("propServ") PropertyService propService){ this.propService = propService;}
 
-    @GetMapping("/")
+    @GetMapping("")
     public List<Property> index() {
         return propService.getAllProperties();
     }
 
-    @GetMapping("/{id}")
-    public Property getPropertyById(@PathVariable("id") Long id) throws Throwable {
-        return propService.getProperties(id);
-    }
+//    @GetMapping("/{id}")
+//    public Property getPropertyById(@PathVariable("id") Long id) throws Throwable {
+//        return propService.getProperties(id);
+//    }
 
     /**
      * @param type must be one of: Property, Land, Residential, Freehold, CooperativeHome,
      *             Condominium, MobileHome, SemiDetached, VacationHome, DetachedHome,
      *             FarmHouse, MultiLex, TownHouse, TripleDeckers, Condo, StackedTownHouse
-     * @param partialAddress optional param
-     * @param minPrice optional param
-     * @param maxPrice optional param
+     * @param partialAddress optional param (better include)
+     * @param minPrice optional param (better include)
+     * @param maxPrice optional param (better include)
      * @return an Optional list of specified type's properties
      */
     @GetMapping("/{type}")
     public Optional<? extends List<? extends Property>> getTypeProperties(
                                             @PathVariable("type") String type,
                                             @RequestParam(required = false) String partialAddress,
-                                            @RequestParam(required = false) int minPrice,
-                                            @RequestParam(required = false) int maxPrice){
+                                            @RequestParam(required = false) Integer minPrice,
+                                            @RequestParam(required = false) Integer maxPrice){
+        if (partialAddress==null) partialAddress="";
+        if (minPrice==null) minPrice=0;
+        if (maxPrice==null) maxPrice=Integer.MAX_VALUE;
         return propService.getProperties(type,partialAddress,minPrice,maxPrice);
     }
 
