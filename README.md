@@ -2,7 +2,10 @@
 This is a web application for CRUD operations developed with Java and Spring Boot. There are totally 16 entities in the domain directory(server folder). The backend server("server_property") provides RESTful APIs to the frontend("front_client"). Attention: only backend ("server_property" folder) is currently finished.
 
 # Quick Start
-Reload pom.xml with maven, and run ServerPropertyApplication.java under "server_property/src/main/java/mls/server_property/" directory. Assigned port is localhost:8090. The controller provides following APIs:
+Reload pom.xml with maven, and run ServerPropertyApplication.java under "server_property/src/main/java/mls/server_property/" directory. Assigned port is localhost:8090. There is an example database file exampleData.sql under "/server_property/docs/" directory. You can import it in MySQL workbench as an example.
+
+# APIs
+The controller provides following APIs:
 1. Get method (read): 
     1. **/api/property**  -> return all properties' JSON data in the database
     2. **/api/property/{Long id}** -> return the specified id property's JSON data in the database
