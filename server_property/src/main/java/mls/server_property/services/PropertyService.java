@@ -84,6 +84,7 @@ public class PropertyService {
 
     }
 
+    @Transactional
     public Property addNewProperty(Property property){
         Optional<Property> propOpt = propertyRepo.findByAddress(property.getAddress());
         if(propOpt.isPresent()){
@@ -112,6 +113,7 @@ public class PropertyService {
         return property;
     }
 
+    @Transactional
     public void removeIdProperty(Long id){
         if(! propertyRepo.existsById(id)){
             throw new IllegalStateException(String.format("No property with id %d exists", id));
@@ -119,6 +121,7 @@ public class PropertyService {
         propertyRepo.deleteById(id);
     }
 
+    @Transactional
     public Long removeAddressProperty(String address){
         if (! propertyRepo.existsByAddressContaining(address)){
             throw new IllegalStateException(String.format(
