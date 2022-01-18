@@ -15,10 +15,10 @@ public class CooperativeHome extends Residential {
     @JsonCreator
     public CooperativeHome( @JsonProperty("id") Long id,
                             @JsonProperty("address") String address,
-                            @JsonProperty("price") int price,
-                            @JsonProperty("no_parking_space") int nOfParkingSpace,
+                            @JsonProperty("price") Integer price,
+                            @JsonProperty("no_parking_space") Integer nOfParkingSpace,
                             @JsonProperty("storage_type") String storageType,
-                            @JsonProperty("no_storage") int nOfStorages,
+                            @JsonProperty("no_storage") Integer nOfStorages,
                             @JsonProperty("build_date") Date builtDate){
         super(id,address,price,nOfParkingSpace,storageType,nOfStorages,builtDate);
     }

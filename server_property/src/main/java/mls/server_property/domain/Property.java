@@ -9,7 +9,7 @@ import java.util.Objects;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="p_type")
 @Table(name="property")
-public abstract class Property {
+public class Property {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

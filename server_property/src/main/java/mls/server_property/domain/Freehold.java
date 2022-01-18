@@ -23,13 +23,13 @@ public abstract class Freehold extends Residential {
     @JsonCreator
     public Freehold(@JsonProperty("id") Long id,
                     @JsonProperty("address") String address,
-                    @JsonProperty("price") int price,
-                    @JsonProperty("no_parking_space") int nOfParkingSpace,
+                    @JsonProperty("price") Integer price,
+                    @JsonProperty("no_parking_space") Integer nOfParkingSpace,
                     @JsonProperty("storage_type") String storageType,
-                    @JsonProperty("no_storage") int nOfStorages,
+                    @JsonProperty("no_storage") Integer nOfStorages,
                     @JsonProperty("build_date") Date builtDate,
                     @JsonProperty("family_type") String type,
-                    @JsonProperty("floors") int numberOfFloors,
+                    @JsonProperty("floors") Integer numberOfFloors,
                     @JsonProperty("is_multi_gen") boolean isMultigeneration) {
         super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate);
         this.type = type;
@@ -54,7 +54,7 @@ public abstract class Freehold extends Residential {
         return "Freehold";
     }
 
-    public void setNumberOfFloors(int numberOfFloors) {
+    public void setNumberOfFloors(Integer numberOfFloors) {
         this.numberOfFloors = numberOfFloors;
     }
 

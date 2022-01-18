@@ -18,13 +18,13 @@ public class PropertyController {
     public PropertyController(@Qualifier("propServ") PropertyService propService){ this.propService = propService;}
 
     // empty instead of "/" to facilitate both with and without "/" urls
-    @GetMapping
+    @GetMapping("/get")
     public List<Property> index() {
         return propService.getAllProperties();
     }
 
-    @GetMapping("/{id}")
-    public Property getPropertyById(@PathVariable("id") Long id) throws Throwable {
+    @GetMapping("/get/id/{id}")
+    public Property getPropertyById(@PathVariable("id") Long id) throws IllegalStateException {
         return propService.getProperties(id);
     }
 
@@ -37,10 +37,9 @@ public class PropertyController {
      * @param maxPrice optional param (better include)
      * @return an Optional list of specified type's properties
      */
-//    @GetMapping("/{type}")    <- will cause ambiguous handler methods error
-    @GetMapping("/type")
+    @GetMapping("/get/type/{type}")
     public Optional<? extends List<? extends Property>> getTypeProperties(
-                                            @RequestParam("type") String type,
+                                            @PathVariable("type") String type,
                                             @RequestParam(required = false) String address,
                                             @RequestParam(required = false) Integer minPrice,
                                             @RequestParam(required = false) Integer maxPrice){
@@ -50,26 +49,37 @@ public class PropertyController {
         return propService.getProperties(type,address,minPrice,maxPrice);
     }
 
-    @GetMapping("/ids")
-    public List<Property> getPropertiesById(@RequestParam List<Long> ids){
-        return propService.getProperties(ids);
+
+    @PostMapping("/post")
+    public Property registerNewRecord(@RequestBody Property property) {
+        return propService.addNewProperty(property);
     }
 
-    @PutMapping("{id}")
-    public void updateRecord(@PathVariable("id") Long id,
+    @PutMapping("/put/id/{id}")
+    public Property updateRecord(@PathVariable("id") Long id,
                              @RequestParam(required = false) String address,
-                             @RequestParam(required = false) int price) throws Throwable {
-        propService.updateProperty(id, address, price);
+                             @RequestParam(required = false) Integer price) throws IllegalStateException {
+        return propService.updateIdProperty(id, address, price);
     }
 
-    @PostMapping("/post-record")
-    public void registerNewRecord(@RequestBody Property property) {
-        propService.addNewProperty(property);
+    // address exact match
+    @PutMapping("/put/address/{address}")
+    public Property updateRecord(@PathVariable("address") String address,
+                             @RequestParam(required = false) Integer price) throws IllegalStateException {
+        return propService.updateAddressProperty(address, price);
     }
 
-
-    @DeleteMapping("{id}")
-    public void deleteRecord(@PathVariable("id") Long id) {
-        propService.removeProperty(id);
+    @DeleteMapping("/delete/id/{id}")
+    public String deleteRecord(@PathVariable("id") Long id) {
+        propService.removeIdProperty(id);
+        return "id: "+id+" deleted";
     }
+
+    // address fuzzy match
+    @DeleteMapping("/delete/address/{address}")
+    public String deleteRecord(@PathVariable("address") String address) {
+        Long num = propService.removeAddressProperty(address);
+        return num+ " records with address containing: \""+address+"\" are deleted";
+    }
+
 }

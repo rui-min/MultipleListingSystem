@@ -17,9 +17,9 @@ public abstract class Condominium extends Residential {
 
     @JsonCreator
     public Condominium(@JsonProperty("id") Long id, @JsonProperty("address") String address,
-                       @JsonProperty("price") int price, @JsonProperty("no_parking_space") int nOfParkingSpace,
-                       @JsonProperty("storage_type") String storageType, @JsonProperty("no_storage") int nOfStorages,
-                       @JsonProperty("build_date") Date builtDate, @JsonProperty("unit_No") int unitNumber) {
+                       @JsonProperty("price") Integer price, @JsonProperty("no_parking_space") Integer nOfParkingSpace,
+                       @JsonProperty("storage_type") String storageType, @JsonProperty("no_storage") Integer nOfStorages,
+                       @JsonProperty("build_date") Date builtDate, @JsonProperty("unit_No") Integer unitNumber) {
         super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate);
         this.unitNumber = unitNumber;
     }
@@ -45,7 +45,7 @@ public abstract class Condominium extends Residential {
      * Set unit number of the condominium type property
      * @param unitNumber unit number of condominium type property
      */
-    public void setUnitNumber(int unitNumber) {
+    public void setUnitNumber(Integer unitNumber) {
         this.unitNumber = unitNumber;
     }
 

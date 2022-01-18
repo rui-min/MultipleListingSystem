@@ -18,47 +18,19 @@ import java.sql.Date;
 @Entity
 //@Table(name = "multilex")
 public class MultiLex extends Freehold {
-
-//    private Integer nOfUnits;
-
     protected MultiLex() {}
 
     public MultiLex( @JsonProperty("id") Long id,
                          @JsonProperty("address") String address,
-                         @JsonProperty("price") int price,
-                         @JsonProperty("no_parking_space") int nOfParkingSpace,
+                         @JsonProperty("price") Integer price,
+                         @JsonProperty("no_parking_space") Integer nOfParkingSpace,
                          @JsonProperty("storage_type") String storageType,
-                         @JsonProperty("no_storage") int nOfStorages,
+                         @JsonProperty("no_storage") Integer nOfStorages,
                          @JsonProperty("build_date") Date builtDate,
                          @JsonProperty("family_type") String type,
-                         @JsonProperty("floors") int numberOfFloors,
+                         @JsonProperty("floors") Integer numberOfFloors,
                          @JsonProperty("is_multi_gen") boolean isMultigeneration) {
         super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate, type, numberOfFloors, isMultigeneration);
     }
-
-//    public void setUnits(int n) {
-//        this.nOfUnits = n;
-//    }
-//
-//    @Override
-//    public String getBuildingType() {
-//
-//        switch (this.nOfUnits) {
-//            case 2:
-//                return "Duplex";
-//            case 3:
-//                return "Triplex";
-//            case 4:
-//                return "Quadriplex";
-//            default:
-//                return "Multiplex (>4)";
-//        }
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return super.toString() +
-//                ", howManyUnits=" + nOfUnits;
-//    }
 
 }

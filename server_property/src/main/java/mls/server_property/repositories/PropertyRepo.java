@@ -4,6 +4,7 @@ import mls.server_property.domain.Property;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,11 +17,12 @@ public interface PropertyRepo<T extends Property> extends JpaRepository<T, Long>
     Optional<List<T>> findByAddressContainsAndPriceBetween(String partialAddress, int lowerBound, int upperBound);
     Optional<List<T>> findByPriceBetween(int lowerBound, int upperBound);
     Optional<List<T>> findByAddressContains(String partialAddress);
+    boolean existsByAddressContaining(String address);
+    @Transactional
+    Long deleteByAddressContaining(String address);
 
 //    //need validation: T extends Freehold
 //    @Query("select f from #{#entityName} f where f.type = ?1")
 //    Optional<List<T>> findFreeholdByFamilyType(String type);
 //    Optional<List<T>> findFreeholdByIsMultigeneration(boolean isMultigeneration);
-
-
 }

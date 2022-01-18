@@ -34,7 +34,7 @@ public class PropertyService {
 
     public List<Property> getAllProperties(){ return propertyRepo.findAll(); }
 
-    public Property getProperties(Long id) throws Throwable {
+    public Property getProperties(Long id) throws IllegalStateException {
         return propertyRepo.findById(id).orElseThrow(() -> new IllegalStateException(
             String.format("No property with id %d exists", id))); }
 
@@ -42,7 +42,7 @@ public class PropertyService {
         return propertyRepo.findAllById(ids);
     }
 
-    public Optional<? extends List<? extends Property>> getProperties(String type, String partialAddress, int lowerBound, int upperBound)
+    public Optional<? extends List<? extends Property>> getProperties(String type, String partialAddress, Integer lowerBound, Integer upperBound)
                                                     throws IllegalArgumentException {
         switch (type.toLowerCase()) {
             case "property":
@@ -84,28 +84,47 @@ public class PropertyService {
 
     }
 
-    public void addNewProperty(Property property){
+    public Property addNewProperty(Property property){
         Optional<Property> propOpt = propertyRepo.findByAddress(property.getAddress());
         if(propOpt.isPresent()){
             throw new IllegalStateException("Property exists at this address");
         }
-        propertyRepo.save(property);
+        return propertyRepo.save(property);
     }
 
-    public void removeProperty(Long id){
+    @Transactional
+    public Property updateIdProperty(Long id, String address, Integer price) throws IllegalStateException {
+        Property property = propertyRepo.findById(id).orElseThrow(() -> new IllegalStateException(
+                String.format("No property with id %d exists", id)));
+        if (price != null)
+            property.setPrice(price);
+        if (address != null)
+            property.setAddress(address);
+        return property;
+    }
+
+    @Transactional
+    public Property updateAddressProperty(String address, Integer price) throws IllegalStateException {
+        Property property = propertyRepo.findByAddress(address).orElseThrow(() -> new IllegalStateException(
+                String.format("No property with address %s exists", address)));
+        if (price != null)
+            property.setPrice(price);
+        return property;
+    }
+
+    public void removeIdProperty(Long id){
         if(! propertyRepo.existsById(id)){
             throw new IllegalStateException(String.format("No property with id %d exists", id));
         }
         propertyRepo.deleteById(id);
     }
 
-    @Transactional
-    public void updateProperty(Long id, String address, int price) throws Throwable {
-        Property property = propertyRepo.findById(id).orElseThrow(() -> new IllegalStateException(
-                String.format("No property with id %d exists", id)));
-        if(property.getPrice() != price)
-            property.setPrice(price);
-        if(! property.getAddress().equals(address))
-            property.setAddress(address);
+    public Long removeAddressProperty(String address){
+        if (! propertyRepo.existsByAddressContaining(address)){
+            throw new IllegalStateException(String.format(
+                    "No property containing address %s exists", address));
+        }
+        return propertyRepo.deleteByAddressContaining(address);
     }
+
 }

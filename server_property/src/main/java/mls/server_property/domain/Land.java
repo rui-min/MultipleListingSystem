@@ -20,7 +20,7 @@ public class Land extends Property {
     @JsonCreator
     public Land(@JsonProperty("id")Long id,
                 @JsonProperty("address")String address,
-                @JsonProperty("price")int price) {
+                @JsonProperty("price")Integer price) {
         super(id, address, price);
     }
 

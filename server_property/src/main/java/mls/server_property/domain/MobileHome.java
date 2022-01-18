@@ -17,12 +17,12 @@ public class MobileHome extends Residential {
     /**
      * Simple constructor for MobileHome.
      * @param address address of property as String.
-     * @param price price of property in int.
+     * @param price price of property in Integer.
      */
     @JsonCreator
     public MobileHome(@JsonProperty("id") Long id, @JsonProperty("address") String address,
-                      @JsonProperty("price") int price, @JsonProperty("no_parking_space") int nOfParkingSpace,
-                      @JsonProperty("storage_type") String storageType, @JsonProperty("no_storage") int nOfStorages,
+                      @JsonProperty("price") Integer price, @JsonProperty("no_parking_space") Integer nOfParkingSpace,
+                      @JsonProperty("storage_type") String storageType, @JsonProperty("no_storage") Integer nOfStorages,
                       @JsonProperty("build_date") Date builtDate, @JsonProperty("ownership") String ownership) {
         super(id, address, price, nOfParkingSpace, storageType, nOfStorages, builtDate);
         this.ownership = ownership;
