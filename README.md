@@ -1,5 +1,5 @@
 # (Group Project) Mulitiple Listing System Documentation
-* This is a web application for CRUD operations developed with Java and Spring Boot. The simulated commercial website is https://www.realtor.ca/. 
+* This is a web application simulating a property listing system with CRUD operations. A good business example is https://www.realtor.ca/. 
 * There are totally 16 entities in the domain directory(server folder). The backend server("server_property") provides RESTful APIs to the frontend("front_client"). 
 * Attention: only backend ("server_property" folder) is currently finished.
 
