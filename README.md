@@ -20,15 +20,26 @@
 ![showcase](/server_property/docs/demonstration_get3.jpg)
 
 # APIs
+**You can copy & paste the bold links below to Postman url section. Remember to switch to correct method section in the dropdown menu. Also make sure to replace all url portions wrapped with "{}" with values in proper types. The italic parts in some urls are optional.** 
+
 The backend controller provides following APIs:
 1. Get method (read): 
-    1. **/api/property**  -> return all properties' JSON data in the database
-    2. **/api/property/{Long id}** -> return the specified id property's JSON data in the database
-    3. **/api/property/ids** -> return the specified ids properties' JSON data in the database
-    4. **/api/property/type** -> return sepcified type properties' JSON data in the database. There are 16 types in total, corresponding to 16 entity classes under domain directory. The domain hierarchy is as follows: 
-2. Put method (update): **api/property/{id}** -> update the specified id property's records
-3. Post method (create): **api/property/post-record** -> create and add new property to the database
-4. Delete method (delete): **api/property/{id}** -> remove the specified id property from the database   
+    1. **localhost:8090/api/property/get**  -> return all properties' JSON data from the database
+    2. **localhost:8090/api/property/get/id/{Long id}** -> return the specified id property's JSON data in the database
+    3. **localhost:8090/api/property/get/type/{String type}_?address={String address}&minPrice={int minPirce}&maxPrice={int maxPrice}_** -> return sepcified type properties' JSON data from the database. There are 16 types in total, corresponding to 16 entity classes under domain directory. {String type} must be one of: Property, Land, Residential, Freehold, CooperativeHome, Condominium, MobileHome, SemiDetached, VacationHome, DetachedHome, FarmHouse, MultiLex, TownHouse, TripleDeckers, Condo, StackedTownHouse 
+    4. **localhost:8090/api/property/get/minPrice/{int minPrice}** -> return properties with prices larger than "minPrice"
+    5. **localhost:8090/api/property/get/maxPrice/{int maxPrice}** -> return properties with prices smaller than "maxPrice"
+    6. **localhost:8090/api/property/get/address/{String address}** -> return properties containing "address" (fuzzy match)
+
+2. Post method (create): **localhost:8090/api/property/post** -> create and add new property to the database and return it. 
+
+3. Put method (update): 
+    1. **localhost:8090/api/property/put/id/{Long id}_?address={String address}&price={int price}_** -> update the specified id property's records
+    2. **localhost:8090/api/property/put/address/{String address}_?price={int price}_** -> update the specified address property's records(exact match)
+
+5. Delete method (delete): 
+    1. **localhost:8090/api/property/delete/id/{Long id}** -> remove the specified id property from the database and return a message if successful
+    2. **localhost:8090/api/property/delete/address/{String address}** -> remove properties containing the address from the database and return a message if successful(fuzzy match for the address string)
 
 # Special Thanks
 A special thanks to a wonderful senior: @constantlyTiTi. Without her help, this project would definitely become much more difficult.
