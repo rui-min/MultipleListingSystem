@@ -46,7 +46,23 @@ public class PropertyController {
         if (address==null) address="";
         if (minPrice==null) minPrice=0;
         if (maxPrice==null) maxPrice=Integer.MAX_VALUE;
-        return propService.getProperties(type,address,minPrice,maxPrice);
+        return propService.getTypeProperties(type,address,minPrice,maxPrice);
+    }
+
+    @GetMapping("/get/minPrice/{minPrice}")
+    public Optional<List<Property>> getMinPriceProperties(@PathVariable("minPrice") Integer minPrice) {
+        return propService.getMinPriceProperties(minPrice);
+    }
+
+    @GetMapping("/get/maxPrice/{maxPrice}")
+    public Optional<List<Property>> getMaxPriceProperties(@PathVariable("maxPrice") Integer maxPrice) {
+        return propService.getMaxPriceProperties(maxPrice);
+    }
+
+    @GetMapping("/get/address/{address}")
+    public Optional<List<Property>> getAddressProperties(
+                                        @PathVariable("address") String address) {
+        return propService.getAddressProperties(address);
     }
 
 

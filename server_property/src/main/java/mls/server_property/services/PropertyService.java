@@ -42,7 +42,7 @@ public class PropertyService {
         return propertyRepo.findAllById(ids);
     }
 
-    public Optional<? extends List<? extends Property>> getProperties(String type, String partialAddress, Integer lowerBound, Integer upperBound)
+    public Optional<? extends List<? extends Property>> getTypeProperties(String type, String partialAddress, Integer lowerBound, Integer upperBound)
                                                     throws IllegalArgumentException {
         switch (type.toLowerCase()) {
             case "property":
@@ -81,7 +81,18 @@ public class PropertyService {
             default:
                 throw new IllegalArgumentException("Illegal property type");
         }
+    }
 
+    public Optional<List<Property>> getMinPriceProperties(Integer minPrice){
+        return propertyRepo.findByPriceGreaterThanEqual(minPrice);
+    }
+
+    public Optional<List<Property>> getMaxPriceProperties(Integer maxPrice){
+        return propertyRepo.findByPriceLessThanEqual(maxPrice);
+    }
+
+    public Optional<List<Property>> getAddressProperties(String address){
+        return propertyRepo.findByAddressContains(address);
     }
 
     @Transactional

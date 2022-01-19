@@ -15,6 +15,8 @@ public interface PropertyRepo<T extends Property> extends JpaRepository<T, Long>
 
     Optional<T> findByAddress(String address);
     Optional<List<T>> findByAddressContainsAndPriceBetween(String partialAddress, int lowerBound, int upperBound);
+    Optional<List<T>> findByPriceGreaterThanEqual(int lowerBound);
+    Optional<List<T>> findByPriceLessThanEqual(int upperBound);
     Optional<List<T>> findByPriceBetween(int lowerBound, int upperBound);
     Optional<List<T>> findByAddressContains(String partialAddress);
     boolean existsByAddressContaining(String address);
