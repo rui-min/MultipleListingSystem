@@ -41,6 +41,9 @@ The backend controller provides following APIs:
     1. **localhost:8090/api/property/delete/id/{Long id}** -> remove the specified id property from the database and return a message if successful
     2. **localhost:8090/api/property/delete/address/{String address}** -> remove properties containing the address from the database and return a message if successful(fuzzy match for the address string)
 
+# About BootStrapData.java
+File BootStrapData.java under "/server_property/src/main/java/mls/server_property/bookstrap/" is used for constructing sample database data. You can uncomment the whole file and rerun the project if more data are needed.
+
 # Special Thanks
 A special thanks to a wonderful senior: @constantlyTiTi. Without her help, this project would definitely become much more difficult.
 
